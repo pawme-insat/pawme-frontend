@@ -21,6 +21,8 @@ import { FooterSocialMediaComponent } from './components/shared/footer/footer-so
 import { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';
 import { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { FooterRightsComponent } from './components/shared/footer/footer-rights/
     FooterRightsComponent,
   ],
   imports: [
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsModule.forRoot([], {
       developmentMode: true,

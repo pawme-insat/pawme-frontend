@@ -7,12 +7,15 @@ import { moduleMetadata, Meta, Story } from '@storybook/angular';
 import { FooterSocialMediaComponent } from 'src/app/components/shared/footer/footer-social-media/footer-social-media.component';
 import { FooterRightsComponent } from 'src/app/components/shared/footer/footer-rights/footer-rights.component';
 import { FooterContactComponent } from 'src/app/components/shared/footer/footer-contact/footer-contact.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 export default {
   title: 'Shared/Footer',
   component: FooterComponent,
   decorators: [
     moduleMetadata({
+      imports: [HttpClientModule, AngularSvgIconModule.forRoot()],
       declarations: [
         LogoComponent,
         FooterSocialMediaComponent,
