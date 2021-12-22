@@ -238,11 +238,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\n\n<router-outlet></router-outlet>\n"
+            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\n\n<app-footer></app-footer>\n\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-372883ecd9ce67b24222ea4f41d0dc7bf97cc8b169ea0dccb7355cbd8de599ffa033c7013c0a3d1f9a1372479afaf5ad997085814365923159b5fcb7fc9b4e3f",
+            "id": "component-FooterComponent-48f54c527ed4b367e19cbf44469e18f90bc65d80a8c7c64ca289f70fb2b596a6b0f32617d327ba13d77586ea58e63e3ea1e975d11aafedbb5919ba831f562d34",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -280,7 +280,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss']\n})\nexport class FooterComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { LogoComponent } from '../logo/logo.component';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -295,12 +295,198 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer class=\"bg-secondary-normal\">\n  <div class=\"px-2 py-2\">\n    <div class=\"flex justify-between px-4 py-4\">\n      <div>\n        <h3>PawMe</h3>\n        <app-footer-social-media></app-footer-social-media>\n      </div>\n\n      <div>\n        <app-footer-contact></app-footer-contact>\n      </div>\n    </div>\n    <div class=\"flex flex-row-reverse\">\n      <app-footer-rights></app-footer-rights>\n    </div>\n  </div>\n</footer>\n"
+        },
+        {
+            "name": "FooterContactComponent",
+            "id": "component-FooterContactComponent-27565304e1424c546df776b482b53929398be15cc2dfb87a86f14d19bcdc7924e630d9241c2627d8cce64590a84148f7fb649b43b2bdfa1b7f28c16779ae33a5",
+            "file": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-contact",
+            "styleUrls": [
+                "./footer-contact.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-contact.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer-contact',\n  templateUrl: './footer-contact.component.html',\n  styleUrls: ['./footer-contact.component.scss']\n})\nexport class FooterContactComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer-contact.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
                 "line": 8
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>footer works!</p>\n"
+            "templateData": "<p>footer-contact works!</p>\n"
+        },
+        {
+            "name": "FooterRightsComponent",
+            "id": "component-FooterRightsComponent-9dae02067a28e36f47130966c30ee83a8d8a26a6ac188fb68d2c517b5f0089d34872f3a18edfece6cc17c47c9143548cfc5d70f53ea9041aa0686742e27149dd",
+            "file": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-rights",
+            "styleUrls": [
+                "./footer-rights.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-rights.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer-rights',\n  templateUrl: './footer-rights.component.html',\n  styleUrls: ['./footer-rights.component.scss']\n})\nexport class FooterRightsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer-rights.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p class=\"text-sm\">&#169; All rights Reserved - PawMe 2021-2022</p>\n"
+        },
+        {
+            "name": "FooterSocialMediaComponent",
+            "id": "component-FooterSocialMediaComponent-99040081ddbc3e7d700e001051962ec959f8945417751d0981a34ca2fe0a6ca748ed7d5fd295f8021ec172bade5420cedb5338a4b780390cdcda5d481c81d9a8",
+            "file": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-social-media",
+            "styleUrls": [
+                "./footer-social-media.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-social-media.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer-social-media',\n  templateUrl: './footer-social-media.component.html',\n  styleUrls: ['./footer-social-media.component.scss']\n})\nexport class FooterSocialMediaComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer-social-media.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>footer-social-media works!</p>\n"
         },
         {
             "name": "HeaderComponent",
@@ -926,13 +1112,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-5f32b5ba3d6b4f29d77cf477db02bd42e69f380bf56590453b1649637aefb02c4cf929c2c24bc0987a4d5022b97a6ca065ad1bf64cc8b78061f847c9ed951e2e",
+            "id": "module-AppModule-eaa7409fbefe927a15409df28ec72f6a73256266c029bdc2d908ad438a2018166ca7cf9d1ba81c431efd23252150c814e69723f20aa1a001a88ab77923493e46",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NgxsModule } from '@ngxs/store';\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\nimport { HeaderComponent } from './components/shared/header/header.component';\nimport { FooterComponent } from './components/shared/footer/footer.component';\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\nimport { LogoComponent } from './components/shared/logo/logo.component';\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    HeaderComponent,\n    FooterComponent,\n    HotdogMenuComponent,\n    NavigationComponent,\n    NavigationItemComponent,\n    SignInComponent,\n    SignUpComponent,\n    HomebannerComponent,\n    HomeExplanationComponent,\n    HomeReviewsComponent,\n    AboutUsBannerComponent,\n    AboutUsValuesComponent,\n    LogoComponent,\n  ],\n  imports: [\n    NgxsRouterPluginModule.forRoot(),\n    NgxsModule.forRoot([], {\n      developmentMode: true,\n    }),\n    BrowserModule,\n    AppRoutingModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NgxsModule } from '@ngxs/store';\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\nimport { HeaderComponent } from './components/shared/header/header.component';\nimport { FooterComponent } from './components/shared/footer/footer.component';\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\nimport { LogoComponent } from './components/shared/logo/logo.component';\nimport { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';\nimport { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';\nimport { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    HeaderComponent,\n    FooterComponent,\n    HotdogMenuComponent,\n    NavigationComponent,\n    NavigationItemComponent,\n    SignInComponent,\n    SignUpComponent,\n    HomebannerComponent,\n    HomeExplanationComponent,\n    HomeReviewsComponent,\n    AboutUsBannerComponent,\n    AboutUsValuesComponent,\n    LogoComponent,\n    FooterSocialMediaComponent,\n    FooterContactComponent,\n    FooterRightsComponent,\n  ],\n  imports: [\n    NgxsRouterPluginModule.forRoot(),\n    NgxsModule.forRoot([], {\n      developmentMode: true,\n    }),\n    BrowserModule,\n    AppRoutingModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -952,6 +1138,15 @@
                         },
                         {
                             "name": "FooterComponent"
+                        },
+                        {
+                            "name": "FooterContactComponent"
+                        },
+                        {
+                            "name": "FooterRightsComponent"
+                        },
+                        {
+                            "name": "FooterSocialMediaComponent"
                         },
                         {
                             "name": "HeaderComponent"
@@ -1314,6 +1509,33 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HomebannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterContactComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterRightsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterSocialMediaComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"

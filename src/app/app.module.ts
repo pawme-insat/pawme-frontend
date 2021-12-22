@@ -17,6 +17,9 @@ import { HomeReviewsComponent } from './components/pages/home/home-reviews/home-
 import { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';
 import { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';
 import { LogoComponent } from './components/shared/logo/logo.component';
+import { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';
+import { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';
+import { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
@@ -35,6 +38,9 @@ import { LogoComponent } from './components/shared/logo/logo.component';
     AboutUsBannerComponent,
     AboutUsValuesComponent,
     LogoComponent,
+    FooterSocialMediaComponent,
+    FooterContactComponent,
+    FooterRightsComponent,
   ],
   imports: [
     NgxsRouterPluginModule.forRoot(),
