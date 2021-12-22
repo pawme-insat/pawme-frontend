@@ -20,6 +20,7 @@ import { LogoComponent } from './components/shared/logo/logo.component';
 import { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';
 import { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';
 import { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';
+import { HomeComponent } from './pages/home/home.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterSocialMediaComponent,
     FooterContactComponent,
     FooterRightsComponent,
+    HomeComponent,
   ],
   imports: [
     HttpClientModule,

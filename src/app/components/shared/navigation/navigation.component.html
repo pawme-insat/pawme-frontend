@@ -1,1 +1,4 @@
-<p>navigation works!</p>
+<div class="flex gap-6">
+  <app-navigation-item *ngFor="let item of navItems" [item]="item.text"
+                       [isActive]="item.isActive"></app-navigation-item>
+</div>

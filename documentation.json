@@ -1,1792 +1,1873 @@
 {
-    "pipes": [],
-    "interfaces": [
+  "pipes": [],
+  "interfaces": [
+    {
+      "name": "LocalIcon",
+      "id": "interface-LocalIcon-d5be9fe08e3d07b1cd7a5a4ae10db4f2aae0aa9fc8adefe75cb346bf08f1e97f4408b90566312d2613abe32a1a43b47761352c7c4da474a22f132b6087d6b29c",
+      "file": "src/app/components/shared/footer/footer.data.ts",
+      "deprecated": false,
+      "deprecationMessage": "",
+      "type": "interface",
+      "sourceCode": "export interface LocalIcon {\n  name: string;\n  url: string;\n  iconPath: string;\n}\n\nexport const FOOTER_ICONS: LocalIcon[] = [\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n];\n",
+      "properties": [
         {
-            "name": "LocalIcon",
-            "id": "interface-LocalIcon-d5be9fe08e3d07b1cd7a5a4ae10db4f2aae0aa9fc8adefe75cb346bf08f1e97f4408b90566312d2613abe32a1a43b47761352c7c4da474a22f132b6087d6b29c",
-            "file": "src/app/components/shared/footer/footer.data.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface LocalIcon {\n  name: string;\n  url: string;\n  iconPath: string;\n}\n\nexport const FOOTER_ICONS: LocalIcon[] = [\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n];\n",
-            "properties": [
-                {
-                    "name": "iconPath",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                },
-                {
-                    "name": "url",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 3
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 165,
-            "methods": []
+          "name": "iconPath",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 4
+        },
+        {
+          "name": "name",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 2
+        },
+        {
+          "name": "url",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 3
         }
-    ],
-    "injectables": [],
-    "guards": [
-        {
-            "name": "AuthGuardGuard",
-            "id": "injectable-AuthGuardGuard-81fcd04166f023d3c9ea2a0fca5fde35a357037292a0d355a2b284344938198a3f600063944b2d9ead3b2a8d631754b13c1ec241b4f6f2f0bfa24844f9e3cab1",
-            "file": "src/app/guards/auth/auth-guard.guard.ts",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "canActivate",
-                    "args": [
-                        {
-                            "name": "route",
-                            "type": "ActivatedRouteSnapshot",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "state",
-                            "type": "RouterStateSnapshot",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "Observable | Promise | boolean | UrlTree",
-                    "typeParameters": [],
-                    "line": 9,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "route",
-                            "type": "ActivatedRouteSnapshot",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "state",
-                            "type": "RouterStateSnapshot",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';\nimport { Observable } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthGuardGuard implements CanActivate {\n  canActivate(\n    route: ActivatedRouteSnapshot,\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\n    return true;\n  }\n  \n}\n",
-            "type": "guard"
-        }
-    ],
-    "interceptors": [],
-    "classes": [],
-    "directives": [],
-    "components": [
-        {
-            "name": "AboutUsBannerComponent",
-            "id": "component-AboutUsBannerComponent-16c0d522d049c39c1a9bef750902dc779498208a865a55850afe8cddf63f837ab00e7b5c23b4ffe77d50205600d14ab7e8e0055bc8ee49f416644ac436be7268",
-            "file": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-about-us-banner",
-            "styleUrls": [
-                "./about-us-banner.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./about-us-banner.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us-banner',\n  templateUrl: './about-us-banner.component.html',\n  styleUrls: ['./about-us-banner.component.scss']\n})\nexport class AboutUsBannerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./about-us-banner.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>about-us-banner works!</p>\n"
-        },
-        {
-            "name": "AboutUsValuesComponent",
-            "id": "component-AboutUsValuesComponent-aaf4bf7464de113b7050e3764d76a3322a5c965eaf33956607482e4cca57c38976447a639dd4f42aab6345c42a7f6184f91a24fdf8e24d5713fdf0d6a14e5b8a",
-            "file": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-about-us-values",
-            "styleUrls": [
-                "./about-us-values.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./about-us-values.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us-values',\n  templateUrl: './about-us-values.component.html',\n  styleUrls: ['./about-us-values.component.scss']\n})\nexport class AboutUsValuesComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./about-us-values.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>about-us-values works!</p>\n"
-        },
-        {
-            "name": "AppComponent",
-            "id": "component-AppComponent-c8d0d9774322f07a1aa847d37381e110898cb82c3dca3b6f87f80133445251e559c54c8be497719b7aab756ec67a3632969c8997cdbb7bb97d9fc399fdbffb42",
-            "file": "src/app/app.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-root",
-            "styleUrls": [
-                "./app.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./app.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "title",
-                    "defaultValue": "'pawme-frontend'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'pawme-frontend';\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\n\n<app-footer></app-footer>\n\n<router-outlet></router-outlet>\n"
-        },
-        {
-            "name": "FooterComponent",
-            "id": "component-FooterComponent-fcddec5df564891d91df2407f3ab3aa812c6b082636cc6712666cc0a7989e9b6185f2900966d32f90fc9b65a3b916677138ea9825941243be3772e70b963cf3d",
-            "file": "src/app/components/shared/footer/footer.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-footer",
-            "styleUrls": [
-                "./footer.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./footer.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "socialIcons",
-                    "defaultValue": "FOOTER_ICONS",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { LogoComponent } from '../logo/logo.component';\nimport { FOOTER_ICONS } from './footer.data';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  constructor() {}\n\n  socialIcons = FOOTER_ICONS;\n\n  ngOnInit(): void {}\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./footer.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<footer class=\"bg-secondary-normal\">\n  <div class=\"\">\n    <div class=\"flex justify-between px-8 py-6\">\n      <div>\n        <h3 class=\"text-3xl text-gray-700 font-medium\">PawMe</h3>\n        <app-footer-social-media\n          [icons]=\"socialIcons\"\n        ></app-footer-social-media>\n      </div>\n\n      <div class=\"text-gray-600\">\n        <app-footer-contact></app-footer-contact>\n      </div>\n    </div>\n    <div class=\"flex text-gray-600 px-2 py-2 flex-row-reverse\">\n      <app-footer-rights></app-footer-rights>\n    </div>\n  </div>\n</footer>\n"
-        },
-        {
-            "name": "FooterContactComponent",
-            "id": "component-FooterContactComponent-27565304e1424c546df776b482b53929398be15cc2dfb87a86f14d19bcdc7924e630d9241c2627d8cce64590a84148f7fb649b43b2bdfa1b7f28c16779ae33a5",
-            "file": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-footer-contact",
-            "styleUrls": [
-                "./footer-contact.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./footer-contact.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer-contact',\n  templateUrl: './footer-contact.component.html',\n  styleUrls: ['./footer-contact.component.scss']\n})\nexport class FooterContactComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./footer-contact.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div>\n  <h3 class=\"text-2xl\">Contact</h3>\n  <p>+ 216 00 000 000</p>\n  <p>pawme@gmail.com</p>\n</div>\n"
-        },
-        {
-            "name": "FooterRightsComponent",
-            "id": "component-FooterRightsComponent-9dae02067a28e36f47130966c30ee83a8d8a26a6ac188fb68d2c517b5f0089d34872f3a18edfece6cc17c47c9143548cfc5d70f53ea9041aa0686742e27149dd",
-            "file": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-footer-rights",
-            "styleUrls": [
-                "./footer-rights.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./footer-rights.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer-rights',\n  templateUrl: './footer-rights.component.html',\n  styleUrls: ['./footer-rights.component.scss']\n})\nexport class FooterRightsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./footer-rights.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p class=\"text-sm\">&#169; All rights Reserved - PawMe 2021-2022</p>\n"
-        },
-        {
-            "name": "FooterSocialMediaComponent",
-            "id": "component-FooterSocialMediaComponent-33210c4fddbaa4f2f2f002f98e209c16cf2c012a8202a62fe36911e85aa047e12431b49b93caf2c11ed74d29a36e4f1533074f55c30d91e240f75845217391df",
-            "file": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-footer-social-media",
-            "styleUrls": [
-                "./footer-social-media.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./footer-social-media.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "icons",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "LocalIcon[]",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { LocalIcon } from '../footer.data';\n\n@Component({\n  selector: 'app-footer-social-media',\n  templateUrl: './footer-social-media.component.html',\n  styleUrls: ['./footer-social-media.component.scss'],\n})\nexport class FooterSocialMediaComponent implements OnInit {\n  @Input() icons: LocalIcon[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./footer-social-media.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<ul class=\"flex gap-1\">\n  <li *ngFor=\"let item of icons\">\n    <svg-icon\n      src=\"assets/icons/social-media/facebook.svg\"\n      [stretch]=\"true\"\n      [svgStyle]=\"{\n        'width.px': 170,\n        fill: 'rgb(150,50,255)',\n        'padding.px': 1,\n        'margin.px': 3\n      }\"\n    >\n    </svg-icon>\n    <!-- <div class=\"rounded-full bg-white fill-current\">{{ item.name }}</div> -->\n  </li>\n</ul>\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-fa2aa27e4139e9793b910068b910e321596a2d195bfa0fd7b8f5f3b804a9b0685cdd9f1a71b7fbe6a9f73526113a68baf80e312c4440dab15890fd39dc4c0aac",
-            "file": "src/app/components/shared/header/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-header",
-            "styleUrls": [
-                "./header.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./header.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss']\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./header.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>header works!</p>\n"
-        },
-        {
-            "name": "HomebannerComponent",
-            "id": "component-HomebannerComponent-ef5247b97fc821561d66e269a751fdbd16a95f51f9d0e0ad2de285fab2748ff4f30af40fe5f331f8a8db195f298ccd30c89a96549066c7dba0a18e52271283c3",
-            "file": "src/app/components/pages/home/homebanner/homebanner.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-homebanner",
-            "styleUrls": [
-                "./homebanner.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./homebanner.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-homebanner',\n  templateUrl: './homebanner.component.html',\n  styleUrls: ['./homebanner.component.scss']\n})\nexport class HomebannerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./homebanner.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>homebanner works!</p>\n"
-        },
-        {
-            "name": "HomeExplanationComponent",
-            "id": "component-HomeExplanationComponent-c92f74474296f8f10bab7173357154778b1330711dcc714dd416540c87437650808dc36fcf9a2f462ea2cfaa38444307d7ffb117d30ebc0ed8442b43fe2cb433",
-            "file": "src/app/components/pages/home/home-explanation/home-explanation.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-home-explanation",
-            "styleUrls": [
-                "./home-explanation.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./home-explanation.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-explanation',\n  templateUrl: './home-explanation.component.html',\n  styleUrls: ['./home-explanation.component.scss']\n})\nexport class HomeExplanationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./home-explanation.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>home-explanation works!</p>\n"
-        },
-        {
-            "name": "HomeReviewsComponent",
-            "id": "component-HomeReviewsComponent-570e2394bf44df13ad0c547ed79f2b39e6ebe25cc50a1783a865e0f1403eff65253de7f70f77bdc2806c4183003199383488619a2dab122fb0e4d3f09f7f2357",
-            "file": "src/app/components/pages/home/home-reviews/home-reviews.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-home-reviews",
-            "styleUrls": [
-                "./home-reviews.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./home-reviews.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-reviews',\n  templateUrl: './home-reviews.component.html',\n  styleUrls: ['./home-reviews.component.scss']\n})\nexport class HomeReviewsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./home-reviews.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>home-reviews works!</p>\n"
-        },
-        {
-            "name": "HotdogMenuComponent",
-            "id": "component-HotdogMenuComponent-ba0320257b4f607e85ff916b8b3cfdfd9aaffecbba284296d71fed76d0709d6e1d31075928b506b3e1dd8334c6d7e2450666163748a1da643c52ff335413b4b4",
-            "file": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-hotdog-menu",
-            "styleUrls": [
-                "./hotdog-menu.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./hotdog-menu.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-hotdog-menu',\n  templateUrl: './hotdog-menu.component.html',\n  styleUrls: ['./hotdog-menu.component.scss']\n})\nexport class HotdogMenuComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./hotdog-menu.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>hotdog-menu works!</p>\n"
-        },
-        {
-            "name": "LogoComponent",
-            "id": "component-LogoComponent-604c10ed615a71b3ef75e6947a9c71cc6107555cea8cffa210cf3424df3a7555c2ab1ede5f4e22d989a29cf1fdd130b17a375b99ebcc790b7e06b7d9570bd98b",
-            "file": "src/app/components/shared/logo/logo.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-logo",
-            "styleUrls": [
-                "./logo.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./logo.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss']\n})\nexport class LogoComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./logo.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>logo works!</p>\n"
-        },
-        {
-            "name": "NavigationComponent",
-            "id": "component-NavigationComponent-f184ab85f6732d902867f414dbaab8cb605bbcb7d2d579745abe173bc9528dd0b70b1a3d430413f60b1059077a078bc2951d1c1e3dc9c3d43fdcb92405b44189",
-            "file": "src/app/components/shared/navigation/navigation.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-navigation",
-            "styleUrls": [
-                "./navigation.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./navigation.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-navigation',\n  templateUrl: './navigation.component.html',\n  styleUrls: ['./navigation.component.scss']\n})\nexport class NavigationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./navigation.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>navigation works!</p>\n"
-        },
-        {
-            "name": "NavigationItemComponent",
-            "id": "component-NavigationItemComponent-8c66128ed415f40fdecdfa2785c099862e1a3c7336fbeaefda4dcbc1adab01556e016063afda9415355ed4711ce1d4c4eae185c5ae13d2fa2bf82dd442542cf9",
-            "file": "src/app/components/shared/navigation-item/navigation-item.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-navigation-item",
-            "styleUrls": [
-                "./navigation-item.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./navigation-item.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-navigation-item',\n  templateUrl: './navigation-item.component.html',\n  styleUrls: ['./navigation-item.component.scss']\n})\nexport class NavigationItemComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./navigation-item.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>navigation-item works!</p>\n"
-        },
-        {
-            "name": "SignInComponent",
-            "id": "component-SignInComponent-915b900c737460c6723529f8ff9fc283005c961ac980290a8bd56d52607befaf51add1cc24aa61c6c63af6f0b621fac5f2b1e93a921a18e2b5f386e96159b21d",
-            "file": "src/app/components/auth/sign-in/sign-in.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-sign-in",
-            "styleUrls": [
-                "./sign-in.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./sign-in.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-sign-in',\n  templateUrl: './sign-in.component.html',\n  styleUrls: ['./sign-in.component.scss']\n})\nexport class SignInComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./sign-in.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>sign-in works!</p>\n"
-        },
-        {
-            "name": "SignUpComponent",
-            "id": "component-SignUpComponent-3198975df0a9eb0d36f0659e4710668ec8ae6f9b24c074ffe4a422d3d2e9a1264f4db3d44a25d61b408e0a7b51416a1e4ab3f59db6e0678e4586b4c39e005ae3",
-            "file": "src/app/components/auth/sign-up/sign-up.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-sign-up",
-            "styleUrls": [
-                "./sign-up.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./sign-up.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-sign-up',\n  templateUrl: './sign-up.component.html',\n  styleUrls: ['./sign-up.component.scss']\n})\nexport class SignUpComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./sign-up.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>sign-up works!</p>\n"
-        }
-    ],
-    "modules": [
-        {
-            "name": "AppModule",
-            "id": "module-AppModule-52517846826ab4063219b9b163230fe40e76bd20f59cc46cde50d8709bbf6792879c3ae113969e025cb0c66ae19958c5673176c465a53ed26d2511c3e9dd9811",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/app.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NgxsModule } from '@ngxs/store';\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\nimport { HeaderComponent } from './components/shared/header/header.component';\nimport { FooterComponent } from './components/shared/footer/footer.component';\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\nimport { LogoComponent } from './components/shared/logo/logo.component';\nimport { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';\nimport { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';\nimport { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    HeaderComponent,\n    FooterComponent,\n    HotdogMenuComponent,\n    NavigationComponent,\n    NavigationItemComponent,\n    SignInComponent,\n    SignUpComponent,\n    HomebannerComponent,\n    HomeExplanationComponent,\n    HomeReviewsComponent,\n    AboutUsBannerComponent,\n    AboutUsValuesComponent,\n    LogoComponent,\n    FooterSocialMediaComponent,\n    FooterContactComponent,\n    FooterRightsComponent,\n  ],\n  imports: [\n    AngularSvgIconModule.forRoot(),\n    NgxsRouterPluginModule.forRoot(),\n    NgxsModule.forRoot([], {\n      developmentMode: true,\n    }),\n    BrowserModule,\n    AppRoutingModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "AboutUsBannerComponent"
-                        },
-                        {
-                            "name": "AboutUsValuesComponent"
-                        },
-                        {
-                            "name": "AppComponent"
-                        },
-                        {
-                            "name": "FooterComponent"
-                        },
-                        {
-                            "name": "FooterContactComponent"
-                        },
-                        {
-                            "name": "FooterRightsComponent"
-                        },
-                        {
-                            "name": "FooterSocialMediaComponent"
-                        },
-                        {
-                            "name": "HeaderComponent"
-                        },
-                        {
-                            "name": "HomeExplanationComponent"
-                        },
-                        {
-                            "name": "HomeReviewsComponent"
-                        },
-                        {
-                            "name": "HomebannerComponent"
-                        },
-                        {
-                            "name": "HotdogMenuComponent"
-                        },
-                        {
-                            "name": "LogoComponent"
-                        },
-                        {
-                            "name": "NavigationComponent"
-                        },
-                        {
-                            "name": "NavigationItemComponent"
-                        },
-                        {
-                            "name": "SignInComponent"
-                        },
-                        {
-                            "name": "SignUpComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": [
-                        {
-                            "name": "AppRoutingModule"
-                        }
-                    ]
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": [
-                        {
-                            "name": "AppComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/app-routing.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": []
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        }
-    ],
-    "miscellaneous": {
-        "variables": [
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: false\n}"
-            },
-            {
-                "name": "FOOTER_ICONS",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/shared/footer/footer.data.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "LocalIcon[]",
-                "defaultValue": "[\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n]"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/shared/Footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/shared/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "literal type"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/shared/Footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/shared/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
-            }
-        ],
-        "functions": [],
-        "typealiases": [],
-        "enumerations": [],
-        "groupedVariables": {
-            "src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "literal type"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
-            "src/app/components/shared/footer/footer.data.ts": [
-                {
-                    "name": "FOOTER_ICONS",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/shared/footer/footer.data.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "LocalIcon[]",
-                    "defaultValue": "[\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n]"
-                }
-            ],
-            "src/stories/shared/Footer.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/shared/Footer.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/shared/Footer.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FooterComponent>",
-                    "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/shared/Header.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/shared/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/shared/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
-                }
-            ]
-        },
-        "groupedFunctions": {},
-        "groupedEnumerations": {},
-        "groupedTypeAliases": {}
-    },
-    "routes": {
-        "name": "<root>",
-        "kind": "module",
-        "className": "AppModule",
-        "children": [
-            {
-                "name": "routes",
-                "filename": "src/app/app-routing.module.ts",
-                "module": "AppRoutingModule",
-                "children": [],
-                "kind": "module"
-            }
-        ]
-    },
-    "coverage": {
-        "count": 0,
-        "status": "low",
-        "files": [
-            {
-                "filePath": "src/app/app.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AppComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/auth/sign-in/sign-in.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SignInComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/auth/sign-up/sign-up.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SignUpComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AboutUsBannerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AboutUsValuesComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/pages/home/home-explanation/home-explanation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomeExplanationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/pages/home/home-reviews/home-reviews.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomeReviewsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/pages/home/homebanner/homebanner.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomebannerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterContactComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterRightsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterSocialMediaComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer.data.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "LocalIcon",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/footer/footer.data.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "FOOTER_ICONS",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HotdogMenuComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/logo/logo.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LogoComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/navigation-item/navigation-item.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationItemComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/navigation/navigation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/guards/auth/auth-guard.guard.ts",
-                "type": "guard",
-                "linktype": "guard",
-                "name": "AuthGuardGuard",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/environments/environment.prod.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/environments/environment.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/shared/Footer.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/shared/Footer.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/shared/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/shared/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            }
-        ]
+      ],
+      "indexSignatures": [],
+      "kind": 165,
+      "methods": []
     }
+  ],
+  "injectables": [],
+  "guards": [
+    {
+      "name": "AuthGuardGuard",
+      "id": "injectable-AuthGuardGuard-943cca79c85e7f5ce64ee688d48fb8a3522df6bf71c5f5a55e77a52ca2d4fcd53179481d75fa3915c38f5aacabc0de3728d28f83d9105ea4a18aea03b259fb02",
+      "file": "src/app/guards/auth/auth-guard.guard.ts",
+      "properties": [],
+      "methods": [
+        {
+          "name": "canActivate",
+          "args": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "deprecated": false,
+              "deprecationMessage": ""
+            },
+            {
+              "name": "state",
+              "type": "RouterStateSnapshot",
+              "deprecated": false,
+              "deprecationMessage": ""
+            }
+          ],
+          "optional": false,
+          "returnType": "Observable | Promise | boolean | UrlTree",
+          "typeParameters": [],
+          "line": 9,
+          "deprecated": false,
+          "deprecationMessage": "",
+          "jsdoctags": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "deprecated": false,
+              "deprecationMessage": "",
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "state",
+              "type": "RouterStateSnapshot",
+              "deprecated": false,
+              "deprecationMessage": "",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "description": "",
+      "rawdescription": "\n",
+      "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthGuardGuard implements CanActivate {\r\n  canActivate(\r\n    route: ActivatedRouteSnapshot,\r\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\r\n    return true;\r\n  }\r\n  \r\n}\r\n",
+      "type": "guard"
+    }
+  ],
+  "interceptors": [],
+  "classes": [],
+  "directives": [],
+  "components": [
+    {
+      "name": "AboutUsBannerComponent",
+      "id": "component-AboutUsBannerComponent-e49e9e6a7e3d124be2675c0310380b2a4141ea0e4ba51b16809ec493f1c18a62e4aaf45bf22d8f4a90f5c5fba9c48724ebba30efecfb0d163608f71a9d113530",
+      "file": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-about-us-banner",
+      "styleUrls": [
+        "./about-us-banner.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./about-us-banner.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-banner',\r\n  templateUrl: './about-us-banner.component.html',\r\n  styleUrls: ['./about-us-banner.component.scss']\r\n})\r\nexport class AboutUsBannerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./about-us-banner.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>about-us-banner works!</p>\r\n"
+    },
+    {
+      "name": "AboutUsComponent",
+      "id": "component-AboutUsComponent-1873c8937ff01f0f7f765a12875e3ff0ccdb2af8ca9c81a20b0071543a45fba0bdc5c0e9917fbd31dd0c35cece5cb4b121ae0b536caf52c121ce94d4e381e9ae",
+      "file": "src/app/pages/about-us/about-us.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-about-us",
+      "styleUrls": [
+        "./about-us.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./about-us.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us',\n  templateUrl: './about-us.component.html',\n  styleUrls: ['./about-us.component.scss']\n})\nexport class AboutUsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./about-us.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>about-us works!</p>\n"
+    },
+    {
+      "name": "AboutUsValuesComponent",
+      "id": "component-AboutUsValuesComponent-24a1f06f95df72873f29975608724a5e93a628d7803b2618211c1f4322be72705fe33c3710829d673aee1117de380e231c1a3a83aa02856a3a005ea7e96868b5",
+      "file": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-about-us-values",
+      "styleUrls": [
+        "./about-us-values.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./about-us-values.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-values',\r\n  templateUrl: './about-us-values.component.html',\r\n  styleUrls: ['./about-us-values.component.scss']\r\n})\r\nexport class AboutUsValuesComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./about-us-values.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>about-us-values works!</p>\r\n"
+    },
+    {
+      "name": "AppComponent",
+      "id": "component-AppComponent-de85eed1ffca2f0f47ca8703bfe83bfd343ebad4a878b329055789b1bef261eadd8ed9607b4232d0ee0e73085e4865c941753183ec60adeef0b0136727a6ac72",
+      "file": "src/app/app.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-root",
+      "styleUrls": [
+        "./app.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./app.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "title",
+          "defaultValue": "'pawme-frontend'",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 9
+        }
+      ],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'pawme-frontend';\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./app.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\r\n\r\n<router-outlet></router-outlet>\r\n"
+    },
+    {
+      "name": "FooterComponent",
+      "id": "component-FooterComponent-6c290628b84a1abe1bdfb878464bc2b706fefca858c51621202ab34ffddd486d19c7b04ea6e2c5d71d1bb1dffcb9099de70b3a4f92b6e5c31ebf472a97986eb5",
+      "file": "src/app/components/shared/footer/footer.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-footer",
+      "styleUrls": [
+        "./footer.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./footer.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "socialIcons",
+          "defaultValue": "FOOTER_ICONS",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 13
+        }
+      ],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 15,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { LogoComponent } from '../logo/logo.component';\nimport { FOOTER_ICONS } from './footer.data';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  constructor() {}\n\n  socialIcons = FOOTER_ICONS;\n\n  ngOnInit(): void {}\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./footer.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 10
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<footer class=\"bg-secondary-normal\">\n  <div class=\"\">\n    <div class=\"flex justify-between px-8 py-6\">\n      <div>\n        <h3 class=\"text-3xl text-gray-700 font-medium\">PawMe</h3>\n        <app-footer-social-media\n          [icons]=\"socialIcons\"\n        ></app-footer-social-media>\n      </div>\n\n      <div class=\"text-gray-600\">\n        <app-footer-contact></app-footer-contact>\n      </div>\n    </div>\n    <div class=\"flex text-gray-600 px-2 py-2 flex-row-reverse\">\n      <app-footer-rights></app-footer-rights>\n    </div>\n  </div>\n</footer>\n"
+    },
+    {
+      "name": "FooterContactComponent",
+      "id": "component-FooterContactComponent-27565304e1424c546df776b482b53929398be15cc2dfb87a86f14d19bcdc7924e630d9241c2627d8cce64590a84148f7fb649b43b2bdfa1b7f28c16779ae33a5",
+      "file": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-footer-contact",
+      "styleUrls": [
+        "./footer-contact.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./footer-contact.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss']\r\n})\r\nexport class FooterComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./footer-contact.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p class=\"bg-primary-normal\">footer works!</p>\r\n"
+    },
+    {
+      "name": "HeaderComponent",
+      "id": "component-HeaderComponent-66aab1b24c0d8854e1f82fba28138804b4b85580f247fc5033dd7baf800ad39c3ed2312637667e7b335e90cb144fdbd62673e2ce34182a65e43f7cecfaa900cc",
+      "file": "src/app/components/shared/header/header.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-header",
+      "styleUrls": [
+        "./header.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./header.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./header.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12\">\r\n  <app-logo></app-logo>\r\n</div>\r\n"
+    },
+    {
+      "name": "HomebannerComponent",
+      "id": "component-HomebannerComponent-1f98bc6b68f4517e00c4172265b99131a8aacd506792f615ccf349ef247445e20446f2edb0e54def825c52232c91cfbe46abd4db2073db0ca40fde2362aa22c9",
+      "file": "src/app/components/pages/home/homebanner/homebanner.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-homebanner",
+      "styleUrls": [
+        "./homebanner.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./homebanner.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-homebanner',\r\n  templateUrl: './homebanner.component.html',\r\n  styleUrls: ['./homebanner.component.scss']\r\n})\r\nexport class HomebannerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./homebanner.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>homebanner works!</p>\r\n"
+    },
+    {
+      "name": "HomeComponent",
+      "id": "component-HomeComponent-6a1f8a3ca6cc7eed44a0ba506eea3ed24de8cb2e45fd2a9ae3207035c43fdd5c56e6bdff9da407ef8884933b065c19fb967d30a5c40fd8a3472ca2eec39123cd",
+      "file": "src/app/pages/home/home.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-home",
+      "styleUrls": [
+        "./home.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./home.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./home.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>home works!</p>\n"
+    },
+    {
+      "name": "HomeExplanationComponent",
+      "id": "component-HomeExplanationComponent-115f6d8b71c2fb400e61f5d14387ecf3f20c69d768f8b4fa2c590d14223752a94068329c5b21e6307ce41cd1235a826605ba982ca429c33a462a8ea7f715258b",
+      "file": "src/app/components/pages/home/home-explanation/home-explanation.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-home-explanation",
+      "styleUrls": [
+        "./home-explanation.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./home-explanation.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-explanation',\r\n  templateUrl: './home-explanation.component.html',\r\n  styleUrls: ['./home-explanation.component.scss']\r\n})\r\nexport class HomeExplanationComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./home-explanation.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>home-explanation works!</p>\r\n"
+    },
+    {
+      "name": "HomeReviewsComponent",
+      "id": "component-HomeReviewsComponent-7c5418ba9e5449722712d8015e0739d6a180b67d95a8c0c42de2e5f1f7ba3b43ed2e20dde9852262b2126d1fa898b73a20f43a70b9eb315fa1cbd028c68d7c7f",
+      "file": "src/app/components/pages/home/home-reviews/home-reviews.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-home-reviews",
+      "styleUrls": [
+        "./home-reviews.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./home-reviews.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-reviews',\r\n  templateUrl: './home-reviews.component.html',\r\n  styleUrls: ['./home-reviews.component.scss']\r\n})\r\nexport class HomeReviewsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./home-reviews.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>home-reviews works!</p>\r\n"
+    },
+    {
+      "name": "HotdogMenuComponent",
+      "id": "component-HotdogMenuComponent-14e252b0f6ecd61130a14204f586327620b5e1538883bb11a0c61831c547a8089d1f4e6896dcb906b4c064ee215a05003c327403ced2020437eac75d38aadced",
+      "file": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-hotdog-menu",
+      "styleUrls": [
+        "./hotdog-menu.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./hotdog-menu.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-hotdog-menu',\r\n  templateUrl: './hotdog-menu.component.html',\r\n  styleUrls: ['./hotdog-menu.component.scss']\r\n})\r\nexport class HotdogMenuComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./hotdog-menu.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<div>\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n</div>\r\n"
+    },
+    {
+      "name": "LogoComponent",
+      "id": "component-LogoComponent-42013a51fabc1956270de910a8d4c2753b34c82173fe0b4d61ed31154937975154a6fa4e443bca6064d9def45de2c07416c5558dead3d53c479a74e3038d2177",
+      "file": "src/app/components/shared/logo/logo.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-logo",
+      "styleUrls": [
+        "./logo.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./logo.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-logo',\r\n  templateUrl: './logo.component.html',\r\n  styleUrls: ['./logo.component.scss']\r\n})\r\nexport class LogoComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./logo.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<!--<div class=\"w-8\"><img src=\"whitePawMe.svg\"/></div>-->\r\n<h2>nimporte quoi</h2>\r\n"
+    },
+    {
+      "name": "NavigationComponent",
+      "id": "component-NavigationComponent-94a0b60ee59ad7e3ee12d2d5ea82ec7062b4021d341f453831f52d96f019073adfa771595ced7b5e0b939c45b17f2f86007e092fd5a86316ed893bfd52a0f0ba",
+      "file": "src/app/components/shared/navigation/navigation.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-navigation",
+      "styleUrls": [
+        "./navigation.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./navigation.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation',\r\n  templateUrl: './navigation.component.html',\r\n  styleUrls: ['./navigation.component.scss']\r\n})\r\nexport class NavigationComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./navigation.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>navigation works!</p>\r\n"
+    },
+    {
+      "name": "NavigationItemComponent",
+      "id": "component-NavigationItemComponent-8875d031739406006ca21c8b54f1ac8ebf9dccde5af8c2bba0d72e60a815199e1a2ca023c689cf3f214d06777f75cc3a23cb40551762fa2b681ddce5cb7ce826",
+      "file": "src/app/components/shared/navigation-item/navigation-item.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-navigation-item",
+      "styleUrls": [
+        "./navigation-item.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./navigation-item.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation-item',\r\n  templateUrl: './navigation-item.component.html',\r\n  styleUrls: ['./navigation-item.component.scss']\r\n})\r\nexport class NavigationItemComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./navigation-item.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>navigation-item works!</p>\r\n"
+    },
+    {
+      "name": "SignInComponent",
+      "id": "component-SignInComponent-32e833d36253245794cdd83c099c63bebd164554fd3986f29a5e5c5bf8607a45188ebb3bb40821a98f976120ac599afb1311b0b19a3231371daae089006513e3",
+      "file": "src/app/components/auth/sign-in/sign-in.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-sign-in",
+      "styleUrls": [
+        "./sign-in.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./sign-in.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-sign-in',\r\n  templateUrl: './sign-in.component.html',\r\n  styleUrls: ['./sign-in.component.scss']\r\n})\r\nexport class SignInComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./sign-in.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>sign-in works!</p>\r\n"
+    },
+    {
+      "name": "SignUpComponent",
+      "id": "component-SignUpComponent-e64ae3aa4d47217edea7085aae90592da4b01c23bbedfbc22a3df9660491181b91f1882a5cf60d463acc0bbc81d4a342166d437f6b84305558d692e28c93283c",
+      "file": "src/app/components/auth/sign-up/sign-up.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-sign-up",
+      "styleUrls": [
+        "./sign-up.component.scss"
+      ],
+      "styles": [],
+      "templateUrl": [
+        "./sign-up.component.html"
+      ],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 12,
+          "deprecated": false,
+          "deprecationMessage": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-sign-up',\r\n  templateUrl: './sign-up.component.html',\r\n  styleUrls: ['./sign-up.component.scss']\r\n})\r\nexport class SignUpComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./sign-up.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": [
+        "OnInit"
+      ],
+      "templateData": "<p>sign-up works!</p>\r\n"
+    }
+  ],
+  "modules": [
+    {
+      "name": "AppModule",
+      "id": "module-AppModule-6717aebbc5cb43b7a1628cadc37c8002b75ac47c8dfe9ebb33fdf7767edffc503ed5ecaecb6a3f53fa93e68113b32f2e733ae2b314b30db9764247f0865a6c31",
+      "description": "",
+      "deprecationMessage": "",
+      "deprecated": false,
+      "file": "src/app/app.module.ts",
+      "methods": [],
+      "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n  ],\r\n  imports: [\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": [
+            {
+              "name": "AboutUsBannerComponent"
+            },
+            {
+              "name": "AboutUsValuesComponent"
+            },
+            {
+              "name": "AppComponent"
+            },
+            {
+              "name": "FooterComponent"
+            },
+            {
+              "name": "FooterContactComponent"
+            },
+            {
+              "name": "FooterRightsComponent"
+            },
+            {
+              "name": "FooterSocialMediaComponent"
+            },
+            {
+              "name": "HeaderComponent"
+            },
+            {
+              "name": "HomeExplanationComponent"
+            },
+            {
+              "name": "HomeReviewsComponent"
+            },
+            {
+              "name": "HomebannerComponent"
+            },
+            {
+              "name": "HotdogMenuComponent"
+            },
+            {
+              "name": "LogoComponent"
+            },
+            {
+              "name": "NavigationComponent"
+            },
+            {
+              "name": "NavigationItemComponent"
+            },
+            {
+              "name": "SignInComponent"
+            },
+            {
+              "name": "SignUpComponent"
+            }
+          ]
+        },
+        {
+          "type": "imports",
+          "elements": [
+            {
+              "name": "AppRoutingModule"
+            }
+          ]
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": [
+            {
+              "name": "AppComponent"
+            }
+          ]
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "AppRoutingModule",
+      "id": "module-AppRoutingModule-76ab3358f3efc0407f0012bea2f6e56a12a23e86f4786a00f8089807b841fbbdd9e9251578e9c4f567ee1e71b473f3b33756fa391d1a763179db60ca1d673560",
+      "description": "",
+      "deprecationMessage": "",
+      "deprecated": false,
+      "file": "src/app/app-routing.module.ts",
+      "methods": [],
+      "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport {HomeComponent} from \"./pages/home/home.component\";\r\nimport {AboutUsComponent} from \"./pages/about-us/about-us.component\";\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: HomeComponent\r\n  },\r\n  {\r\n    path: 'about-us',\r\n    component: AboutUsComponent\r\n  },\r\n\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": []
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    }
+  ],
+  "miscellaneous": {
+    "variables": [
+      {
+        "name": "context",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/test.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "",
+        "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+      },
+      {
+        "name": "env",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "environements/env.dev.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\r\n  TAILWIND_MODE: \"jit\",\r\n}"
+      },
+      {
+        "name": "env",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "environements/env.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
+      },
+      {
+        "name": "environment",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/environment.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\r\n  production: false\r\n}"
+      },
+      {
+        "name": "environment",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/environment.prod.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\r\n  production: true\r\n}"
+      },
+      {
+        "name": "FOOTER_ICONS",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/components/shared/footer/footer.data.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "LocalIcon[]",
+        "defaultValue": "[\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n]"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/shared/Footer.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "",
+        "defaultValue": "Template.bind({})"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/shared/Header.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "",
+        "defaultValue": "Template.bind({})"
+      },
+      {
+        "name": "require",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/test.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "literal type"
+      },
+      {
+        "name": "Template",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/shared/Footer.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story<FooterComponent>",
+        "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+      },
+      {
+        "name": "Template",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/shared/Header.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story<HeaderComponent>",
+        "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+      }
+    ],
+    "functions": [],
+    "typealiases": [],
+    "enumerations": [],
+    "groupedVariables": {
+      "src/test.ts": [
+        {
+          "name": "context",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/test.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+        },
+        {
+          "name": "require",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/test.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "literal type"
+        }
+      ],
+      "environements/env.dev.ts": [
+        {
+          "name": "env",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "environements/env.dev.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "object",
+          "defaultValue": "{\r\n  TAILWIND_MODE: \"jit\",\r\n}"
+        }
+      ],
+      "environements/env.ts": [
+        {
+          "name": "env",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "environements/env.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "object",
+          "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
+        }
+      ],
+      "src/environments/environment.ts": [
+        {
+          "name": "environment",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/environment.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "object",
+          "defaultValue": "{\r\n  production: false\r\n}"
+        }
+      ],
+      "src/environments/environment.prod.ts": [
+        {
+          "name": "environment",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/environment.prod.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "object",
+          "defaultValue": "{\r\n  production: true\r\n}"
+        }
+      ],
+      "src/app/components/shared/footer/footer.data.ts": [
+        {
+          "name": "FOOTER_ICONS",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/components/shared/footer/footer.data.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "LocalIcon[]",
+          "defaultValue": "[\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\n]"
+        }
+      ],
+      "src/stories/shared/Footer.stories.ts": [
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/shared/Footer.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "defaultValue": "Template.bind({})"
+        },
+        {
+          "name": "Template",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/shared/Footer.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story<FooterComponent>",
+          "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+        }
+      ],
+      "src/stories/shared/Header.stories.ts": [
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/shared/Header.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "defaultValue": "Template.bind({})"
+        },
+        {
+          "name": "Template",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/shared/Header.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story<HeaderComponent>",
+          "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+        }
+      ]
+    },
+    "groupedFunctions": {},
+    "groupedEnumerations": {},
+    "groupedTypeAliases": {}
+  },
+  "routes": {
+    "name": "<root>",
+    "kind": "module",
+    "className": "AppModule",
+    "children": [
+      {
+        "name": "routes",
+        "filename": "src/app/app-routing.module.ts",
+        "module": "AppRoutingModule",
+        "children": [
+          {
+            "path": "",
+            "component": "HomeComponent"
+          },
+          {
+            "path": "about-us",
+            "component": "AboutUsComponent"
+          }
+        ],
+        "kind": "module"
+      }
+    ]
+  },
+  "coverage": {
+    "count": 0,
+    "status": "low",
+    "files": [
+      {
+        "filePath": "environements/env.dev.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "env",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "environements/env.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "env",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/app.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "AppComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/auth/sign-in/sign-in.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "SignInComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/auth/sign-up/sign-up.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "SignUpComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "AboutUsBannerComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "AboutUsValuesComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/pages/home/home-explanation/home-explanation.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HomeExplanationComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/pages/home/home-reviews/home-reviews.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HomeReviewsComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/pages/home/homebanner/homebanner.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HomebannerComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "FooterContactComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "FooterRightsComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "FooterSocialMediaComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "FooterComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer.data.ts",
+        "type": "interface",
+        "linktype": "interface",
+        "name": "LocalIcon",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/footer/footer.data.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "FOOTER_ICONS",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/header/header.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HeaderComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HotdogMenuComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/logo/logo.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "LogoComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/navigation-item/navigation-item.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "NavigationItemComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/components/shared/navigation/navigation.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "NavigationComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/guards/auth/auth-guard.guard.ts",
+        "type": "guard",
+        "linktype": "guard",
+        "name": "AuthGuardGuard",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/pages/about-us/about-us.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "AboutUsComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/pages/home/home.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HomeComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/environments/environment.prod.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "environment",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/environments/environment.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "environment",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/shared/Footer.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/shared/Footer.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Template",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/shared/Header.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/shared/Header.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Template",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/test.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "context",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/test.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "require",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      }
+    ]
+  }
 }
