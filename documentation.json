@@ -5,7 +5,7 @@
     "guards": [
         {
             "name": "AuthGuardGuard",
-            "id": "injectable-AuthGuardGuard-81fcd04166f023d3c9ea2a0fca5fde35a357037292a0d355a2b284344938198a3f600063944b2d9ead3b2a8d631754b13c1ec241b4f6f2f0bfa24844f9e3cab1",
+            "id": "injectable-AuthGuardGuard-943cca79c85e7f5ce64ee688d48fb8a3522df6bf71c5f5a55e77a52ca2d4fcd53179481d75fa3915c38f5aacabc0de3728d28f83d9105ea4a18aea03b259fb02",
             "file": "src/app/guards/auth/auth-guard.guard.ts",
             "properties": [],
             "methods": [
@@ -57,7 +57,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';\nimport { Observable } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthGuardGuard implements CanActivate {\n  canActivate(\n    route: ActivatedRouteSnapshot,\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\n    return true;\n  }\n  \n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthGuardGuard implements CanActivate {\r\n  canActivate(\r\n    route: ActivatedRouteSnapshot,\r\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\r\n    return true;\r\n  }\r\n  \r\n}\r\n",
             "type": "guard"
         }
     ],
@@ -67,7 +67,7 @@
     "components": [
         {
             "name": "AboutUsBannerComponent",
-            "id": "component-AboutUsBannerComponent-16c0d522d049c39c1a9bef750902dc779498208a865a55850afe8cddf63f837ab00e7b5c23b4ffe77d50205600d14ab7e8e0055bc8ee49f416644ac436be7268",
+            "id": "component-AboutUsBannerComponent-e49e9e6a7e3d124be2675c0310380b2a4141ea0e4ba51b16809ec493f1c18a62e4aaf45bf22d8f4a90f5c5fba9c48724ebba30efecfb0d163608f71a9d113530",
             "file": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -105,7 +105,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us-banner',\n  templateUrl: './about-us-banner.component.html',\n  styleUrls: ['./about-us-banner.component.scss']\n})\nexport class AboutUsBannerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-banner',\r\n  templateUrl: './about-us-banner.component.html',\r\n  styleUrls: ['./about-us-banner.component.scss']\r\n})\r\nexport class AboutUsBannerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -125,11 +125,73 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>about-us-banner works!</p>\n"
+            "templateData": "<p>about-us-banner works!</p>\r\n"
+        },
+        {
+            "name": "AboutUsComponent",
+            "id": "component-AboutUsComponent-1873c8937ff01f0f7f765a12875e3ff0ccdb2af8ca9c81a20b0071543a45fba0bdc5c0e9917fbd31dd0c35cece5cb4b121ae0b536caf52c121ce94d4e381e9ae",
+            "file": "src/app/pages/about-us/about-us.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-about-us",
+            "styleUrls": [
+                "./about-us.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./about-us.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us',\n  templateUrl: './about-us.component.html',\n  styleUrls: ['./about-us.component.scss']\n})\nexport class AboutUsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./about-us.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>about-us works!</p>\n"
         },
         {
             "name": "AboutUsValuesComponent",
-            "id": "component-AboutUsValuesComponent-aaf4bf7464de113b7050e3764d76a3322a5c965eaf33956607482e4cca57c38976447a639dd4f42aab6345c42a7f6184f91a24fdf8e24d5713fdf0d6a14e5b8a",
+            "id": "component-AboutUsValuesComponent-24a1f06f95df72873f29975608724a5e93a628d7803b2618211c1f4322be72705fe33c3710829d673aee1117de380e231c1a3a83aa02856a3a005ea7e96868b5",
             "file": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -167,7 +229,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about-us-values',\n  templateUrl: './about-us-values.component.html',\n  styleUrls: ['./about-us-values.component.scss']\n})\nexport class AboutUsValuesComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-values',\r\n  templateUrl: './about-us-values.component.html',\r\n  styleUrls: ['./about-us-values.component.scss']\r\n})\r\nexport class AboutUsValuesComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -187,11 +249,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>about-us-values works!</p>\n"
+            "templateData": "<p>about-us-values works!</p>\r\n"
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-c8d0d9774322f07a1aa847d37381e110898cb82c3dca3b6f87f80133445251e559c54c8be497719b7aab756ec67a3632969c8997cdbb7bb97d9fc399fdbffb42",
+            "id": "component-AppComponent-de85eed1ffca2f0f47ca8703bfe83bfd343ebad4a878b329055789b1bef261eadd8ed9607b4232d0ee0e73085e4865c941753183ec60adeef0b0136727a6ac72",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -229,7 +291,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'pawme-frontend';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'pawme-frontend';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -238,11 +300,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\n\n<router-outlet></router-outlet>\n"
+            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\r\n\r\n<router-outlet></router-outlet>\r\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-372883ecd9ce67b24222ea4f41d0dc7bf97cc8b169ea0dccb7355cbd8de599ffa033c7013c0a3d1f9a1372479afaf5ad997085814365923159b5fcb7fc9b4e3f",
+            "id": "component-FooterComponent-6c290628b84a1abe1bdfb878464bc2b706fefca858c51621202ab34ffddd486d19c7b04ea6e2c5d71d1bb1dffcb9099de70b3a4f92b6e5c31ebf472a97986eb5",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -280,7 +342,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss']\n})\nexport class FooterComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss']\r\n})\r\nexport class FooterComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -300,11 +362,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>footer works!</p>\n"
+            "templateData": "<p class=\"bg-primary-normal\">footer works!</p>\r\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-fa2aa27e4139e9793b910068b910e321596a2d195bfa0fd7b8f5f3b804a9b0685cdd9f1a71b7fbe6a9f73526113a68baf80e312c4440dab15890fd39dc4c0aac",
+            "id": "component-HeaderComponent-66aab1b24c0d8854e1f82fba28138804b4b85580f247fc5033dd7baf800ad39c3ed2312637667e7b335e90cb144fdbd62673e2ce34182a65e43f7cecfaa900cc",
             "file": "src/app/components/shared/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -342,7 +404,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss']\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -362,11 +424,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>header works!</p>\n"
+            "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12\">\r\n  <app-logo></app-logo>\r\n</div>\r\n"
         },
         {
             "name": "HomebannerComponent",
-            "id": "component-HomebannerComponent-ef5247b97fc821561d66e269a751fdbd16a95f51f9d0e0ad2de285fab2748ff4f30af40fe5f331f8a8db195f298ccd30c89a96549066c7dba0a18e52271283c3",
+            "id": "component-HomebannerComponent-1f98bc6b68f4517e00c4172265b99131a8aacd506792f615ccf349ef247445e20446f2edb0e54def825c52232c91cfbe46abd4db2073db0ca40fde2362aa22c9",
             "file": "src/app/components/pages/home/homebanner/homebanner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -404,7 +466,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-homebanner',\n  templateUrl: './homebanner.component.html',\n  styleUrls: ['./homebanner.component.scss']\n})\nexport class HomebannerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-homebanner',\r\n  templateUrl: './homebanner.component.html',\r\n  styleUrls: ['./homebanner.component.scss']\r\n})\r\nexport class HomebannerComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -424,11 +486,73 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>homebanner works!</p>\n"
+            "templateData": "<p>homebanner works!</p>\r\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-6a1f8a3ca6cc7eed44a0ba506eea3ed24de8cb2e45fd2a9ae3207035c43fdd5c56e6bdff9da407ef8884933b065c19fb967d30a5c40fd8a3472ca2eec39123cd",
+            "file": "src/app/pages/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>home works!</p>\n"
         },
         {
             "name": "HomeExplanationComponent",
-            "id": "component-HomeExplanationComponent-c92f74474296f8f10bab7173357154778b1330711dcc714dd416540c87437650808dc36fcf9a2f462ea2cfaa38444307d7ffb117d30ebc0ed8442b43fe2cb433",
+            "id": "component-HomeExplanationComponent-115f6d8b71c2fb400e61f5d14387ecf3f20c69d768f8b4fa2c590d14223752a94068329c5b21e6307ce41cd1235a826605ba982ca429c33a462a8ea7f715258b",
             "file": "src/app/components/pages/home/home-explanation/home-explanation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -466,7 +590,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-explanation',\n  templateUrl: './home-explanation.component.html',\n  styleUrls: ['./home-explanation.component.scss']\n})\nexport class HomeExplanationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-explanation',\r\n  templateUrl: './home-explanation.component.html',\r\n  styleUrls: ['./home-explanation.component.scss']\r\n})\r\nexport class HomeExplanationComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -486,11 +610,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>home-explanation works!</p>\n"
+            "templateData": "<p>home-explanation works!</p>\r\n"
         },
         {
             "name": "HomeReviewsComponent",
-            "id": "component-HomeReviewsComponent-570e2394bf44df13ad0c547ed79f2b39e6ebe25cc50a1783a865e0f1403eff65253de7f70f77bdc2806c4183003199383488619a2dab122fb0e4d3f09f7f2357",
+            "id": "component-HomeReviewsComponent-7c5418ba9e5449722712d8015e0739d6a180b67d95a8c0c42de2e5f1f7ba3b43ed2e20dde9852262b2126d1fa898b73a20f43a70b9eb315fa1cbd028c68d7c7f",
             "file": "src/app/components/pages/home/home-reviews/home-reviews.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -528,7 +652,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-reviews',\n  templateUrl: './home-reviews.component.html',\n  styleUrls: ['./home-reviews.component.scss']\n})\nexport class HomeReviewsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-reviews',\r\n  templateUrl: './home-reviews.component.html',\r\n  styleUrls: ['./home-reviews.component.scss']\r\n})\r\nexport class HomeReviewsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -548,11 +672,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>home-reviews works!</p>\n"
+            "templateData": "<p>home-reviews works!</p>\r\n"
         },
         {
             "name": "HotdogMenuComponent",
-            "id": "component-HotdogMenuComponent-ba0320257b4f607e85ff916b8b3cfdfd9aaffecbba284296d71fed76d0709d6e1d31075928b506b3e1dd8334c6d7e2450666163748a1da643c52ff335413b4b4",
+            "id": "component-HotdogMenuComponent-14e252b0f6ecd61130a14204f586327620b5e1538883bb11a0c61831c547a8089d1f4e6896dcb906b4c064ee215a05003c327403ced2020437eac75d38aadced",
             "file": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -590,7 +714,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-hotdog-menu',\n  templateUrl: './hotdog-menu.component.html',\n  styleUrls: ['./hotdog-menu.component.scss']\n})\nexport class HotdogMenuComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-hotdog-menu',\r\n  templateUrl: './hotdog-menu.component.html',\r\n  styleUrls: ['./hotdog-menu.component.scss']\r\n})\r\nexport class HotdogMenuComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -610,11 +734,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>hotdog-menu works!</p>\n"
+            "templateData": "<div>\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n</div>\r\n"
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-604c10ed615a71b3ef75e6947a9c71cc6107555cea8cffa210cf3424df3a7555c2ab1ede5f4e22d989a29cf1fdd130b17a375b99ebcc790b7e06b7d9570bd98b",
+            "id": "component-LogoComponent-42013a51fabc1956270de910a8d4c2753b34c82173fe0b4d61ed31154937975154a6fa4e443bca6064d9def45de2c07416c5558dead3d53c479a74e3038d2177",
             "file": "src/app/components/shared/logo/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -652,7 +776,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss']\n})\nexport class LogoComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-logo',\r\n  templateUrl: './logo.component.html',\r\n  styleUrls: ['./logo.component.scss']\r\n})\r\nexport class LogoComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -672,11 +796,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>logo works!</p>\n"
+            "templateData": "<!--<div class=\"w-8\"><img src=\"whitePawMe.svg\"/></div>-->\r\n<h2>nimporte quoi</h2>\r\n"
         },
         {
             "name": "NavigationComponent",
-            "id": "component-NavigationComponent-f184ab85f6732d902867f414dbaab8cb605bbcb7d2d579745abe173bc9528dd0b70b1a3d430413f60b1059077a078bc2951d1c1e3dc9c3d43fdcb92405b44189",
+            "id": "component-NavigationComponent-94a0b60ee59ad7e3ee12d2d5ea82ec7062b4021d341f453831f52d96f019073adfa771595ced7b5e0b939c45b17f2f86007e092fd5a86316ed893bfd52a0f0ba",
             "file": "src/app/components/shared/navigation/navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -714,7 +838,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-navigation',\n  templateUrl: './navigation.component.html',\n  styleUrls: ['./navigation.component.scss']\n})\nexport class NavigationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation',\r\n  templateUrl: './navigation.component.html',\r\n  styleUrls: ['./navigation.component.scss']\r\n})\r\nexport class NavigationComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -734,11 +858,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation works!</p>\n"
+            "templateData": "<p>navigation works!</p>\r\n"
         },
         {
             "name": "NavigationItemComponent",
-            "id": "component-NavigationItemComponent-8c66128ed415f40fdecdfa2785c099862e1a3c7336fbeaefda4dcbc1adab01556e016063afda9415355ed4711ce1d4c4eae185c5ae13d2fa2bf82dd442542cf9",
+            "id": "component-NavigationItemComponent-8875d031739406006ca21c8b54f1ac8ebf9dccde5af8c2bba0d72e60a815199e1a2ca023c689cf3f214d06777f75cc3a23cb40551762fa2b681ddce5cb7ce826",
             "file": "src/app/components/shared/navigation-item/navigation-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -776,7 +900,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-navigation-item',\n  templateUrl: './navigation-item.component.html',\n  styleUrls: ['./navigation-item.component.scss']\n})\nexport class NavigationItemComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation-item',\r\n  templateUrl: './navigation-item.component.html',\r\n  styleUrls: ['./navigation-item.component.scss']\r\n})\r\nexport class NavigationItemComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -796,11 +920,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation-item works!</p>\n"
+            "templateData": "<p>navigation-item works!</p>\r\n"
         },
         {
             "name": "SignInComponent",
-            "id": "component-SignInComponent-915b900c737460c6723529f8ff9fc283005c961ac980290a8bd56d52607befaf51add1cc24aa61c6c63af6f0b621fac5f2b1e93a921a18e2b5f386e96159b21d",
+            "id": "component-SignInComponent-32e833d36253245794cdd83c099c63bebd164554fd3986f29a5e5c5bf8607a45188ebb3bb40821a98f976120ac599afb1311b0b19a3231371daae089006513e3",
             "file": "src/app/components/auth/sign-in/sign-in.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -838,7 +962,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-sign-in',\n  templateUrl: './sign-in.component.html',\n  styleUrls: ['./sign-in.component.scss']\n})\nexport class SignInComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-sign-in',\r\n  templateUrl: './sign-in.component.html',\r\n  styleUrls: ['./sign-in.component.scss']\r\n})\r\nexport class SignInComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -858,11 +982,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>sign-in works!</p>\n"
+            "templateData": "<p>sign-in works!</p>\r\n"
         },
         {
             "name": "SignUpComponent",
-            "id": "component-SignUpComponent-3198975df0a9eb0d36f0659e4710668ec8ae6f9b24c074ffe4a422d3d2e9a1264f4db3d44a25d61b408e0a7b51416a1e4ab3f59db6e0678e4586b4c39e005ae3",
+            "id": "component-SignUpComponent-e64ae3aa4d47217edea7085aae90592da4b01c23bbedfbc22a3df9660491181b91f1882a5cf60d463acc0bbc81d4a342166d437f6b84305558d692e28c93283c",
             "file": "src/app/components/auth/sign-up/sign-up.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -900,7 +1024,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-sign-up',\n  templateUrl: './sign-up.component.html',\n  styleUrls: ['./sign-up.component.scss']\n})\nexport class SignUpComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-sign-up',\r\n  templateUrl: './sign-up.component.html',\r\n  styleUrls: ['./sign-up.component.scss']\r\n})\r\nexport class SignUpComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -920,19 +1044,19 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>sign-up works!</p>\n"
+            "templateData": "<p>sign-up works!</p>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-5f32b5ba3d6b4f29d77cf477db02bd42e69f380bf56590453b1649637aefb02c4cf929c2c24bc0987a4d5022b97a6ca065ad1bf64cc8b78061f847c9ed951e2e",
+            "id": "module-AppModule-6717aebbc5cb43b7a1628cadc37c8002b75ac47c8dfe9ebb33fdf7767edffc503ed5ecaecb6a3f53fa93e68113b32f2e733ae2b314b30db9764247f0865a6c31",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NgxsModule } from '@ngxs/store';\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\nimport { HeaderComponent } from './components/shared/header/header.component';\nimport { FooterComponent } from './components/shared/footer/footer.component';\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\nimport { LogoComponent } from './components/shared/logo/logo.component';\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    HeaderComponent,\n    FooterComponent,\n    HotdogMenuComponent,\n    NavigationComponent,\n    NavigationItemComponent,\n    SignInComponent,\n    SignUpComponent,\n    HomebannerComponent,\n    HomeExplanationComponent,\n    HomeReviewsComponent,\n    AboutUsBannerComponent,\n    AboutUsValuesComponent,\n    LogoComponent,\n  ],\n  imports: [\n    NgxsRouterPluginModule.forRoot(),\n    NgxsModule.forRoot([], {\n      developmentMode: true,\n    }),\n    BrowserModule,\n    AppRoutingModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n  ],\r\n  imports: [\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1013,13 +1137,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "id": "module-AppRoutingModule-76ab3358f3efc0407f0012bea2f6e56a12a23e86f4786a00f8089807b841fbbdd9e9251578e9c4f567ee1e71b473f3b33756fa391d1a763179db60ca1d673560",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport {HomeComponent} from \"./pages/home/home.component\";\r\nimport {AboutUsComponent} from \"./pages/about-us/about-us.component\";\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: HomeComponent\r\n  },\r\n  {\r\n    path: 'about-us',\r\n    component: AboutUsComponent\r\n  },\r\n\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1061,14 +1185,24 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "environment",
+                "name": "env",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "environements/env.dev.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\r\n  TAILWIND_MODE: \"jit\",\r\n}"
+            },
+            {
+                "name": "env",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "environements/env.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
             },
             {
                 "name": "environment",
@@ -1078,7 +1212,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "Primary",
@@ -1117,7 +1261,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1127,7 +1271,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1155,16 +1299,28 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "environements/env.dev.ts": [
                 {
-                    "name": "environment",
+                    "name": "env",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "environements/env.dev.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\r\n  TAILWIND_MODE: \"jit\",\r\n}"
+                }
+            ],
+            "environements/env.ts": [
+                {
+                    "name": "env",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "environements/env.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -1176,7 +1332,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/stories/shared/Footer.stories.ts": [
@@ -1198,7 +1366,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FooterComponent>",
-                    "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/shared/Header.stories.ts": [
@@ -1220,7 +1388,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -1237,7 +1405,16 @@
                 "name": "routes",
                 "filename": "src/app/app-routing.module.ts",
                 "module": "AppRoutingModule",
-                "children": [],
+                "children": [
+                    {
+                        "path": "",
+                        "component": "HomeComponent"
+                    },
+                    {
+                        "path": "about-us",
+                        "component": "AboutUsComponent"
+                    }
+                ],
                 "kind": "module"
             }
         ]
@@ -1246,6 +1423,26 @@
         "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": "environements/env.dev.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "env",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "environements/env.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "env",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
@@ -1379,6 +1576,24 @@
                 "name": "AuthGuardGuard",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/about-us/about-us.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutUsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

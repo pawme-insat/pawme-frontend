@@ -17,6 +17,7 @@ import { HomeReviewsComponent } from './components/pages/home/home-reviews/home-
 import { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';
 import { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';
 import { LogoComponent } from './components/shared/logo/logo.component';
+import {HomeComponent} from "./pages/home/home.component";
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LogoComponent } from './components/shared/logo/logo.component';
     AboutUsBannerComponent,
     AboutUsValuesComponent,
     LogoComponent,
+    HomeComponent
   ],
   imports: [
     NgxsRouterPluginModule.forRoot(),
