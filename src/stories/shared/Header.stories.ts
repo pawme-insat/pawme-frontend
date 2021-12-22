@@ -19,4 +19,3 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Primary.args = {};
