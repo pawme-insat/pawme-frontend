@@ -25,17 +25,14 @@ export class HotdogMenuComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if (this.router.url == ''){
+    if (this.router.url == '/'){
       this.navItems[0].isActive = true
-      console.log('blank')
     }
     if (this.router.url == '/about-us'){
       this.navItems[1].isActive = true
-      console.log('about us')
     }
     if (this.router.url == '/sign-in'){
       this.navItems[2].isActive = true
-      console.log('sign in')
     }
 
 
