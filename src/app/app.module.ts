@@ -17,8 +17,13 @@ import { HomeReviewsComponent } from './components/pages/home/home-reviews/home-
 import { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';
 import { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';
 import { LogoComponent } from './components/shared/logo/logo.component';
-import {HomeComponent} from "./pages/home/home.component";
+import { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';
+import { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';
+import { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';
+import { HomeComponent } from './pages/home/home.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,9 +41,14 @@ import {HomeComponent} from "./pages/home/home.component";
     AboutUsBannerComponent,
     AboutUsValuesComponent,
     LogoComponent,
-    HomeComponent
+    FooterSocialMediaComponent,
+    FooterContactComponent,
+    FooterRightsComponent,
+    HomeComponent,
   ],
   imports: [
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsModule.forRoot([], {
       developmentMode: true,

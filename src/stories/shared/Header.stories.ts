@@ -1,18 +1,20 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { HeaderComponent } from 'src/app/components/shared/header/header.component';
-import {moduleMetadata} from "@storybook/angular";
-import {LogoComponent} from "../../app/components/shared/logo/logo.component";
-import {HotdogMenuComponent} from "../../app/components/shared/hotdog-menu/hotdog-menu.component";
+import { moduleMetadata } from '@storybook/angular';
+import { LogoComponent } from '../../app/components/shared/logo/logo.component';
+import { HotdogMenuComponent } from '../../app/components/shared/hotdog-menu/hotdog-menu.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Shared/Header',
   component: HeaderComponent,
-  decorators:[
+  decorators: [
     moduleMetadata({
-      declarations: [LogoComponent, HotdogMenuComponent]
-    })
-  ]
+      declarations: [LogoComponent, HotdogMenuComponent],
+      imports: [AppRoutingModule],
+    }),
+  ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   //   argTypes: {
   //     backgroundColor: { control: 'color' },
