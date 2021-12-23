@@ -1,6 +1,48 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "LocalIcon",
+            "id": "interface-LocalIcon-91202852ef0f95fb51e8e3335ebed8972bc659f9a1579f37b2a32efa3890632b220b8d26e18f0ad6f27f0365812d863192409c7a5cb056cdbd5f074e88caab51",
+            "file": "src/app/components/shared/footer/footer.data.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface LocalIcon {\r\n  name: string;\r\n  url: string;\r\n  iconPath: string;\r\n}\r\n\r\nexport const FOOTER_ICONS: LocalIcon[] = [\r\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\r\n];\r\n",
+            "properties": [
+                {
+                    "name": "iconPath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "url",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "guards": [
         {
@@ -68,7 +110,7 @@
         {
             "name": "AboutUsBannerComponent",
             "id": "component-AboutUsBannerComponent-e49e9e6a7e3d124be2675c0310380b2a4141ea0e4ba51b16809ec493f1c18a62e4aaf45bf22d8f4a90f5c5fba9c48724ebba30efecfb0d163608f71a9d113530",
-            "file": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
+            "file": "src/app/components/pages/about-us/about-us-banner/about-us-banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -125,7 +167,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"flex w-full flex-col\">\r\n  <div>\r\n    <h2>Learn more about Pawme</h2>\r\n  </div>\r\n\r\n  <div class=\"flex w-full\">\r\n    <div>\r\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's\r\n        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.</p>\r\n    </div>\r\n\r\n    <div>\r\n      <img src=\"assets/cat&doggo.svg\">\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"flex w-full flex-col text-gray-normal font-body justify-center px-16\">\r\n  <div>\r\n    <p class=\"font-bold text-xl font-display\">Learn more about Pawme</p>\r\n  </div>\r\n\r\n  <div class=\"flex w-full\">\r\n    <div class=\"w-9/12 flex items-center\">\r\n      <p class=\"text-sm\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's\r\n        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.</p>\r\n    </div>\r\n\r\n    <div class=\"w-3/12 flex justify-center\">\r\n      <img src=\"assets/cat&doggo.svg\">\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "AboutUsComponent",
@@ -187,12 +229,83 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>about-us works!</p>\n"
+            "templateData": "<div>\n  <app-about-us-banner/>\n  <app-about-us-values/>\n</div>\n"
+        },
+        {
+            "name": "AboutUsValueComponent",
+            "id": "component-AboutUsValueComponent-7b8f353f1d4bc54d681be380164e7c838e0daa7b6f6d34f8551ace142913db7e9f9d5fd261bb503c76da01b6a86f54f22e93f9eeea00c270e9b2e067d321cc7d",
+            "file": "src/app/components/pages/about-us/about-us-value/about-us-value.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-about-us-value",
+            "styleUrls": [
+                "./about-us-value.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./about-us-value.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-about-us-value',\n  templateUrl: './about-us-value.component.html',\n  styleUrls: ['./about-us-value.component.scss']\n})\nexport class AboutUsValueComponent implements OnInit {\n\n  @Input() value: any\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./about-us-value.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"w-full px-16 flex justify-between\">\n  <div>\n    <img [src]=\"'assets/' + value.icon\">\n  </div>\n\n  <div>\n    <h3> {{value.title}} </h3>\n    <p> {{value.text}} </p>\n  </div>\n</div>\n"
         },
         {
             "name": "AboutUsValuesComponent",
-            "id": "component-AboutUsValuesComponent-24a1f06f95df72873f29975608724a5e93a628d7803b2618211c1f4322be72705fe33c3710829d673aee1117de380e231c1a3a83aa02856a3a005ea7e96868b5",
-            "file": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
+            "id": "component-AboutUsValuesComponent-a88404a5d7c9c472f72d710e0bc9a6a7577e123e5ab37ac5c9258ac8ec3d81b7d4f241ab52cd248689c5ef1d50d2d050c9b0f827a743a05f22f5e2731f5de031",
+            "file": "src/app/components/pages/about-us/about-us-values/about-us-values.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -209,7 +322,18 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "values",
+                    "defaultValue": "[\r\n    {\r\n      title: 'Integrity',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'integrity.svg'\r\n    },\r\n    {\r\n      title: 'Communication',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'communication.svg'\r\n    },\r\n    {\r\n      title: 'Confidentiality',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'confidentiality.svg'\r\n    }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -217,7 +341,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 31,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -229,7 +353,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-values',\r\n  templateUrl: './about-us-values.component.html',\r\n  styleUrls: ['./about-us-values.component.scss']\r\n})\r\nexport class AboutUsValuesComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-about-us-values',\r\n  templateUrl: './about-us-values.component.html',\r\n  styleUrls: ['./about-us-values.component.scss']\r\n})\r\nexport class AboutUsValuesComponent implements OnInit {\r\n\r\n  values = [\r\n    {\r\n      title: 'Integrity',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'integrity.svg'\r\n    },\r\n    {\r\n      title: 'Communication',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'communication.svg'\r\n    },\r\n    {\r\n      title: 'Confidentiality',\r\n      text: 'Lorem Ipsum is simply dummy text of the printing',\r\n      icon: 'confidentiality.svg'\r\n    }\r\n  ]\r\n\r\n  constructor() {\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -244,12 +368,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 26
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>about-us-values works!</p>\r\n"
+            "templateData": "<div class=\"w-full px-16\">\r\n  <h1 class=\"text-xl\">Our Values</h1>\r\n  <div>\r\n    <app-about-us-value *ngFor=\"let value of values\" [value]=\"value\"/>\r\n  </div>\r\n  <div></div>\r\n</div>\r\n"
         },
         {
             "name": "AppComponent",
@@ -304,7 +428,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-6c290628b84a1abe1bdfb878464bc2b706fefca858c51621202ab34ffddd486d19c7b04ea6e2c5d71d1bb1dffcb9099de70b3a4f92b6e5c31ebf472a97986eb5",
+            "id": "component-FooterComponent-6d7ce87bc802feabb88c5a816af19917dcd59d26e8f889dd76bd4e51f66ddf929e8a9d5e3b0c7c7e08aa1ad9f9220d2fc51653769a292546d865bca527405b9b",
             "file": "src/app/components/shared/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -318,6 +442,79 @@
             "styles": [],
             "templateUrl": [
                 "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "socialIcons",
+                    "defaultValue": "FOOTER_ICONS",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { LogoComponent } from '../logo/logo.component';\r\nimport { FOOTER_ICONS } from './footer.data';\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss'],\r\n})\r\nexport class FooterComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  socialIcons = FOOTER_ICONS;\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer class=\"bg-secondary-normal\">\r\n  <div class=\"\">\r\n    <div class=\"grid grid-cols-2 px-8 py-6\">\r\n      <div>\r\n        <h3 class=\"text-2xl text-gray-700 font-medium\">PawMe</h3>\r\n        <div class=\"text-gray-600 mt-2\">\r\n          <app-footer-social-media\r\n            [icons]=\"socialIcons\"\r\n          ></app-footer-social-media>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"text-gray-600\">\r\n        <app-footer-contact></app-footer-contact>\r\n      </div>\r\n    </div>\r\n    <div class=\"flex text-gray-600 px-2 py-2 flex-row-reverse\">\r\n      <app-footer-rights></app-footer-rights>\r\n    </div>\r\n  </div>\r\n</footer>\r\n"
+        },
+        {
+            "name": "FooterContactComponent",
+            "id": "component-FooterContactComponent-e714055e2208d35f7b835e8b76b354af042d8adc831503d180f98db2b2bcba4c41592ffcbbfdb81d3dfa3c8c1908869d6ad0253b523879ac7ba04ce6dc01aee8",
+            "file": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-contact",
+            "styleUrls": [
+                "./footer-contact.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-contact.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
@@ -342,12 +539,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  templateUrl: './footer.component.html',\r\n  styleUrls: ['./footer.component.scss']\r\n})\r\nexport class FooterComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer-contact',\r\n  templateUrl: './footer-contact.component.html',\r\n  styleUrls: ['./footer-contact.component.scss']\r\n})\r\nexport class FooterContactComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./footer.component.scss"
+                    "styleUrl": "./footer-contact.component.scss"
                 }
             ],
             "stylesData": "",
@@ -362,7 +559,141 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p class=\"bg-primary-normal\">footer works!</p>\r\n"
+            "templateData": "<div class=\"text-sm\">\r\n  <h3 class=\"text-xl\">Contact</h3>\r\n  <p>+ 216 00 000 000</p>\r\n  <p>pawme@gmail.com</p>\r\n</div>\r\n"
+        },
+        {
+            "name": "FooterRightsComponent",
+            "id": "component-FooterRightsComponent-4eb0d536657d1365cb95a73282347e398389e7e6977d338f3f00a7a807785fc539071f204c81c7a92f245e7de5e70068ceca24b87e07de13b4f38a75cc673e24",
+            "file": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-rights",
+            "styleUrls": [
+                "./footer-rights.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-rights.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer-rights',\r\n  templateUrl: './footer-rights.component.html',\r\n  styleUrls: ['./footer-rights.component.scss']\r\n})\r\nexport class FooterRightsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer-rights.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p class=\"text-xs\">&#169; All rights Reserved - PawMe 2021-2022</p>\r\n"
+        },
+        {
+            "name": "FooterSocialMediaComponent",
+            "id": "component-FooterSocialMediaComponent-15ea92fb06af0a6ab296e343b543c881b88b9573d9c8cb6e62a6af1b6ec218abc496050bc95d49498498444d2db9d7d43ad623c0a6ecf11d4afa421ff7d24d03",
+            "file": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer-social-media",
+            "styleUrls": [
+                "./footer-social-media.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer-social-media.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icons",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "LocalIcon[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { LocalIcon } from '../footer.data';\r\n\r\n@Component({\r\n  selector: 'app-footer-social-media',\r\n  templateUrl: './footer-social-media.component.html',\r\n  styleUrls: ['./footer-social-media.component.scss'],\r\n})\r\nexport class FooterSocialMediaComponent implements OnInit {\r\n  @Input() icons: LocalIcon[] = [];\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer-social-media.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<ul class=\"flex gap-3\">\r\n  <li *ngFor=\"let item of icons\">\r\n    <div class=\"bg-white rounded-full p-2\">\r\n      <svg-icon\r\n        class=\"h-3 w-3 block fill-current\"\r\n        src=\"assets/icons/social-media/facebook.svg\"\r\n        [stretch]=\"true\"\r\n      >\r\n      </svg-icon>\r\n    </div>\r\n    <!-- <div class=\"rounded-full bg-white fill-current\">{{ item.name }}</div> -->\r\n  </li>\r\n</ul>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -1107,13 +1438,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-ebcb023363ddf5fe690699082949190357353928e1b74336c4c697ccab9e70e121855891c183ec0f003a85269727a3eb523f474013a64e8f37e007378e72552b",
+            "id": "module-AppModule-569733ca135d510781aa752769991d532273fa3ac652bc152c7aa0367ddb8aa33085d7aabfa2354725682bf32a7bad42b76aea30acc5c505e3c39da68c28a464",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\nimport {HomeComponent} from \"./pages/home/home.component\";\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n    HomeComponent\r\n  ],\r\n  imports: [\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/about-us/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/about-us/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\nimport { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';\r\nimport { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';\r\nimport { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';\r\nimport { HomeComponent } from './pages/home/home.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\nimport { AngularSvgIconModule } from 'angular-svg-icon';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n    FooterSocialMediaComponent,\r\n    FooterContactComponent,\r\n    FooterRightsComponent,\r\n    HomeComponent,\r\n    AboutUsValueComponent,\r\n  ],\r\n  imports: [\r\n    HttpClientModule,\r\n    AngularSvgIconModule.forRoot(),\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1126,6 +1457,9 @@
                             "name": "AboutUsBannerComponent"
                         },
                         {
+                            "name": "AboutUsValueComponent"
+                        },
+                        {
                             "name": "AboutUsValuesComponent"
                         },
                         {
@@ -1133,6 +1467,15 @@
                         },
                         {
                             "name": "FooterComponent"
+                        },
+                        {
+                            "name": "FooterContactComponent"
+                        },
+                        {
+                            "name": "FooterRightsComponent"
+                        },
+                        {
+                            "name": "FooterSocialMediaComponent"
                         },
                         {
                             "name": "HeaderComponent"
@@ -1268,16 +1611,6 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1285,14 +1618,24 @@
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
-                "name": "Primary",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/shared/Footer.stories.ts",
+                "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "FOOTER_ICONS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/shared/footer/footer.data.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "LocalIcon[]",
+                "defaultValue": "[\r\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\r\n]"
             },
             {
                 "name": "Primary",
@@ -1308,7 +1651,27 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/shared/Footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/aboutUs/About-us-values.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1327,16 +1690,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/shared/Footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/shared/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1347,11 +1700,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/shared/Footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<AboutUsBannerComponent>",
                 "defaultValue": "(args: AboutUsBannerComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/aboutUs/About-us-values.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AboutUsValuesComponent>",
+                "defaultValue": "(args: AboutUsValuesComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1403,18 +1776,6 @@
                     "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -1427,26 +1788,28 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/stories/shared/Footer.stories.ts": [
+            "src/environments/environment.prod.ts": [
                 {
-                    "name": "Primary",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/shared/Footer.stories.ts",
+                    "file": "src/environments/environment.prod.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/app/components/shared/footer/footer.data.ts": [
                 {
-                    "name": "Template",
+                    "name": "FOOTER_ICONS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/shared/Footer.stories.ts",
+                    "file": "src/app/components/shared/footer/footer.data.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FooterComponent>",
-                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                    "type": "LocalIcon[]",
+                    "defaultValue": "[\r\n  { name: 'facebook', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'instagram', url: 'www.facebook.com', iconPath: '/' },\r\n  { name: 'linkedin', url: 'www.facebook.com', iconPath: '/' },\r\n]"
                 }
             ],
             "src/stories/shared/Header.stories.ts": [
@@ -1471,6 +1834,28 @@
                     "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/shared/Footer.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/shared/Footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/shared/Footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FooterComponent>",
+                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/pages/aboutUs/About-us-banner.stories.ts": [
                 {
                     "name": "Primary",
@@ -1491,6 +1876,28 @@
                     "deprecationMessage": "",
                     "type": "Story<AboutUsBannerComponent>",
                     "defaultValue": "(args: AboutUsBannerComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/pages/aboutUs/About-us-values.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/aboutUs/About-us-values.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/aboutUs/About-us-values.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AboutUsValuesComponent>",
+                    "defaultValue": "(args: AboutUsValuesComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -1573,7 +1980,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/pages/aboutUs/about-us-banner/about-us-banner.component.ts",
+                "filePath": "src/app/components/pages/about-us/about-us-banner/about-us-banner.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AboutUsBannerComponent",
@@ -1582,12 +1989,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/pages/aboutUs/about-us-values/about-us-values.component.ts",
+                "filePath": "src/app/components/pages/about-us/about-us-value/about-us-value.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutUsValueComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pages/about-us/about-us-values/about-us-values.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AboutUsValuesComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1618,12 +2034,58 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/shared/footer/footer-contact/footer-contact.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterContactComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer-rights/footer-rights.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterRightsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer-social-media/footer-social-media.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterSocialMediaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/shared/footer/footer.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer.data.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "LocalIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/shared/footer/footer.data.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FOOTER_ICONS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1730,6 +2192,26 @@
             },
             {
                 "filePath": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/aboutUs/About-us-values.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/aboutUs/About-us-values.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

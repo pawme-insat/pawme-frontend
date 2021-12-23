@@ -9,6 +9,7 @@ module.exports = {
           normal: "#ffa934",
         },
         secondary: {
+          dark: "#2A8575",
           normal: "#b8dfd8",
           light: "#E8F6EF",
           lighter: "#F8F8FA",
