@@ -15,7 +15,7 @@ module.exports = {
           lighter: "#F8F8FA",
         },
         gray: {
-          normal: "#3E3E3E",
+          normal: "#636363",
         }
       },
       fontFamily: {

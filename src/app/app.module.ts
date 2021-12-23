@@ -25,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
+import {AboutUsComponent} from "./pages/about-us/about-us.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AboutUsValueComponent } from './components/pages/about-us/about-us-valu
     FooterRightsComponent,
     HomeComponent,
     AboutUsValueComponent,
+    AboutUsComponent
   ],
   imports: [
     HttpClientModule,
