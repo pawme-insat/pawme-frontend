@@ -167,7 +167,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"flex w-full flex-col text-gray-normal font-body justify-center px-16\">\r\n  <div>\r\n    <p class=\"font-bold text-xl font-display\">Learn more about Pawme</p>\r\n  </div>\r\n\r\n  <div class=\"flex w-full\">\r\n    <div class=\"w-9/12 flex items-center\">\r\n      <p class=\"text-sm\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's\r\n        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.</p>\r\n    </div>\r\n\r\n    <div class=\"w-3/12 flex justify-center\">\r\n      <img src=\"assets/cat&doggo.svg\">\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"w-full text-gray-normal font-body justify-center py-24\">\r\n  <img class=\"absolute right-8 h-56 -top-8 z-0\" src=\"assets/grayPawPrints.svg\">\r\n\r\n  <div class=\"flex w-full\">\r\n    <div class=\"w-2/3 flex flex-col justify-around py-8\">\r\n      <p class=\"font-bold text-3xl font-display font-bold\">Learn more about Pawme</p>\r\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's\r\n        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.</p>\r\n    </div>\r\n\r\n    <div class=\"w-1-3 flex justify-center\">\r\n      <img class=\"h-80 -mt-20 z-40\" src=\"assets/cat&doggo.svg\">\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "AboutUsComponent",
@@ -229,7 +229,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\n  <app-about-us-banner/>\n  <app-about-us-values/>\n</div>\n"
+            "templateData": "<div class=\"flex justify-center flex-col px-24 pt-12\">\n  <app-about-us-banner></app-about-us-banner>\n  <app-about-us-values></app-about-us-values>\n</div>\n"
         },
         {
             "name": "AboutUsValueComponent",
@@ -300,7 +300,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"w-full px-16 flex justify-between\">\n  <div>\n    <img [src]=\"'assets/' + value.icon\">\n  </div>\n\n  <div>\n    <h3> {{value.title}} </h3>\n    <p> {{value.text}} </p>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"w-full flex justify-between mb-10 font-body\">\n  <div class=\"w-2/6 md:w-1/6 flex items-center\">\n    <img [src]=\"'assets/' + value.icon\">\n  </div>\n\n  <div class=\"w-7/12 md:w-9/12\">\n    <h3 class=\"font-bold text-sm\"> {{value.title}} </h3>\n    <p class=\"text-xs\"> {{value.text}} </p>\n  </div>\n</div>\n"
         },
         {
             "name": "AboutUsValuesComponent",
@@ -373,7 +373,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"w-full px-16\">\r\n  <h1 class=\"text-xl\">Our Values</h1>\r\n  <div>\r\n    <app-about-us-value *ngFor=\"let value of values\" [value]=\"value\"/>\r\n  </div>\r\n  <div></div>\r\n</div>\r\n"
+            "templateData": "<div class=\"w-full flex flex-col md:flex-row justify-between mb-20\">\r\n  <img class=\"absolute left-0 h-80 top-2/3\" src=\"assets/grayPawPrints1.2.svg\">\r\n  <h1 class=\"text-3xl text-secondary-dark font-bold mb-8 font-body w-full md:w-1/3 md:border-r\">Our Values</h1>\r\n\r\n  <div class=\"w-full md:w-1/2\">\r\n    <app-about-us-value *ngFor=\"let value of values\" [value]=\"value\"></app-about-us-value>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "AppComponent",
@@ -424,7 +424,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n"
+            "templateData": "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>\r\n"
         },
         {
             "name": "FooterComponent",
@@ -755,7 +755,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12 flex px-8 py-1 items-center justify-between shadow\">\r\n  <app-logo></app-logo>\r\n  <app-hotdog-menu></app-hotdog-menu>\r\n</div>\r\n"
+            "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12 flex px-8 py-1 items-center justify-between shadow z-50 fixed\">\r\n  <app-logo></app-logo>\r\n  <app-hotdog-menu></app-hotdog-menu>\r\n</div>\r\n"
         },
         {
             "name": "HomebannerComponent",
@@ -879,7 +879,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-header></app-header>\n"
+            "templateData": "<p>home component work!</p>\n"
         },
         {
             "name": "HomeExplanationComponent",
@@ -1094,7 +1094,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\r\n  <div class=\"bg-white w-4 h-4 md:hidden\"></div>\r\n  <app-navigation [navItems]=\"navItems\"></app-navigation>\r\n<!--  <img src=\"assets/Upper_bread.svg\">-->\r\n<!--  <img src=\"assets/HotDog.svg.svg\">-->\r\n<!--  <img src=\"assets/Lower_bread.svg\">-->\r\n</div>\r\n"
+            "templateData": "<div>\r\n  <div class=\"bg-white w-4 h-4 md:hidden\"></div>\r\n  <app-navigation class=\"hidden md:block\" [navItems]=\"navItems\"></app-navigation>\r\n<!--  <img src=\"assets/Upper_bread.svg\">-->\r\n<!--  <img src=\"assets/HotDog.svg.svg\">-->\r\n<!--  <img src=\"assets/Lower_bread.svg\">-->\r\n</div>\r\n"
         },
         {
             "name": "LogoComponent",
@@ -1438,13 +1438,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-569733ca135d510781aa752769991d532273fa3ac652bc152c7aa0367ddb8aa33085d7aabfa2354725682bf32a7bad42b76aea30acc5c505e3c39da68c28a464",
+            "id": "module-AppModule-248c6cb4a04bd0c7b4db0e679cacfe0b63354b30316fdbf94ebd2eeebda1d62cc520b7d8bf797111b0d10c62e7dd9d3049d93f68a4e9e1d948673f8997c7c8c6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/about-us/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/about-us/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\nimport { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';\r\nimport { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';\r\nimport { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';\r\nimport { HomeComponent } from './pages/home/home.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\nimport { AngularSvgIconModule } from 'angular-svg-icon';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n    FooterSocialMediaComponent,\r\n    FooterContactComponent,\r\n    FooterRightsComponent,\r\n    HomeComponent,\r\n    AboutUsValueComponent,\r\n  ],\r\n  imports: [\r\n    HttpClientModule,\r\n    AngularSvgIconModule.forRoot(),\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/about-us/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/about-us/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\nimport { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';\r\nimport { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';\r\nimport { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';\r\nimport { HomeComponent } from './pages/home/home.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\nimport { AngularSvgIconModule } from 'angular-svg-icon';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';\r\nimport {AboutUsComponent} from \"./pages/about-us/about-us.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n    FooterSocialMediaComponent,\r\n    FooterContactComponent,\r\n    FooterRightsComponent,\r\n    HomeComponent,\r\n    AboutUsValueComponent,\r\n    AboutUsComponent\r\n  ],\r\n  imports: [\r\n    HttpClientModule,\r\n    AngularSvgIconModule.forRoot(),\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1455,6 +1455,9 @@
                     "elements": [
                         {
                             "name": "AboutUsBannerComponent"
+                        },
+                        {
+                            "name": "AboutUsComponent"
                         },
                         {
                             "name": "AboutUsValueComponent"
@@ -1611,21 +1614,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "FOOTER_ICONS",
@@ -1776,18 +1779,6 @@
                     "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1798,6 +1789,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/app/components/shared/footer/footer.data.ts": [
