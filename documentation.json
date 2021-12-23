@@ -125,7 +125,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>about-us-banner works!</p>\r\n"
+            "templateData": "<div class=\"flex w-full flex-col\">\r\n  <div>\r\n    <h2>Learn more about Pawme</h2>\r\n  </div>\r\n\r\n  <div class=\"flex w-full\">\r\n    <div>\r\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's\r\n        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.</p>\r\n    </div>\r\n\r\n    <div>\r\n      <img src=\"assets/cat&doggo.svg\">\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "AboutUsComponent",
@@ -300,7 +300,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1 class=\"text-5xl bg-red-400 block p-2\">hello pawme !!</h1>\r\n\r\n<router-outlet></router-outlet>\r\n"
+            "templateData": "<app-header></app-header>\r\n<router-outlet></router-outlet>\r\n"
         },
         {
             "name": "FooterComponent",
@@ -366,7 +366,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-66aab1b24c0d8854e1f82fba28138804b4b85580f247fc5033dd7baf800ad39c3ed2312637667e7b335e90cb144fdbd62673e2ce34182a65e43f7cecfaa900cc",
+            "id": "component-HeaderComponent-b6fb6892d82b0b19d6d3fea6d5c86b306324f74ff1417541046ac819cee7c22ff9b61ed3f6cb373ca0ab206ce62bf28aa2a02d2c8d78a9906b569c44f3c50f17",
             "file": "src/app/components/shared/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -392,7 +392,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -404,7 +404,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  constructor() {\r\n  }\r\n\r\n  ngOnInit(): void {\r\n\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -424,7 +424,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12\">\r\n  <app-logo></app-logo>\r\n</div>\r\n"
+            "templateData": "<div class=\"w-full bg-primary-normal p-0 h-12 flex px-8 py-1 items-center justify-between shadow\">\r\n  <app-logo></app-logo>\r\n  <app-hotdog-menu></app-hotdog-menu>\r\n</div>\r\n"
         },
         {
             "name": "HomebannerComponent",
@@ -548,7 +548,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>home works!</p>\n"
+            "templateData": "<app-header></app-header>\n"
         },
         {
             "name": "HomeExplanationComponent",
@@ -676,7 +676,7 @@
         },
         {
             "name": "HotdogMenuComponent",
-            "id": "component-HotdogMenuComponent-14e252b0f6ecd61130a14204f586327620b5e1538883bb11a0c61831c547a8089d1f4e6896dcb906b4c064ee215a05003c327403ced2020437eac75d38aadced",
+            "id": "component-HotdogMenuComponent-b84e08e1d8391d55f3e64397bb5d0e239300931e430d8e51cca1d1e7f4c278db0e3c480b4caaedd928403006bd40b7d9cdc85ba4e9c8617e2f1aab571759107b",
             "file": "src/app/components/shared/hotdog-menu/hotdog-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -694,7 +694,18 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "navItems",
+                    "defaultValue": "[\r\n    {\r\n      text: \"Get started\",\r\n      isActive: false\r\n    },\r\n    {\r\n      text: \"About us\",\r\n      isActive: false\r\n    },\r\n    {\r\n      text: \"Sign in\",\r\n      isActive: false\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -702,7 +713,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -714,7 +725,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-hotdog-menu',\r\n  templateUrl: './hotdog-menu.component.html',\r\n  styleUrls: ['./hotdog-menu.component.scss']\r\n})\r\nexport class HotdogMenuComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport {Router} from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: 'app-hotdog-menu',\r\n  templateUrl: './hotdog-menu.component.html',\r\n  styleUrls: ['./hotdog-menu.component.scss']\r\n})\r\nexport class HotdogMenuComponent implements OnInit {\r\n\r\n  navItems = [\r\n    {\r\n      text: \"Get started\",\r\n      isActive: false\r\n    },\r\n    {\r\n      text: \"About us\",\r\n      isActive: false\r\n    },\r\n    {\r\n      text: \"Sign in\",\r\n      isActive: false\r\n    },\r\n  ]\r\n  constructor(private router: Router) { }\r\n\r\n  ngOnInit(): void {\r\n    if (this.router.url == '/'){\r\n      this.navItems[0].isActive = true\r\n    }\r\n    if (this.router.url == '/about-us'){\r\n      this.navItems[1].isActive = true\r\n    }\r\n    if (this.router.url == '/sign-in'){\r\n      this.navItems[2].isActive = true\r\n    }\r\n\r\n\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -728,13 +739,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 8
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n  <img src=\"assets/Upper_bread.svg\">\r\n</div>\r\n"
+            "templateData": "<div>\r\n  <div class=\"bg-white w-4 h-4 md:hidden\"></div>\r\n  <app-navigation [navItems]=\"navItems\"></app-navigation>\r\n<!--  <img src=\"assets/Upper_bread.svg\">-->\r\n<!--  <img src=\"assets/HotDog.svg.svg\">-->\r\n<!--  <img src=\"assets/Lower_bread.svg\">-->\r\n</div>\r\n"
         },
         {
             "name": "LogoComponent",
@@ -796,11 +825,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!--<div class=\"w-8\"><img src=\"whitePawMe.svg\"/></div>-->\r\n<h2>nimporte quoi</h2>\r\n"
+            "templateData": "<div>\r\n  <img class=\"h-10\" src=\"assets/whitePawMe.svg\"/>\r\n</div>\r\n\r\n"
         },
         {
             "name": "NavigationComponent",
-            "id": "component-NavigationComponent-94a0b60ee59ad7e3ee12d2d5ea82ec7062b4021d341f453831f52d96f019073adfa771595ced7b5e0b939c45b17f2f86007e092fd5a86316ed893bfd52a0f0ba",
+            "id": "component-NavigationComponent-3dddd8b6dfe56b4a135948abdab6b98717cad9531a4f9ca5bf8c80cdf6d77fa0d93a5c43b5c632c99f5dbd590b34d5cd2b287dbd6566412d31d1c357d314f66a",
             "file": "src/app/components/shared/navigation/navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -816,7 +845,16 @@
                 "./navigation.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "navItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -826,7 +864,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -838,7 +876,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation',\r\n  templateUrl: './navigation.component.html',\r\n  styleUrls: ['./navigation.component.scss']\r\n})\r\nexport class NavigationComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\n\r\n\r\n@Component({\r\n  selector: 'app-navigation',\r\n  templateUrl: './navigation.component.html',\r\n  styleUrls: ['./navigation.component.scss']\r\n})\r\nexport class NavigationComponent implements OnInit {\r\n\r\n  @Input() navItems: any\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n    console.log('navItems', this.navItems)\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -853,16 +891,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 11
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation works!</p>\r\n"
+            "templateData": "<div class=\"flex gap-6\">\r\n  <app-navigation-item *ngFor=\"let item of navItems\" [item]=\"item.text\"\r\n                       [isActive]=\"item.isActive\"></app-navigation-item>\r\n</div>\r\n"
         },
         {
             "name": "NavigationItemComponent",
-            "id": "component-NavigationItemComponent-8875d031739406006ca21c8b54f1ac8ebf9dccde5af8c2bba0d72e60a815199e1a2ca023c689cf3f214d06777f75cc3a23cb40551762fa2b681ddce5cb7ce826",
+            "id": "component-NavigationItemComponent-778c6f183f20f77969da24f5d3a1bc44ca40e55412105f6a74e68cc1c6665ce12630ba12eded9aae81d8ee2042d89b2835d50d0ac5b42535ff286c585da00ae0",
             "file": "src/app/components/shared/navigation-item/navigation-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -878,7 +916,26 @@
                 "./navigation-item.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "item",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -888,7 +945,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -900,7 +957,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation-item',\r\n  templateUrl: './navigation-item.component.html',\r\n  styleUrls: ['./navigation-item.component.scss']\r\n})\r\nexport class NavigationItemComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navigation-item',\r\n  templateUrl: './navigation-item.component.html',\r\n  styleUrls: ['./navigation-item.component.scss']\r\n})\r\n\r\n\r\nexport class NavigationItemComponent implements OnInit {\r\n  @Input() item = ''\r\n  @Input() isActive = false\r\n\r\n  constructor() {\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -915,12 +972,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 12
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation-item works!</p>\r\n"
+            "templateData": "<div>\r\n  <p class=\"text-white opacity-60 font-medium\" [ngClass]=\"{'opacity-100': isActive}\">{{item}}</p>\r\n</div>\r\n"
         },
         {
             "name": "SignInComponent",
@@ -1050,13 +1107,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-6717aebbc5cb43b7a1628cadc37c8002b75ac47c8dfe9ebb33fdf7767edffc503ed5ecaecb6a3f53fa93e68113b32f2e733ae2b314b30db9764247f0865a6c31",
+            "id": "module-AppModule-ebcb023363ddf5fe690699082949190357353928e1b74336c4c697ccab9e70e121855891c183ec0f003a85269727a3eb523f474013a64e8f37e007378e72552b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n  ],\r\n  imports: [\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { NgxsModule } from '@ngxs/store';\r\nimport { NgxsRouterPluginModule } from '@ngxs/router-plugin';\r\nimport { HeaderComponent } from './components/shared/header/header.component';\r\nimport { FooterComponent } from './components/shared/footer/footer.component';\r\nimport { HotdogMenuComponent } from './components/shared/hotdog-menu/hotdog-menu.component';\r\nimport { NavigationComponent } from './components/shared/navigation/navigation.component';\r\nimport { NavigationItemComponent } from './components/shared/navigation-item/navigation-item.component';\r\nimport { SignInComponent } from './components/auth/sign-in/sign-in.component';\r\nimport { SignUpComponent } from './components/auth/sign-up/sign-up.component';\r\nimport { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';\r\nimport { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';\r\nimport { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';\r\nimport { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';\r\nimport { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';\r\nimport { LogoComponent } from './components/shared/logo/logo.component';\r\nimport {HomeComponent} from \"./pages/home/home.component\";\r\n// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HeaderComponent,\r\n    FooterComponent,\r\n    HotdogMenuComponent,\r\n    NavigationComponent,\r\n    NavigationItemComponent,\r\n    SignInComponent,\r\n    SignUpComponent,\r\n    HomebannerComponent,\r\n    HomeExplanationComponent,\r\n    HomeReviewsComponent,\r\n    AboutUsBannerComponent,\r\n    AboutUsValuesComponent,\r\n    LogoComponent,\r\n    HomeComponent\r\n  ],\r\n  imports: [\r\n    NgxsRouterPluginModule.forRoot(),\r\n    NgxsModule.forRoot([], {\r\n      developmentMode: true,\r\n    }),\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1079,6 +1136,9 @@
                         },
                         {
                             "name": "HeaderComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
                         },
                         {
                             "name": "HomeExplanationComponent"
@@ -1208,21 +1268,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Primary",
@@ -1239,6 +1299,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/shared/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1272,6 +1342,16 @@
                 "deprecationMessage": "",
                 "type": "Story<HeaderComponent>",
                 "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AboutUsBannerComponent>",
+                "defaultValue": "(args: AboutUsBannerComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1323,18 +1403,6 @@
                     "defaultValue": "{\r\n  TAILWIND_MODE: '',\r\n  baseUrl: 'http://localhost:8000'\r\n}"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1345,6 +1413,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/shared/Footer.stories.ts": [
@@ -1389,6 +1469,28 @@
                     "deprecationMessage": "",
                     "type": "Story<HeaderComponent>",
                     "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/pages/aboutUs/About-us-banner.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AboutUsBannerComponent>",
+                    "defaultValue": "(args: AboutUsBannerComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -1539,7 +1641,7 @@
                 "linktype": "component",
                 "name": "HotdogMenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1557,7 +1659,7 @@
                 "linktype": "component",
                 "name": "NavigationItemComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -1566,7 +1668,7 @@
                 "linktype": "component",
                 "name": "NavigationComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1612,6 +1714,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/aboutUs/About-us-banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

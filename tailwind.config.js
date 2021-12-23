@@ -13,6 +13,13 @@ module.exports = {
           light: "#E8F6EF",
           lighter: "#F8F8FA",
         },
+        gray: {
+          normal: "#3E3E3E",
+        }
+      },
+      fontFamily: {
+        'display': ['Montserrat', 'sans-serif'],
+        'body': ['"Open Sans"', 'sans-serif'],
       },
     },
   },
