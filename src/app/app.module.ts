@@ -14,10 +14,19 @@ import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { HomebannerComponent } from './components/pages/home/homebanner/homebanner.component';
 import { HomeExplanationComponent } from './components/pages/home/home-explanation/home-explanation.component';
 import { HomeReviewsComponent } from './components/pages/home/home-reviews/home-reviews.component';
-import { AboutUsBannerComponent } from './components/pages/aboutUs/about-us-banner/about-us-banner.component';
-import { AboutUsValuesComponent } from './components/pages/aboutUs/about-us-values/about-us-values.component';
+import { AboutUsBannerComponent } from './components/pages/about-us/about-us-banner/about-us-banner.component';
+import { AboutUsValuesComponent } from './components/pages/about-us/about-us-values/about-us-values.component';
 import { LogoComponent } from './components/shared/logo/logo.component';
+import { FooterSocialMediaComponent } from './components/shared/footer/footer-social-media/footer-social-media.component';
+import { FooterContactComponent } from './components/shared/footer/footer-contact/footer-contact.component';
+import { FooterRightsComponent } from './components/shared/footer/footer-rights/footer-rights.component';
+import { HomeComponent } from './pages/home/home.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
+import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
+import {AboutUsComponent} from "./pages/about-us/about-us.component";
+import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +44,17 @@ import { LogoComponent } from './components/shared/logo/logo.component';
     AboutUsBannerComponent,
     AboutUsValuesComponent,
     LogoComponent,
+    FooterSocialMediaComponent,
+    FooterContactComponent,
+    FooterRightsComponent,
+    HomeComponent,
+    AboutUsValueComponent,
+    AboutUsComponent,
+    ContactButtonComponent
   ],
   imports: [
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsModule.forRoot([], {
       developmentMode: true,

@@ -1,5 +1,4 @@
 module.exports = {
-  mode: "jit",
   purge: ["./src/**/*.{html,ts}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -10,10 +9,18 @@ module.exports = {
           normal: "#ffa934",
         },
         secondary: {
+          dark: "#2A8575",
           normal: "#b8dfd8",
           light: "#E8F6EF",
           lighter: "#F8F8FA",
         },
+        gray: {
+          normal: "#636363",
+        }
+      },
+      fontFamily: {
+        'display': ['Montserrat', 'sans-serif'],
+        'body': ['"Open Sans"', 'sans-serif'],
       },
     },
   },

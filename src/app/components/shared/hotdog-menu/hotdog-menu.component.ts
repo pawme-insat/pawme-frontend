@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-hotdog-menu',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotdogMenuComponent implements OnInit {
 
-  constructor() { }
+  navItems = [
+    {
+      text: "Get started",
+      link: "/"
+    },
+    {
+      text: "About us",
+      link: "/about-us"
+    },
+    {
+      text: "Sign in",
+      link: "/sign-in"
+    },
+  ]
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

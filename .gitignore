@@ -45,3 +45,8 @@ testem.log
 .DS_Store
 Thumbs.db
 storybook-static
+
+#env files
+/environements/env.ts
+
+documentation.json
