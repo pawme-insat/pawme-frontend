@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
+import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanner/home-banner-cta-buttons/home-banner-cta-buttons.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ContactButtonComponent } from './components/pages/about-us/contact-butt
     HomeComponent,
     AboutUsValueComponent,
     AboutUsComponent,
-    ContactButtonComponent
+    ContactButtonComponent,
+    HomeBannerCtaButtonsComponent
   ],
   imports: [
     HttpClientModule,
