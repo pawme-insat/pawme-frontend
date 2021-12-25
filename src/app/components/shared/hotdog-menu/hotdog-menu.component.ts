@@ -11,31 +11,20 @@ export class HotdogMenuComponent implements OnInit {
   navItems = [
     {
       text: "Get started",
-      isActive: false
+      link: "/"
     },
     {
       text: "About us",
-      isActive: false
+      link: "/about-us"
     },
     {
       text: "Sign in",
-      isActive: false
+      link: "/sign-in"
     },
   ]
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if (this.router.url == '/'){
-      this.navItems[0].isActive = true
-    }
-    if (this.router.url == '/about-us'){
-      this.navItems[1].isActive = true
-    }
-    if (this.router.url == '/sign-in'){
-      this.navItems[2].isActive = true
-    }
-
-
   }
 
 }
