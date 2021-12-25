@@ -25,9 +25,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
-import {AboutUsComponent} from "./pages/about-us/about-us.component";
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
 import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanner/home-banner-cta-buttons/home-banner-cta-buttons.component';
+import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanne
     AboutUsValueComponent,
     AboutUsComponent,
     ContactButtonComponent,
-    HomeBannerCtaButtonsComponent
+    HomeBannerCtaButtonsComponent,
+    CircleStepComponent,
   ],
   imports: [
     HttpClientModule,

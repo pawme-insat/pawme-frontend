@@ -1,0 +1,10 @@
+<div
+  [ngClass]="[
+    isActive
+      ? 'bg-primary-normal text-primary-light'
+      : 'bg-primary-light text-primary-normal'
+  ]"
+  class="w-10 grid place-items-center h-10 bg-primary-light rounded-full"
+>
+  <p><ng-content></ng-content></p>
+</div>
