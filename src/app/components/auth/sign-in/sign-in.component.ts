@@ -14,7 +14,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.form.push(new Field('username', FieldType.text, 'Please enter your username', '', []))
-    this.form.push(new Field('email', FieldType.email, 'Please enter your email', '',[]))
+    this.form.push(new Field('password', FieldType.password, 'Please enter your password', '',[]))
   }
 
 }

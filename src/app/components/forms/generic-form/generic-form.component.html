@@ -1,4 +1,4 @@
-<form class="pr-16 my-4 text-gray-100 md:text-gray-normal font-body" *ngIf="formGroup" [formGroup]="formGroup"
+<form class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body" *ngIf="formGroup" [formGroup]="formGroup"
       (ngSubmit)="submit()">
 
   <div class="mb-6" *ngFor="let field of form">
