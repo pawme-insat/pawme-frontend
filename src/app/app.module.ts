@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
+import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
+import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { ContactButtonComponent } from './components/pages/about-us/contact-butt
     HomeComponent,
     AboutUsValueComponent,
     AboutUsComponent,
-    ContactButtonComponent
+    ContactButtonComponent,
+    GenericFormComponent,
+    SideBannerComponent
   ],
   imports: [
     HttpClientModule,

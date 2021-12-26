@@ -22,6 +22,10 @@ module.exports = {
         'display': ['Montserrat', 'sans-serif'],
         'body': ['"Open Sans"', 'sans-serif'],
       },
+      backgroundImage: {
+        'sign-in': "url('assets/signInPic.png')",
+        'sign-up': "url('assets/signUpPic.png')"
+      }
     },
   },
   variants: {
