@@ -8,21 +8,17 @@ import {Field} from "../../../models/Field";
   styleUrls: ['./generic-form.component.scss']
 })
 export class GenericFormComponent implements OnInit {
-  @Input() form: Field[] | any
-  // form format :
-  // form = [
-  //  {
-  //    name: String,
-  //    type:  String ('number' | 'text' | 'email')
-  //    validators: []
-  //  },
-  //  ...
-  // ]
+  @Input() form: Field[] = []
+
+  // @Input() style: any
 
   formGroup: FormGroup | undefined
 
 
   constructor(private fb: FormBuilder) {
+  }
+
+  ngOnInit(): void {
     let config = {}
 
     for (let field of this.form) {
@@ -30,11 +26,13 @@ export class GenericFormComponent implements OnInit {
       config[field.name] = ['', Validators.compose(field.validators)];
     }
 
-    console.log(config)
+    this.formGroup = this.fb.group(config)
 
+    console.log(this.formGroup)
   }
 
-  ngOnInit(): void {
+  submit() {
+    console.log('submitted')
   }
 
 }

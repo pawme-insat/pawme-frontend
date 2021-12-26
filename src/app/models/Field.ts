@@ -1,5 +1,12 @@
+import {FieldType} from "./FieldType.enum";
+
 export class Field {
-  name = '';
-  type = '';
-  validators = []
+  constructor(
+    public name = '',
+    public type = FieldType.text,
+    public placeholder = '',
+    public errorMsg = '',
+    public validators = [],) {
+  }
+
 }

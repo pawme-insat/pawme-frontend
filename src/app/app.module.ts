@@ -29,6 +29,7 @@ import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
 import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { SideBannerComponent } from './components/shared/side-banner/side-banner
     }),
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

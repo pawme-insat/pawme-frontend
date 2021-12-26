@@ -1,1 +1,22 @@
-<p>generic-form works!</p>
+<form class="pr-8 my-4 font-body" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="submit()">
+
+  <div class="mb-6" *ngFor="let field of form">
+    <label class="block text-gray-700 text-sm mb-2 capitalize">
+      {{field.name}}
+    </label>
+
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 placeholder-gray-400 text-sm
+           leading-tight focus:outline-none focus:shadow-outline"
+           [id]="field.name" [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.name">
+
+    <p class="text-red-500 text-xs italic">{{field.errorMsg}}</p>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <button
+      class="bg-secondary-dark hover:bg-secondary-darker text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
+      type="submit">
+      Sign In
+    </button>
+  </div>
+</form>
