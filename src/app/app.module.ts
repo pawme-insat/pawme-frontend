@@ -32,6 +32,7 @@ import { CircleStepComponent } from './components/pages/home/home-explanation/ci
 import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
