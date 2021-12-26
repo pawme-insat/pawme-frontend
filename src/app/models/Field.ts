@@ -1,4 +1,4 @@
-import {FieldType} from "./FieldType.enum";
+import { FieldType } from './FieldType.enum';
 
 export class Field {
   constructor(
@@ -6,7 +6,6 @@ export class Field {
     public type = FieldType.text,
     public placeholder = '',
     public errorMsg = '',
-    public validators = [],) {
-  }
-
+    public validators = []
+  ) {}
 }

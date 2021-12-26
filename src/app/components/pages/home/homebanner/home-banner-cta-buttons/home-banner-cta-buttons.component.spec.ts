@@ -8,9 +8,8 @@ describe('HomeBannerCtaButtonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeBannerCtaButtonsComponent ]
-    })
-    .compileComponents();
+      declarations: [HomeBannerCtaButtonsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
