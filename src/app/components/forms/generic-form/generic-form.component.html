@@ -1,11 +1,12 @@
-<form class="pr-8 my-4 font-body" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="submit()">
+<form class="pr-16 my-4 text-gray-100 md:text-gray-normal font-body" *ngIf="formGroup" [formGroup]="formGroup"
+      (ngSubmit)="submit()">
 
   <div class="mb-6" *ngFor="let field of form">
-    <label class="block text-gray-700 text-sm mb-2 capitalize">
+    <label class="block text-sm mb-2 capitalize" [ngClass]="[ 'text-' + style + '-normal' ]">
       {{field.name}}
     </label>
 
-    <input class="shadow appearance-none border rounded w-full py-2 px-3 placeholder-gray-400 text-sm
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 bg-transparent placeholder-gray-400 text-sm
            leading-tight focus:outline-none focus:shadow-outline"
            [id]="field.name" [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.name">
 
@@ -14,7 +15,8 @@
 
   <div class="flex items-center justify-between">
     <button
-      class="bg-secondary-dark hover:bg-secondary-darker text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
+      class="text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
+      [ngClass]="['bg-' + style + '-normal' + ' hover:bg-' + style + '-dark']"
       type="submit">
       Sign In
     </button>

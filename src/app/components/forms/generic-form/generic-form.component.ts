@@ -9,8 +9,7 @@ import {Field} from "../../../models/Field";
 })
 export class GenericFormComponent implements OnInit {
   @Input() form: Field[] = []
-
-  // @Input() style: any
+  @Input() style: String = 'secondary'
 
   formGroup: FormGroup | undefined
 
