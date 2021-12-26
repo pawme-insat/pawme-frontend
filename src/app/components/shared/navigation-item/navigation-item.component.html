@@ -1,9 +1,11 @@
 <div>
   <a
+    class="text-white font-medium transition-all"
     [routerLink]="item.link"
-    [routerLinkActive]="'opacity-100'"
+    routerLinkActive="opacity-100"
+    #link="routerLinkActive"
+    [class.opacity-60]="!link.isActive"
     [routerLinkActiveOptions]="{ exact: true }"
-    class="text-white opacity-60 font-medium transition-all"
     >{{ item.text }}</a
   >
 </div>
