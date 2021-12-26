@@ -19,7 +19,7 @@ export class SignUpComponent implements OnInit {
     this.form.push(new Field('password confirm', FieldType.password, 'Please confirm your password', '', []))
     this.form.push(new Field('first and last name', FieldType.text, 'Please enter your full name', '', []))
     this.form.push(new Field('phone', FieldType.text, 'Please enter your phone number', '', []))
-    this.form.push(new Field('birth date', FieldType.text, 'Please enter your birth date', '', []))
+    this.form.push(new Field('birth date', FieldType.date, '', '', []))
 
   }
 
