@@ -6,9 +6,7 @@ export default {
   component: AboutUsBannerComponent,
 } as Meta;
 
-const Template: Story<AboutUsBannerComponent> = (
-  args: AboutUsBannerComponent
-) => ({
+const Template: Story<AboutUsBannerComponent> = (args: AboutUsBannerComponent) => ({
   props: args,
 });
 

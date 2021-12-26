@@ -2,12 +2,7 @@ import { moduleMetadata, Meta, Story } from '@storybook/angular';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { GenericFormComponent } from '../../app/components/forms/generic-form/generic-form.component';
-import {
-  FormBuilder,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Field } from '../../app/models/Field';
 
 export default {
@@ -15,12 +10,7 @@ export default {
   component: GenericFormComponent,
   decorators: [
     moduleMetadata({
-      imports: [
-        HttpClientModule,
-        AngularSvgIconModule.forRoot(),
-        FormsModule,
-        ReactiveFormsModule,
-      ],
+      imports: [HttpClientModule, AngularSvgIconModule.forRoot(), FormsModule, ReactiveFormsModule],
     }),
   ],
 } as Meta;
