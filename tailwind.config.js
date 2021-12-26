@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*.{html,ts}"],
+  content: ["./src/**/*.{html,ts}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -16,11 +16,11 @@ module.exports = {
         },
         gray: {
           normal: "#636363",
-        }
+        },
       },
       fontFamily: {
-        'display': ['Montserrat', 'sans-serif'],
-        'body': ['"Open Sans"', 'sans-serif'],
+        display: ["Montserrat", "sans-serif"],
+        body: ['"Open Sans"', "sans-serif"],
       },
     },
   },
