@@ -24,24 +24,24 @@
           </p>
 
           <p
-            class="text-primary-normal pl-1 text-sm absolute left-2/3 md:left-1/4 md:text-lg md:-top-10 -top-6"
+            class="text-primary-normal pl-1 text-sm absolute left-1/3 md:left-1/4 md:text-lg md:-top-10 -bottom-6"
           >
             Add your pet
           </p>
           <p
-            class="text-gray-normal pl-1 text-sm absolute left-2/3 md:left-2/4 md:text-lg md:-top-10 -top-6"
+            class="text-gray-normal hid pl-1 text-sm absolute left-2/3 md:left-2/4 md:text-lg md:-top-10 -top-6"
           >
             Find a match
           </p>
 
           <p
-            class="text-gray-normal pl-1 text-sm absolute left-2/3 md:left-3/4 md:text-lg md:-top-10 -top-6"
+            class="text-gray-normal hidden md:block pl-1 text-sm absolute left-2/3 md:left-3/4 md:text-lg md:-top-10 -top-6"
           >
             Text the owner
           </p>
 
           <p
-            class="text-gray-normal pl-1 text-sm absolute left-2/3 md:left-full line whitespace-nowrap md:text-lg md:-top-10 -top-6"
+            class="text-gray-normal hidden md:block pl-1 text-sm absolute left-2/3 md:left-full line whitespace-nowrap md:text-lg md:-top-10 -top-6"
           >
             It's a date !
           </p>
@@ -66,7 +66,12 @@
           </div>
 
           <div class="absolute hidden md:block md:left-full left-2/3">
-            <app-circle-step [isActive]="false"> P </app-circle-step>
+            <app-circle-step [isActive]="false">
+              <svg-icon
+                class="w-6 h-6 fill-current block"
+                src="assets/pages/home/explanation/paw.svg"
+              ></svg-icon>
+            </app-circle-step>
           </div>
 
           <!-- horizental circles -->
@@ -93,7 +98,7 @@
           </p>
 
           <p class="text-gray-normal pl-1 text-sm absolute bottom-0 left-11">
-            It's a date !
+            It's <span class="whitespace-nowrap">a date !</span>
           </p>
 
           <!-- vertical circles -->
@@ -102,7 +107,12 @@
           </div>
 
           <div class="absolute bottom-0">
-            <app-circle-step [isActive]="false"> P </app-circle-step>
+            <app-circle-step [isActive]="false">
+              <svg-icon
+                class="w-6 h-6 fill-current block"
+                src="assets/pages/home/explanation/paw.svg"
+              ></svg-icon>
+            </app-circle-step>
           </div>
           <!-- vertical circles -->
 
