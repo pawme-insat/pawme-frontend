@@ -11,6 +11,5 @@ export class NavigationComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('navItems', this.navItems);
   }
 }
