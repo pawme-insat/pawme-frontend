@@ -1,0 +1,35 @@
+<form
+  class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body"
+  *ngIf="formGroup"
+  [formGroup]="formGroup"
+  (ngSubmit)="submit()"
+>
+  <div class="mb-6" *ngFor="let field of form">
+    <label
+      class="block text-sm mb-2 capitalize"
+      [ngClass]="['text-' + style + '-normal']"
+    >
+      {{ field.name }}
+    </label>
+
+    <input
+      class="shadow appearance-none border rounded w-full py-2 px-3 bg-transparent placeholder-gray-400 text-sm leading-tight focus:outline-none focus:shadow-outline"
+      [id]="field.name"
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.name"
+    />
+
+    <p class="text-red-500 text-xs italic">{{ field.errorMsg }}</p>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <button
+      class="text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
+      [ngClass]="['bg-' + style + '-normal' + ' hover:bg-' + style + '-dark']"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </div>
+</form>

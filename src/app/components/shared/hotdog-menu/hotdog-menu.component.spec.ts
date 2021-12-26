@@ -8,9 +8,8 @@ describe('HotdogMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HotdogMenuComponent ]
-    })
-    .compileComponents();
+      declarations: [HotdogMenuComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

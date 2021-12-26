@@ -1,10 +1,29 @@
-<footer class="bg-secondary-normal">
-  <div class="">
-    <div class="grid grid-cols-2 px-8 py-6">
+<footer
+  class="relative flex items-center flex-col overflow-hidden bg-secondary-normal"
+>
+  <!-- paws pattern -->
+  <div class="absolute z-0 -top-4 right-12">
+    <svg-icon
+      class="block w-28"
+      src="assets/footer/paws-pattern.svg"
+    ></svg-icon>
+  </div>
+
+  <div class="absolute hidden md:block z-0 -top-4 right-52">
+    <svg-icon
+      class="block w-28"
+      src="assets/footer/paws-pattern.svg"
+    ></svg-icon>
+  </div>
+
+  <div class="z-10 md:container relative">
+    <!-- footer -->
+    <div class="grid rel grid-cols-2 px-4 py-6">
       <div>
-        <h3 class="text-2xl text-gray-700 font-medium">PawMe</h3>
+        <h3 class="text-2xl md:text-3xl text-gray-700 font-medium">PawMe</h3>
         <div class="text-gray-600 mt-2">
           <app-footer-social-media
+            class="block"
             [icons]="socialIcons"
           ></app-footer-social-media>
         </div>

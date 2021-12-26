@@ -8,9 +8,8 @@ describe('FooterSocialMediaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterSocialMediaComponent ]
-    })
-    .compileComponents();
+      declarations: [FooterSocialMediaComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

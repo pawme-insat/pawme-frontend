@@ -1,27 +1,31 @@
 module.exports = {
-  purge: ["./src/**/*.{html,ts}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.{html,ts}"],
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         primary: {
-          light: "#FFDFC8",
           normal: "#ffa934",
+          light: "#FFDFC8",
         },
         secondary: {
-          dark: "#2A8575",
-          normal: "#b8dfd8",
-          light: "#E8F6EF",
-          lighter: "#F8F8FA",
+          dark: "#1C7363",
+          normal: "#2A8575",
+          light: "#b8dfd8",
+          lighter: "#E8F6EF",
         },
         gray: {
           normal: "#636363",
-        }
+        },
       },
       fontFamily: {
-        'display': ['Montserrat', 'sans-serif'],
-        'body': ['"Open Sans"', 'sans-serif'],
+        display: ["Montserrat", "sans-serif"],
+        body: ['"Open Sans"', "sans-serif"],
       },
+      backgroundImage: {
+        'sign-in': "url('assets/signInPic.png')",
+        'sign-up': "url('assets/signUpPic.png')"
+      }
     },
   },
   variants: {

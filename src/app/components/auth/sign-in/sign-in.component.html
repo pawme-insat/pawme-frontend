@@ -1,1 +1,29 @@
-<p>sign-in works!</p>
+<div class="w-full relative md:w-1/2">
+  <app-side-banner [isSignIn]="true" class="z-0"></app-side-banner>
+
+  <div
+    class="flex-col flex h-screen justify-center pl-16 text-gray-100 md:text-gray-normal"
+  >
+    <p class="font-display text-3xl font-bold z-50">Sign In to PawMe.</p>
+    <div class="text-left z-50">
+      <span class="opacity-70">You don’t have an account? </span>
+      <a class="text-primary-normal cursor-pointer" routerLink="/sign-up"
+        >sign up</a
+      >
+    </div>
+
+    <app-generic-form
+      class="z-50 pr-16"
+      [form]="form"
+      [style]="'secondary'"
+    ></app-generic-form>
+  </div>
+
+  <p class="text-xs text-gray-200 md:text-gray-normal fixed bottom-4 left-4">
+    &#169; All rights Reserved - PawMe 2021-2022
+  </p>
+  <img
+    class="absolute bottom-0 right-0 h-52 hidden md:inline"
+    src="assets/SignInPaws.svg"
+  />
+</div>

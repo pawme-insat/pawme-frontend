@@ -25,8 +25,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
-import {AboutUsComponent} from "./pages/about-us/about-us.component";
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
+import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanner/home-banner-cta-buttons/home-banner-cta-buttons.component';
+import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
+import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
+import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,11 @@ import { ContactButtonComponent } from './components/pages/about-us/contact-butt
     HomeComponent,
     AboutUsValueComponent,
     AboutUsComponent,
-    ContactButtonComponent
+    ContactButtonComponent,
+    HomeBannerCtaButtonsComponent,
+    CircleStepComponent,
+    GenericFormComponent,
+    SideBannerComponent,
   ],
   imports: [
     HttpClientModule,
@@ -61,6 +70,7 @@ import { ContactButtonComponent } from './components/pages/about-us/contact-butt
     }),
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
