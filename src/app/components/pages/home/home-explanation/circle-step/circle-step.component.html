@@ -1,9 +1,5 @@
 <div
-  [ngClass]="[
-    isActive
-      ? 'bg-primary-normal text-primary-light'
-      : 'bg-primary-light text-primary-normal'
-  ]"
+  [ngClass]="[isActive ? 'bg-primary-normal text-primary-light' : 'bg-primary-light text-primary-normal']"
   class="w-10 grid md:w-12 place-items-center md:font-medium md:text-xl h-10 md:h-12 rounded-full"
 >
   <p><ng-content></ng-content></p>

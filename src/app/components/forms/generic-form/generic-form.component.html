@@ -5,10 +5,7 @@
   (ngSubmit)="submit()"
 >
   <div class="mb-6" *ngFor="let field of form">
-    <label
-      class="block text-sm mb-2 capitalize"
-      [ngClass]="['text-' + style + '-normal']"
-    >
+    <label class="block text-sm mb-2 capitalize" [ngClass]="['text-' + style + '-normal']">
       {{ field.name }}
     </label>
 

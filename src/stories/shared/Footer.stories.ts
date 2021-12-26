@@ -16,12 +16,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [HttpClientModule, AngularSvgIconModule.forRoot()],
-      declarations: [
-        LogoComponent,
-        FooterSocialMediaComponent,
-        FooterContactComponent,
-        FooterRightsComponent,
-      ],
+      declarations: [LogoComponent, FooterSocialMediaComponent, FooterContactComponent, FooterRightsComponent],
     }),
   ],
 } as Meta;

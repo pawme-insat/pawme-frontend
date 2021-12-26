@@ -13,9 +13,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<AboutUsValuesComponent> = (
-  args: AboutUsValuesComponent
-) => ({
+const Template: Story<AboutUsValuesComponent> = (args: AboutUsValuesComponent) => ({
   props: args,
 });
 
