@@ -1,12 +1,12 @@
 # Where to get schema data
 schema:
-  - https://api.spacex.land/graphql/
+  - http://localhost:3000/graphql
 # The client side queries to turn into services
 documents:
   - src/**/*.graphql
 # Where to output the services and the list of plugins
 generates:
-  ./src/app/services/spacexGraphql.service.ts:
+  ./src/app/services/pawme.graphql.service.ts:
     plugins:
       - typescript
       - typescript-operations

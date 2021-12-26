@@ -2,7 +2,7 @@ module.exports = {
   client: {
     service: {
       name: "angular-spacex-graphql-codegen",
-      url: "https://api.spacex.land/graphql/",
+      url: "http://localhost:3000/graphql",
     },
   },
 };
