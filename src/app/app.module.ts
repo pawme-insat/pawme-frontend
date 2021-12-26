@@ -29,6 +29,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
 import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanner/home-banner-cta-buttons/home-banner-cta-buttons.component';
 import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
+import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
+import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,8 @@ import { CircleStepComponent } from './components/pages/home/home-explanation/ci
     ContactButtonComponent,
     HomeBannerCtaButtonsComponent,
     CircleStepComponent,
+    GenericFormComponent,
+    SideBannerComponent,
   ],
   imports: [
     HttpClientModule,
@@ -65,6 +70,7 @@ import { CircleStepComponent } from './components/pages/home/home-explanation/ci
     }),
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
