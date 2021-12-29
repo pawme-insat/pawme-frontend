@@ -8,12 +8,19 @@
       <a class="text-secondary-normal" routerLink="/sign-in">sign in</a>
     </div>
 
-    <app-generic-form class="z-50 h-4/6" [form]="form" [style]="'primary'"></app-generic-form>
+    <app-generic-form
+      (onSubmit)="onSubmit($event)"
+      class="z-50 h-4/6"
+      [form]="form"
+      [style]="'primary'"
+      [isLoading]="isLoading"
+      [formErrors]="formErrors"
+    ></app-generic-form>
   </div>
 
   <p class="text-xs text-gray-normal fixed bottom-4 left-4 hidden md:inline">
     &#169; All rights Reserved - PawMe 2021-2022
   </p>
 
-  <img class="absolute top-0 top-0 h-52" src="assets/grayPawPrints2.svg" />
+  <img class="absolute top-0 h-52" src="assets/grayPawPrints2.svg" />
 </div>

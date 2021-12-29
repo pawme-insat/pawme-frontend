@@ -576,17 +576,30 @@ export type User = {
   phone: Scalars['Int'];
 };
 
-export type PetQueryVariables = Exact<{
-  petId: Scalars['Int'];
+export type SignUpMutationVariables = Exact<{
+  registerDto: RegisterDto;
 }>;
 
 
-export type PetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number } };
+export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
-export const PetDocument = gql`
-    query Pet($petId: Int!) {
-  pet(id: $petId) {
+export const SignUpDocument = gql`
+    mutation SignUp($registerDto: RegisterDto!) {
+  SignUp(registerDto: $registerDto) {
     id
+    first_name
+    last_name
+    phone
+    email
+    password
+    address {
+      id
+      zip_code
+      street
+      region
+      country
+    }
+    birth_date
   }
 }
     `;
@@ -594,8 +607,8 @@ export const PetDocument = gql`
   @Injectable({
     providedIn: 'root'
   })
-  export class PetGQL extends Apollo.Query<PetQuery, PetQueryVariables> {
-    document = PetDocument;
+  export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
+    document = SignUpDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);
