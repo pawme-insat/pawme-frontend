@@ -13,7 +13,6 @@ import { SignUpFormValues } from './sign-up.interface';
 export class SignUpComponent implements OnInit {
   public form: Field[] = [
     new Field('email', FieldType.email, 'Please enter your email', '', []),
-    new Field('username', FieldType.text, 'Please enter your username', '', []),
     new Field('password', FieldType.password, 'Please enter your password', '', []),
     new Field('password confirm', FieldType.password, 'Please confirm your password', '', []),
     new Field('first and last name', FieldType.text, 'Please enter your full name', '', []),

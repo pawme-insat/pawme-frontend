@@ -576,6 +576,13 @@ export type User = {
   phone: Scalars['Int'];
 };
 
+export type LoginQueryVariables = Exact<{
+  credentials: SignInDto;
+}>;
+
+
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string } };
+
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
 }>;
@@ -583,6 +590,24 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
+export const LoginDocument = gql`
+    query Login($credentials: SignInDto!) {
+  login(credentials: $credentials) {
+    token
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class LoginGQL extends Apollo.Query<LoginQuery, LoginQueryVariables> {
+    document = LoginDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const SignUpDocument = gql`
     mutation SignUp($registerDto: RegisterDto!) {
   SignUp(registerDto: $registerDto) {
