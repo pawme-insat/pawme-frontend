@@ -143,6 +143,7 @@ export type Message = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  SignUp: User;
   createAddress: Address;
   createBreed: Breed;
   createBreedCharacteristic: BreedCharacteristic;
@@ -176,6 +177,11 @@ export type Mutation = {
   updateReview: Review;
   updateType: PetType;
   updateUser: User;
+};
+
+
+export type MutationSignUpArgs = {
+  registerDto: RegisterDto;
 };
 
 
@@ -369,6 +375,7 @@ export type Query = {
   breedCharacteristic: BreedCharacteristic;
   conversation: Conversation;
   like: LikePet;
+  login: SignInResponseDto;
   match: Match;
   message: Message;
   pet: Pet;
@@ -403,6 +410,11 @@ export type QueryLikeArgs = {
 };
 
 
+export type QueryLoginArgs = {
+  credentials: SignInDto;
+};
+
+
 export type QueryMatchArgs = {
   id: Scalars['Int'];
 };
@@ -432,6 +444,16 @@ export type QueryUserArgs = {
   id: Scalars['Int'];
 };
 
+export type RegisterDto = {
+  address: CreateAddressInput;
+  birth_date: Scalars['DateTime'];
+  email: Scalars['String'];
+  first_name: Scalars['String'];
+  last_name: Scalars['String'];
+  password: Scalars['String'];
+  phone: Scalars['Int'];
+};
+
 export type Review = {
   __typename?: 'Review';
   description: Scalars['String'];
@@ -449,6 +471,16 @@ export enum SexeEnum {
   Feminin = 'Feminin',
   Masculin = 'Masculin'
 }
+
+export type SignInDto = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
+export type SignInResponseDto = {
+  __typename?: 'SignInResponseDto';
+  token: Scalars['String'];
+};
 
 export type UpdateAddressInput = {
   country?: InputMaybe<Scalars['String']>;

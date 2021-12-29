@@ -50,3 +50,5 @@ storybook-static
 /environements/env.ts
 
 documentation.json
+
+.env

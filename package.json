@@ -11,7 +11,7 @@
     "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --write",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "codegen": "gql-gen",
+    "codegen": "gql-gen --config codegen.js -r dotenv/config",
     "build-storybook": "npm run docs:json && build-storybook"
   },
   "private": true,
@@ -31,6 +31,7 @@
     "@ngxs/store": "^3.7.2-dev.master-9a7c431",
     "angular-svg-icon": "^13.0.0",
     "apollo-angular": "^3.0.0-alpha.2",
+    "dotenv": "^10.0.0",
     "graphql": "^15.8.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
