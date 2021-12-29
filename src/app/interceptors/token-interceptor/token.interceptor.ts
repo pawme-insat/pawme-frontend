@@ -9,7 +9,6 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log('request intercepted');
     const a = this.token.pipe(
       concatMap((e) => {
         if (!e) return next.handle(request);
