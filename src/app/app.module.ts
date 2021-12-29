@@ -33,6 +33,7 @@ import { GenericFormComponent } from './components/forms/generic-form/generic-fo
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
+import { AuthState } from './utils/ngxs/auth/auth.state';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { GraphQLModule } from './graphql.module';
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([AuthState], {
       developmentMode: true,
     }),
     BrowserModule,

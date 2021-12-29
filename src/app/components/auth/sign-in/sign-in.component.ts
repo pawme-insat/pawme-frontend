@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 import { LoginGQL } from 'src/app/services/pawme.graphql.service';
+import { SetToken } from 'src/app/utils/ngxs/auth/auth.actions';
+import { AuthState } from 'src/app/utils/ngxs/auth/auth.state';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { LoginFormValues } from './sign-in.interface';
@@ -22,7 +25,7 @@ export class SignInComponent implements OnInit {
   public isLoading = false;
   public formErrors: string[] = [];
 
-  constructor(private loginGQL: LoginGQL, private router: Router) {}
+  constructor(private loginGQL: LoginGQL, private router: Router, private store: Store) {}
 
   ngOnInit(): void {}
 
@@ -33,7 +36,8 @@ export class SignInComponent implements OnInit {
       (e) => {
         this.isLoading = e.loading;
         if (e.errors) this.formErrors = e.errors.map((e) => e.message);
-        console.log(e.data);
+        if (e.data) this.store.dispatch(new SetToken(e.data.login.token));
+        // this.router.navigate(['/']);
       },
       (e) => {
         if (!this.formErrors.find((e) => e == WRONG_EMAIL_STRING)) this.formErrors.push(WRONG_EMAIL_STRING);
