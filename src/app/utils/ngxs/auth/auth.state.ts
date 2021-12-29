@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action, StateContext } from '@ngxs/store';
 import { SetUser, SetToken } from './auth.actions';
 
@@ -13,6 +14,7 @@ export interface AuthStateModel {
     token: null,
   },
 })
+@Injectable()
 export class AuthState {
   constructor() {}
   @Action(SetUser)

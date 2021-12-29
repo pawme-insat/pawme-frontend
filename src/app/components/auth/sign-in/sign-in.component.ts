@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
 import { LoginGQL } from 'src/app/services/pawme.graphql.service';
 import { SetToken } from 'src/app/utils/ngxs/auth/auth.actions';
-import { AuthState } from 'src/app/utils/ngxs/auth/auth.state';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { LoginFormValues } from './sign-in.interface';

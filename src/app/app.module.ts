@@ -23,7 +23,7 @@ import { FooterRightsComponent } from './components/shared/footer/footer-rights/
 import { HomeComponent } from './pages/home/home.component';
 // import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AboutUsValueComponent } from './components/pages/about-us/about-us-value/about-us-value.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactButtonComponent } from './components/pages/about-us/contact-button/contact-button.component';
@@ -36,6 +36,7 @@ import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     ReactiveFormsModule,
     GraphQLModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
