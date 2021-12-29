@@ -1,0 +1,5 @@
+query Pet($petId: Int!) {
+  pet(id: $petId) {
+    id
+  }
+}
