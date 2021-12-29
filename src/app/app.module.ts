@@ -34,6 +34,7 @@ import { SideBannerComponent } from './components/shared/side-banner/side-banner
 import { ReactiveFormsModule } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AuthState } from './utils/ngxs/auth/auth.state';
   ],
   imports: [
     HttpClientModule,
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     NgxsModule.forRoot([AuthState], {
