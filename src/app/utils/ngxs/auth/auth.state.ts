@@ -7,7 +7,7 @@ export interface AuthStateModel {
 }
 
 @State<AuthStateModel>({
-  name: 'app',
+  name: 'auth',
   defaults: {
     user: null,
     token: null,

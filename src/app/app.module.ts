@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
     NgxsReduxDevtoolsPluginModule.forRoot(),
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({ key: [AuthState] }),
     NgxsModule.forRoot([AuthState], {
       developmentMode: true,
     }),
