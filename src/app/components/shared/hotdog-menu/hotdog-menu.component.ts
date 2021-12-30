@@ -9,9 +9,5 @@ export class HotdogMenuComponent implements OnInit {
   @Input() isOpen = false;
   constructor() {}
 
-  ngOnInit(): void {
-    setInterval(() => {
-      this.isOpen = !this.isOpen;
-    }, 1000);
-  }
+  ngOnInit(): void {}
 }
