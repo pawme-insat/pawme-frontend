@@ -5,7 +5,6 @@ export class Field {
     public name = '',
     public type = FieldType.text,
     public placeholder = '',
-    public errorMsg = '',
     public validators = []
   ) {}
 }

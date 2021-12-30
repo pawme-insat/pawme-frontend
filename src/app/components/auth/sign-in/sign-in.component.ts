@@ -6,6 +6,7 @@ import { SetToken } from 'src/app/utils/ngxs/auth/auth.actions';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { LoginFormValues } from './sign-in.interface';
+import {Validators} from "@angular/forms";
 
 const WRONG_EMAIL_STRING = 'Wrong Password Or Email';
 
@@ -16,8 +17,8 @@ const WRONG_EMAIL_STRING = 'Wrong Password Or Email';
 })
 export class SignInComponent implements OnInit {
   form: Field[] = [
-    new Field('email', FieldType.text, 'Please enter your email', '', []),
-    new Field('password', FieldType.password, 'Please enter your password', '', []),
+    new Field('email', FieldType.text, 'Please enter your email', [Validators.required, Validators.email]),
+    new Field('password', FieldType.password, 'Please enter your password',  [Validators.required]),
   ];
 
   public isLoading = false;
