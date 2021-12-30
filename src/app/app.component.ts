@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'pawme-frontend';
 
   noFooter = ['/sign-up', '/sign-in'];
@@ -14,6 +14,8 @@ export class AppComponent {
   noNavbar = ['/sign-up', '/sign-in'];
 
   constructor(private router: Router) {}
+
+  ngOnInit(): void {}
 
   has_footer(): boolean {
     return this.has_layout(this.noFooter);

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Field } from '../../../models/Field';
 
@@ -10,6 +10,10 @@ import { Field } from '../../../models/Field';
 export class GenericFormComponent implements OnInit {
   @Input() form: Field[] = [];
   @Input() style: String = 'secondary';
+  @Input() isLoading = false;
+  @Input() formErrors: string[] = [];
+
+  @Output() onSubmit = new EventEmitter<any>();
 
   formGroup: FormGroup | undefined;
 
@@ -24,11 +28,9 @@ export class GenericFormComponent implements OnInit {
     }
 
     this.formGroup = this.fb.group(config);
-
-    console.log(this.formGroup);
   }
 
   submit() {
-    console.log('submitted');
+    this.onSubmit.emit(this.formGroup.value);
   }
 }

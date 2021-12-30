@@ -8,7 +8,14 @@
       <a class="text-primary-normal cursor-pointer" routerLink="/sign-up">sign up</a>
     </div>
 
-    <app-generic-form class="z-50 pr-16" [form]="form" [style]="'secondary'"></app-generic-form>
+    <app-generic-form
+      (onSubmit)="onSubmit($event)"
+      [formErrors]="formErrors"
+      [isLoading]="isLoading"
+      class="z-50 pr-16"
+      [form]="form"
+      [style]="'secondary'"
+    ></app-generic-form>
   </div>
 
   <p class="text-xs text-gray-200 md:text-gray-normal fixed bottom-4 left-4">

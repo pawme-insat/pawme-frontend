@@ -143,6 +143,7 @@ export type Message = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  SignUp: User;
   createAddress: Address;
   createBreed: Breed;
   createBreedCharacteristic: BreedCharacteristic;
@@ -176,6 +177,11 @@ export type Mutation = {
   updateReview: Review;
   updateType: PetType;
   updateUser: User;
+};
+
+
+export type MutationSignUpArgs = {
+  registerDto: RegisterDto;
 };
 
 
@@ -369,6 +375,7 @@ export type Query = {
   breedCharacteristic: BreedCharacteristic;
   conversation: Conversation;
   like: LikePet;
+  login: SignInResponseDto;
   match: Match;
   message: Message;
   pet: Pet;
@@ -403,6 +410,11 @@ export type QueryLikeArgs = {
 };
 
 
+export type QueryLoginArgs = {
+  credentials: SignInDto;
+};
+
+
 export type QueryMatchArgs = {
   id: Scalars['Int'];
 };
@@ -432,6 +444,16 @@ export type QueryUserArgs = {
   id: Scalars['Int'];
 };
 
+export type RegisterDto = {
+  address: CreateAddressInput;
+  birth_date: Scalars['DateTime'];
+  email: Scalars['String'];
+  first_name: Scalars['String'];
+  last_name: Scalars['String'];
+  password: Scalars['String'];
+  phone: Scalars['Int'];
+};
+
 export type Review = {
   __typename?: 'Review';
   description: Scalars['String'];
@@ -449,6 +471,16 @@ export enum SexeEnum {
   Feminin = 'Feminin',
   Masculin = 'Masculin'
 }
+
+export type SignInDto = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
+export type SignInResponseDto = {
+  __typename?: 'SignInResponseDto';
+  token: Scalars['String'];
+};
 
 export type UpdateAddressInput = {
   country?: InputMaybe<Scalars['String']>;
@@ -544,17 +576,24 @@ export type User = {
   phone: Scalars['Int'];
 };
 
-export type PetQueryVariables = Exact<{
-  petId: Scalars['Int'];
+export type LoginQueryVariables = Exact<{
+  credentials: SignInDto;
 }>;
 
 
-export type PetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string } };
 
-export const PetDocument = gql`
-    query Pet($petId: Int!) {
-  pet(id: $petId) {
-    id
+export type SignUpMutationVariables = Exact<{
+  registerDto: RegisterDto;
+}>;
+
+
+export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
+
+export const LoginDocument = gql`
+    query Login($credentials: SignInDto!) {
+  login(credentials: $credentials) {
+    token
   }
 }
     `;
@@ -562,8 +601,39 @@ export const PetDocument = gql`
   @Injectable({
     providedIn: 'root'
   })
-  export class PetGQL extends Apollo.Query<PetQuery, PetQueryVariables> {
-    document = PetDocument;
+  export class LoginGQL extends Apollo.Query<LoginQuery, LoginQueryVariables> {
+    document = LoginDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const SignUpDocument = gql`
+    mutation SignUp($registerDto: RegisterDto!) {
+  SignUp(registerDto: $registerDto) {
+    id
+    first_name
+    last_name
+    phone
+    email
+    password
+    address {
+      id
+      zip_code
+      street
+      region
+      country
+    }
+    birth_date
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
+    document = SignUpDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);
