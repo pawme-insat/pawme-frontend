@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hotdog-menu',
@@ -7,21 +6,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./hotdog-menu.component.scss'],
 })
 export class HotdogMenuComponent implements OnInit {
-  navItems = [
-    {
-      text: 'Get started',
-      link: '/',
-    },
-    {
-      text: 'About us',
-      link: '/about-us',
-    },
-    {
-      text: 'Sign in',
-      link: '/sign-in',
-    },
-  ];
-  constructor(private router: Router) {}
+  @Input() isOpen = false;
+  constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setInterval(() => {
+      this.isOpen = !this.isOpen;
+    }, 1000);
+  }
 }

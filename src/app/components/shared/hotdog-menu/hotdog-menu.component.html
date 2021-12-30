@@ -1,7 +1,13 @@
-<div>
-  <div class="bg-white w-4 h-4 md:hidden"></div>
-  <app-navigation class="hidden md:block" [navItems]="navItems"></app-navigation>
-  <!--  <img src="assets/Upper_bread.svg">-->
-  <!--  <img src="assets/HotDog.svg.svg">-->
-  <!--  <img src="assets/Lower_bread.svg">-->
+<div class="flex flex-col gap-0.5 items-center">
+  <img
+    [ngClass]="{ '-translate-y-1 ': isOpen }"
+    class="w-7 transform transform-cpu transition-transform duration-200 ease-linear object-contain"
+    src="/assets/header/menu/Upper_bread.png"
+  />
+  <img class="w-9 object-contain" src="/assets/header/menu/HotDog.png" />
+  <img
+    [ngClass]="{ 'translate-y-1 ': isOpen }"
+    class="w-7 transform transform-cpu transition-transform duration-200 ease-linear object-contain"
+    src="/assets/header/menu/Lower_bread.png"
+  />
 </div>
