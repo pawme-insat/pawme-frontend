@@ -19,12 +19,11 @@ jobs:
         with:
           submodules: true
 
-      - run:
-          name: Install volta
-          command: |
-            curl https://get.volta.sh | bash
-            echo 'export VOLTA_HOME=$HOME/.volta' >> $BASH_ENV
-            echo 'export PATH=$VOLTA_HOME:$PATH' >> $BASH_ENV
+      - script: |
+          curl https://get.volta.sh | bash
+          echo 'export VOLTA_HOME=$HOME/.volta' >> $BASH_ENV
+          echo 'export PATH=$VOLTA_HOME:$PATH' >> $BASH_ENV
+        displayName: 'npm install and build'
 
       - name: Build And Deploy
         id: builddeploy
