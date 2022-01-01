@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { LoginGQL } from 'src/app/services/pawme.graphql.service';
-import { SetToken } from 'src/app/utils/ngxs/auth/auth.actions';
+import { SetToken, SetUser } from 'src/app/utils/ngxs/auth/auth.actions';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { LoginFormValues } from './sign-in.interface';
@@ -35,8 +35,8 @@ export class SignInComponent implements OnInit {
       (e) => {
         this.isLoading = e.loading;
         if (e.errors) this.formErrors = e.errors.map((e) => e.message);
-        if (e.data) this.store.dispatch(new SetToken(e.data.login.token));
-        // this.router.navigate(['/']);
+        if (e.data) this.store.dispatch([new SetToken(e.data.login.token), new SetUser({ name: 'tass' })]);
+        this.router.navigate(['/']);
       },
       (e) => {
         if (!this.formErrors.find((e) => e == WRONG_EMAIL_STRING)) this.formErrors.push(WRONG_EMAIL_STRING);

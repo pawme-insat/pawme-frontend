@@ -38,6 +38,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
 import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
+import { HeaderUserMenuComponent } from './components/shared/header-user-menu/header-user-menu.component';
+import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader
     GenericFormComponent,
     SideBannerComponent,
     LoaderSpinnerComponent,
+    HeaderUserMenuComponent,
+    ClickedOutsideDirective,
   ],
   imports: [
     HttpClientModule,
