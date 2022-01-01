@@ -5,8 +5,8 @@
       <app-hotdog-menu [isOpen]="openMenu"></app-hotdog-menu>
     </div>
 
-    <div class="flex items-center">
-      <app-navigation class="hidden md:block" [navItems]="navItems | async"></app-navigation>
+    <div class="hidden md:flex items-center">
+      <app-navigation [navItems]="navItems | async"></app-navigation>
       <div
         appClickedOutside
         (clickOutside)="closeUserMenu()"
