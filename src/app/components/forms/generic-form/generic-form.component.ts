@@ -18,6 +18,7 @@ export class GenericFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<any>();
 
   formGroup: FormGroup | undefined;
+  double: boolean = false
   controlsErrorMessages = {
     'required': 'This field is required',
     'email': 'Please enter a valid email',
@@ -34,6 +35,7 @@ export class GenericFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.double = this.form.length > 3
     let config = {};
     let options = {validator: this.crossValidators}
 
@@ -70,9 +72,5 @@ export class GenericFormComponent implements OnInit {
 
   submit() {
     this.onSubmit.emit(this.formGroup.value);
-  }
-
-  test(name: string) {
-    console.log(this.formGroup)
   }
 }

@@ -1,10 +1,11 @@
 <form
-  class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body items-center"
+  class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body"
+  [ngClass]="{'items-center': double}"
   *ngIf="formGroup"
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
 >
-  <div class="mb-6" *ngFor="let field of form" [ngClass]="{'md:w-2/5': form.length>3}">
+  <div class="mb-6" *ngFor="let field of form" [ngClass]="{'md:w-2/5': double}">
     <label class="block text-sm mb-2 capitalize" [ngClass]="['text-' + style + '-normal']">
       {{ field.name }}
     </label>
@@ -15,8 +16,7 @@
       [id]="field.name"
       [type]="field.type"
       [placeholder]="field.placeholder"
-      [formControlName]="field.name"
-      (click)="test(field.name)"/>
+      [formControlName]="field.name"/>
 
 
     <div *ngIf="getControl(field.name).touched">
@@ -35,11 +35,14 @@
 
   <div class="flex items-center justify-between md:w-2/5">
     <button
-      class="text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
-      [ngClass]="['bg-' + style + '-normal' + ' hover:bg-' + style + '-dark']"
+      class="text-white flex py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+      [ngClass]="['bg-' + style + '-normal'+' hover:bg-'+ style +'-dark']"
+      [disabled]="formGroup.invalid"
       type="submit"
     >
-      Sign In
+      <app-loader-spinner *ngIf="isLoading"></app-loader-spinner>
+      {{'bg-' + style + '-normal'+' hover:bg-'+ style +'-dark'}}
     </button>
   </div>
 </form>
+

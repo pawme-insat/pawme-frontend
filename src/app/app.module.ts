@@ -37,6 +37,7 @@ import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
+import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { TokenInterceptor } from './interceptors/token-interceptor/token.interce
     CircleStepComponent,
     GenericFormComponent,
     SideBannerComponent,
+    LoaderSpinnerComponent,
   ],
   imports: [
     HttpClientModule,
