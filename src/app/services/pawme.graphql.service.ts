@@ -371,17 +371,29 @@ export type PetType = {
 export type Query = {
   __typename?: 'Query';
   Address: Address;
+  Addresses: Array<Address>;
   breed: Breed;
   breedCharacteristic: BreedCharacteristic;
+  breedCharacteristics: Array<BreedCharacteristic>;
+  breeds: Array<Breed>;
   conversation: Conversation;
-  like: LikePet;
+  conversations: Array<Conversation>;
   login: SignInResponseDto;
   match: Match;
+  matches: Array<Match>;
   message: Message;
+  messages: Array<Message>;
   pet: Pet;
+  petLike: LikePet;
+  petLikes: Array<LikePet>;
+  petType: PetType;
+  petTypes: Array<PetType>;
+  pets: Array<Pet>;
   review: Review;
-  type: PetType;
+  reviews: Array<Review>;
   user?: Maybe<User>;
+  users?: Maybe<Array<User>>;
+  validateEmail: ValidateEmailResponseDto;
 };
 
 
@@ -401,11 +413,6 @@ export type QueryBreedCharacteristicArgs = {
 
 
 export type QueryConversationArgs = {
-  id: Scalars['Int'];
-};
-
-
-export type QueryLikeArgs = {
   id: Scalars['Int'];
 };
 
@@ -430,18 +437,28 @@ export type QueryPetArgs = {
 };
 
 
-export type QueryReviewArgs = {
+export type QueryPetLikeArgs = {
   id: Scalars['Int'];
 };
 
 
-export type QueryTypeArgs = {
+export type QueryPetTypeArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type QueryReviewArgs = {
   id: Scalars['Int'];
 };
 
 
 export type QueryUserArgs = {
   id: Scalars['Int'];
+};
+
+
+export type QueryValidateEmailArgs = {
+  email: Scalars['String'];
 };
 
 export type RegisterDto = {
@@ -576,6 +593,18 @@ export type User = {
   phone: Scalars['Int'];
 };
 
+export type ValidateEmailResponseDto = {
+  __typename?: 'ValidateEmailResponseDto';
+  user_exists: Scalars['Boolean'];
+};
+
+export type ValidateEmailQueryVariables = Exact<{
+  email: Scalars['String'];
+}>;
+
+
+export type ValidateEmailQuery = { __typename?: 'Query', validateEmail: { __typename?: 'ValidateEmailResponseDto', user_exists: boolean } };
+
 export type LoginQueryVariables = Exact<{
   credentials: SignInDto;
 }>;
@@ -590,6 +619,24 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
+export const ValidateEmailDocument = gql`
+    query ValidateEmail($email: String!) {
+  validateEmail(email: $email) {
+    user_exists
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class ValidateEmailGQL extends Apollo.Query<ValidateEmailQuery, ValidateEmailQueryVariables> {
+    document = ValidateEmailDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const LoginDocument = gql`
     query Login($credentials: SignInDto!) {
   login(credentials: $credentials) {

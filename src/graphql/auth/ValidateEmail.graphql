@@ -1,0 +1,5 @@
+query ValidateEmail($email: String!) {
+  validateEmail(email: $email) {
+    user_exists
+  }
+}
