@@ -6,7 +6,7 @@ export function PasswordPattern(control: AbstractControl): ValidationErrors | nu
   const password = control?.value;
   if (!password) return null
 
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g;
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/g;
 
   return password.match(regex) ? null : {password_pattern: true};
 }

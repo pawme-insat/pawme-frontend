@@ -1,10 +1,10 @@
 <form
-  class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body"
+  class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body items-center"
   *ngIf="formGroup"
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
 >
-  <div class="mb-6" *ngFor="let field of form">
+  <div class="mb-6" *ngFor="let field of form" [ngClass]="{'md:w-2/5': form.length>3}">
     <label class="block text-sm mb-2 capitalize" [ngClass]="['text-' + style + '-normal']">
       {{ field.name }}
     </label>
@@ -27,13 +27,13 @@
 
       <div *ngFor="let error of getGroupErrors()">
         <p *ngIf="this.groupErrorMessages[error].position == field.name"
-           class="text-red-500 text-xs italic">{{ groupErrorMessages[error].message }}</p>
+           class="text-red-500 text-xs italic ">{{ groupErrorMessages[error].message }}</p>
       </div>
     </div>
 
   </div>
 
-  <div class="flex items-center justify-between">
+  <div class="flex items-center justify-between md:w-2/5">
     <button
       class="text-white py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline"
       [ngClass]="['bg-' + style + '-normal' + ' hover:bg-' + style + '-dark']"

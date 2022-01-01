@@ -22,8 +22,7 @@ export class GenericFormComponent implements OnInit {
     'required': 'This field is required',
     'email': 'Please enter a valid email',
     'minlength': 'This field requires at least 8 characters',
-    'password_pattern': 'Your password should be longer than 8 characters and contain ' +
-      'at least one uppercase letter, one lowercase letter and one number',
+    'password_pattern':  'Should contain one uppercase, one lower case and a number',
     'full_name_pattern': 'Please enter both your first and last name',
   }
 

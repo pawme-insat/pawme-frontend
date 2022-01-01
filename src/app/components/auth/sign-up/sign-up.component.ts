@@ -16,7 +16,7 @@ import {confirmPassword} from "../../../validators/confirm-password";
 export class SignUpComponent implements OnInit {
   public form: Field[] = [
     new Field('email', FieldType.email, 'Please enter your email', [Validators.required, Validators.email]),
-    new Field('password', FieldType.password, 'Please enter your password', [Validators.required, PasswordPattern]),
+    new Field('password', FieldType.password, 'Please enter your password', [Validators.required,Validators.minLength(8), PasswordPattern]),
     new Field('password confirm', FieldType.password, 'Please confirm your password', [Validators.required]),
     new Field('first and last name', FieldType.text, 'Please enter your full name', [Validators.required, FullNamePattern]),
     new Field('phone', FieldType.text, 'Please enter your phone number', [Validators.required, Validators.minLength(8)]),
