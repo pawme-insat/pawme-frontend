@@ -12,6 +12,7 @@ export class GenericFormComponent implements OnInit {
   @Input() form: Field[] = [];
   @Input() crossValidators: Validators[] = [];
   @Input() style: String = 'secondary';
+  @Input() primaryMode: boolean = true;
   @Input() isLoading = false;
   @Input() formErrors: string[] = [];
 
