@@ -38,6 +38,12 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
 import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { ProfileBannerComponent } from './components/pages/user-profile/profile-banner/profile-banner.component';
+import { UserPetsComponent } from './components/pages/user-profile/user-pets/user-pets.component';
+import { UserBreedsComponent } from './components/pages/user-profile/user-breeds/user-breeds.component';
+import { BreedComponent } from './components/pages/user-profile/user-breeds/breed/breed.component';
+import { PetComponent } from './components/pages/user-profile/user-pets/pet/pet.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +73,12 @@ import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader
     GenericFormComponent,
     SideBannerComponent,
     LoaderSpinnerComponent,
+    UserProfileComponent,
+    ProfileBannerComponent,
+    UserPetsComponent,
+    UserBreedsComponent,
+    BreedComponent,
+    PetComponent,
   ],
   imports: [
     HttpClientModule,

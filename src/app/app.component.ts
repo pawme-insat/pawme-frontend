@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'pawme-frontend';
 
-  noFooter = ['/sign-up', '/sign-in'];
+  noFooter = ['/sign-up', '/sign-in', '/profile'];
 
   noNavbar = ['/sign-up', '/sign-in'];
 

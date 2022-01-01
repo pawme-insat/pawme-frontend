@@ -1,0 +1,20 @@
+<div class="flex gap-7">
+  <img src="assets/pet-placeholder.svg" />
+  <div class="flex flex-col justify-center gap-3">
+    <div class="flex gap-2 items-center">
+      <span class="text-black text-lg">{{ pet.name }}</span>
+      <span class="bg-gray-400 rounded-3xl h-1 w-1"></span>
+      <span class="text-gray-500">{{ pet.gender }}</span>
+      <span class="bg-gray-400 rounded-3xl h-1 w-1"></span>
+      <span class="text-gray-500">{{ pet.breed }}</span>
+    </div>
+
+    <div>
+      <button class="bg-secondary-medium text-white rounded-3xl justify-around items-center flex px-5 py-1.5">
+        <span class="text-sm"> Check me out </span>
+        <svg-icon class="h-4 w-4 flex items-center" src="assets/icons/shared/chevron-right.svg"></svg-icon>
+      </button>
+    </div>
+
+  </div>
+</div>
