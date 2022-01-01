@@ -47,9 +47,7 @@ export class SignUpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.form.find((e) => e.name == 'email').asyncValidators.push(this.emailExistsValidator.validate);
-    }, 1000);
+    this.form.find((e) => e.name == 'email').asyncValidators.push(this.emailExistsValidator.validate);
   }
 
   onSubmit(values: SignUpFormValues) {

@@ -25,6 +25,7 @@ export class GenericFormComponent implements OnInit {
     minlength: 'This field requires at least 8 characters',
     password_pattern: 'Should contain one uppercase, one lower case and a number',
     full_name_pattern: 'Please enter both your first and last name',
+    emailExists: 'this email exists',
   };
 
   groupErrorMessages = {
@@ -72,7 +73,7 @@ export class GenericFormComponent implements OnInit {
     this.onSubmit.emit(this.formGroup.value);
   }
 
-  test(name: string) {
+  test() {
     console.log(this.formGroup);
   }
 }

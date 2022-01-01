@@ -1,48 +1,53 @@
 <form
   class="md:h-full flex flex-col gap-x-16 flex-wrap my-4 text-gray-100 md:text-gray-normal font-body"
-  [ngClass]="{'items-center': double}"
+  [ngClass]="{ 'items-center': double }"
   *ngIf="formGroup"
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
 >
-  <div class="mb-6" *ngFor="let field of form" [ngClass]="{'md:w-2/5': double}">
+  <div class="mb-6" *ngFor="let field of form" [ngClass]="{ 'md:w-2/5': double }">
     <label class="block text-sm mb-2 capitalize" [ngClass]="['text-' + style + '-normal']">
       {{ field.name }}
     </label>
 
     <input
+      (click)="test()"
       class="shadow appearance-none border rounded w-full py-2 px-3 bg-transparent placeholder-gray-400 text-sm leading-tight focus:outline-none focus:shadow-outline"
-      [ngClass]="{'border-red-500': (getControl(field.name).invalid || formGroup.errors || isErrorField(field.name)) && getControl(field.name).touched }"
+      [ngClass]="{
+        'border-red-500':
+          (getControl(field.name).invalid || formGroup.errors || isErrorField(field.name)) &&
+          getControl(field.name).touched
+      }"
       [id]="field.name"
       [type]="field.type"
       [placeholder]="field.placeholder"
-      [formControlName]="field.name"/>
-
+      [formControlName]="field.name"
+    />
 
     <div *ngIf="getControl(field.name).touched">
       <div *ngFor="let error of getControlErrors(field.name)">
-        <p *ngIf="getControl(field.name).hasError(error)"
-           class="text-red-500 text-xs italic">{{ controlsErrorMessages[error] }}</p>
+        <p *ngIf="getControl(field.name).hasError(error)" class="text-red-500 text-xs italic">
+          {{ controlsErrorMessages[error] }}
+        </p>
       </div>
 
       <div *ngFor="let error of getGroupErrors()">
-        <p *ngIf="this.groupErrorMessages[error].position == field.name"
-           class="text-red-500 text-xs italic ">{{ groupErrorMessages[error].message }}</p>
+        <p *ngIf="this.groupErrorMessages[error].position == field.name" class="text-red-500 text-xs italic">
+          {{ groupErrorMessages[error].message }}
+        </p>
       </div>
     </div>
-
   </div>
 
   <div class="flex items-center justify-between md:w-2/5">
     <button
       class="text-white flex py-2 px-6 mt-6 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
-      [ngClass]="['bg-' + style + '-normal'+' hover:bg-'+ style +'-dark']"
+      [ngClass]="['bg-' + style + '-normal' + ' hover:bg-' + style + '-dark']"
       [disabled]="formGroup.invalid"
       type="submit"
     >
       <app-loader-spinner *ngIf="isLoading"></app-loader-spinner>
-      {{'bg-' + style + '-normal'+' hover:bg-'+ style +'-dark'}}
+      {{ 'bg-' + style + '-normal' + ' hover:bg-' + style + '-dark' }}
     </button>
   </div>
 </form>
-
