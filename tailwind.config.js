@@ -8,8 +8,12 @@ module.exports = {
           normal: "#ffa934",
           light: "#FFDFC8",
         },
+        greeny: {
+          normal: "#2A8575",
+          light: "#b8dfd8",
+        },
         secondary: {
-          dark: "#1C7363",
+          // dark: "#1C7363",
           normal: "#2A8575",
           light: "#b8dfd8",
           lighter: "#E8F6EF",

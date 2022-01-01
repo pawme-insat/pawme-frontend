@@ -11,9 +11,10 @@
     <app-generic-form
       class="z-50 pr-16"
       (onSubmit)="onSubmit($event)"
-      [formErrors]="formErrors"
-      [isLoading]="isLoading"
+      [primaryMode]="false"
       [form]="form"
+      [isLoading]="isLoading"
+      [formErrors]="formErrors"
     ></app-generic-form>
   </div>
 
