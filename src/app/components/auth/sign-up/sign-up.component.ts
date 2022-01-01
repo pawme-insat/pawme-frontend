@@ -6,6 +6,7 @@ import {FieldType} from '../../../models/FieldType.enum';
 import {SignUpFormValues} from './sign-up.interface';
 import {Validators} from "@angular/forms";
 import {FullNamePattern, PasswordPattern} from "../../../validators/patterns";
+import {confirmPassword} from "../../../validators/confirm-password";
 
 @Component({
   selector: 'app-sign-up',
@@ -15,14 +16,14 @@ import {FullNamePattern, PasswordPattern} from "../../../validators/patterns";
 export class SignUpComponent implements OnInit {
   public form: Field[] = [
     new Field('email', FieldType.email, 'Please enter your email', [Validators.required, Validators.email]),
-    // should follow a decent password pattern
     new Field('password', FieldType.password, 'Please enter your password', [Validators.required, PasswordPattern]),
     new Field('password confirm', FieldType.password, 'Please confirm your password', [Validators.required]),
-    // should contain at least one space
     new Field('first and last name', FieldType.text, 'Please enter your full name', [Validators.required, FullNamePattern]),
     new Field('phone', FieldType.text, 'Please enter your phone number', [Validators.required, Validators.minLength(8)]),
     new Field('birth date', FieldType.date, '', []),
   ];
+
+  crossValidators: Validators[] = [confirmPassword]
 
   public isLoading = false;
   public formErrors: string[] = [];

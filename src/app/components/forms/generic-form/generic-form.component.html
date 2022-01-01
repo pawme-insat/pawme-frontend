@@ -11,7 +11,7 @@
 
     <input
       class="shadow appearance-none border rounded w-full py-2 px-3 bg-transparent placeholder-gray-400 text-sm leading-tight focus:outline-none focus:shadow-outline"
-      [ngClass]="{'border-red-500': getControl(field.name).invalid && getControl(field.name).touched }"
+      [ngClass]="{'border-red-500': (getControl(field.name).invalid || formGroup.errors || isErrorField(field.name)) && getControl(field.name).touched }"
       [id]="field.name"
       [type]="field.type"
       [placeholder]="field.placeholder"
@@ -22,7 +22,12 @@
     <div *ngIf="getControl(field.name).touched">
       <div *ngFor="let error of getControlErrors(field.name)">
         <p *ngIf="getControl(field.name).hasError(error)"
-           class="text-red-500 text-xs italic">{{ errorMessages[error] }}</p>
+           class="text-red-500 text-xs italic">{{ controlsErrorMessages[error] }}</p>
+      </div>
+
+      <div *ngFor="let error of getGroupErrors()">
+        <p *ngIf="this.groupErrorMessages[error].position == field.name"
+           class="text-red-500 text-xs italic">{{ groupErrorMessages[error].message }}</p>
       </div>
     </div>
 
