@@ -1,0 +1,11 @@
+<div class="text-xl text-center font-medium">
+  <a
+    class="transition-all py-1 block"
+    [routerLink]="item.link"
+    routerLinkActive="opacity-100"
+    #link="routerLinkActive"
+    [class.opacity-60]="!link.isActive"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >{{ item.text }}</a
+  >
+</div>

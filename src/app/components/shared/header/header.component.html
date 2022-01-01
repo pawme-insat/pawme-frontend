@@ -1,9 +1,24 @@
 <div class="w-full bg-primary-normal flex flex-col items-center fixed shadow z-50">
+  <div *ngIf="$openMenu | async" class="fixed md:hidden -z-10 top-0 left-0">
+    <app-navigation-mobile [navItems]="navItems | async"></app-navigation-mobile>
+  </div>
   <div class="flex w-full md:container h-14 px-4 py-1 items-center justify-between">
     <app-logo></app-logo>
     <div (click)="menuClick()" class="md:hidden">
-      <app-hotdog-menu [isOpen]="openMenu"></app-hotdog-menu>
+      <app-hotdog-menu [isOpen]="$openMenu | async"></app-hotdog-menu>
     </div>
-    <app-navigation class="hidden md:block" [navItems]="navItems"></app-navigation>
+
+    <div class="hidden md:flex items-center">
+      <app-navigation [navItems]="navItems | async"></app-navigation>
+      <div
+        appClickedOutside
+        (clickOutside)="closeUserMenu()"
+        (click)="userMenuClick()"
+        class="ml-10 hidden md:block"
+        *ngIf="user | async as e"
+      >
+        <app-header-user-menu [isOpen]="$openUserMenu | async" [user]="e"></app-header-user-menu>
+      </div>
+    </div>
   </div>
 </div>

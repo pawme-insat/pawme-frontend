@@ -44,6 +44,11 @@ import { UserPetsComponent } from './components/pages/user-profile/user-pets/use
 import { UserBreedsComponent } from './components/pages/user-profile/user-breeds/user-breeds.component';
 import { BreedComponent } from './components/pages/user-profile/user-breeds/breed/breed.component';
 import { PetComponent } from './components/pages/user-profile/user-pets/pet/pet.component';
+import { HeaderUserMenuComponent } from './components/shared/header-user-menu/header-user-menu.component';
+import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
+import { NavigationMobileComponent } from './components/shared/navigation-mobile/navigation-mobile.component';
+import { NavigationItemMobileComponent } from './components/shared/navigation-item-mobile/navigation-item-mobile.component';
+
 
 @NgModule({
   declarations: [
@@ -79,6 +84,10 @@ import { PetComponent } from './components/pages/user-profile/user-pets/pet/pet.
     UserBreedsComponent,
     BreedComponent,
     PetComponent,
+    HeaderUserMenuComponent,
+    ClickedOutsideDirective,
+    NavigationMobileComponent,
+    NavigationItemMobileComponent,
   ],
   imports: [
     HttpClientModule,
