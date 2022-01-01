@@ -40,6 +40,8 @@ import { TokenInterceptor } from './interceptors/token-interceptor/token.interce
 import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
 import { HeaderUserMenuComponent } from './components/shared/header-user-menu/header-user-menu.component';
 import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
+import { NavigationMobileComponent } from './components/shared/navigation-mobile/navigation-mobile.component';
+import { NavigationItemMobileComponent } from './components/shared/navigation-item-mobile/navigation-item-mobile.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-out
     LoaderSpinnerComponent,
     HeaderUserMenuComponent,
     ClickedOutsideDirective,
+    NavigationMobileComponent,
+    NavigationItemMobileComponent,
   ],
   imports: [
     HttpClientModule,

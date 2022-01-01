@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HeaderNavData } from '../header/header.data';
 
 @Component({
   selector: 'app-navigation-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navigation-item.component.scss'],
 })
 export class NavigationItemComponent implements OnInit {
-  @Input() item: any;
+  @Input() item: HeaderNavData;
 
   constructor() {}
 

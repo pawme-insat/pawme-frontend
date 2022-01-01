@@ -1,8 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { Select } from '@ngxs/store';
-import { concatMap, distinctUntilChanged, map, Observable, of } from 'rxjs';
+import {
+  BehaviorSubject,
+  concatMap,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  Observable,
+  of,
+  throttleTime,
+} from 'rxjs';
+import { HeaderNavData } from './header.data';
 
-const fixedNavItems = [
+const fixedNavItems: HeaderNavData[] = [
   {
     text: 'Get started',
     link: '/',
@@ -13,7 +25,7 @@ const fixedNavItems = [
   },
 ];
 
-const signInNav = {
+const signInNav: HeaderNavData = {
   text: 'Sign in',
   link: '/sign-in',
 };
@@ -28,24 +40,31 @@ export class HeaderComponent implements OnInit {
 
   public navItems = of(fixedNavItems);
 
-  public openMenu = false;
-  public openUserMenu = false;
+  // this magic is to combat a certain bug  where a click events fires two time for unknown reasons
+  // TODO investigate more and maybe simplify this
+  public openMenu = new BehaviorSubject(false);
+  public $openMenu = this.openMenu.asObservable().pipe(throttleTime(250));
 
-  constructor() {}
+  public openUserMenu = new BehaviorSubject(false);
+  public $openUserMenu = this.openUserMenu.asObservable().pipe(throttleTime(250));
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.navItems = this.user.pipe(concatMap((u) => of([...fixedNavItems, ...(!u ? [signInNav] : [])])));
+
+    this.router.events.pipe(filter((e) => e instanceof NavigationStart)).subscribe((_) => this.openMenu.next(false));
   }
 
   menuClick() {
-    this.openMenu = !this.openMenu;
+    this.openMenu.next(!this.openMenu.value);
   }
 
   userMenuClick() {
-    this.openUserMenu = !this.openUserMenu;
+    this.openUserMenu.next(!this.openUserMenu.value);
   }
 
   closeUserMenu() {
-    this.openUserMenu = false;
+    this.openUserMenu.next(false);
   }
 }

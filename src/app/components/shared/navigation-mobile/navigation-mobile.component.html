@@ -1,0 +1,7 @@
+<div class="bg-primary-normal text-white pt-14 h-screen w-screen">
+  <nav class="px-4 pt-4 flex flex-col">
+    <div *ngFor="let item of navItems; trackBy: tracker" class="my-1">
+      <app-navigation-item-mobile [item]="item"></app-navigation-item-mobile>
+    </div>
+  </nav>
+</div>
