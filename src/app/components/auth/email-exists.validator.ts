@@ -13,7 +13,8 @@ export class EmailExistsValidator implements AsyncValidator {
       concatMap((_) => this.validateEmailGQL.fetch({ email: ctrl.value })),
       filter((e) => !e.loading && !!e.data),
       map((e) => e.data.validateEmail.user_exists),
-      map((e) => (e ? { emailExists: e } : null))
+      map((e) => (e ? { emailExists: e } : null)),
+      catchError((e) => null)
     );
   };
 }
