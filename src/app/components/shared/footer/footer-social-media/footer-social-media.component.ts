@@ -12,4 +12,7 @@ export class FooterSocialMediaComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  tracker(_: number, e: LocalIcon) {
+    return e.name;
+  }
 }

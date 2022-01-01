@@ -1,10 +1,9 @@
 <ul class="flex gap-3">
-  <li *ngFor="let item of icons">
+  <li *ngFor="let item of icons; trackBy: tracker">
     <div class="bg-white rounded-full p-2">
       <a [name]="item.name" [href]="item.url" target="_blank">
         <svg-icon class="h-4 w-4 block fill-current" [src]="item.iconPath"> </svg-icon>
       </a>
     </div>
-    <!-- <div class="rounded-full bg-white fill-current">{{ item.name }}</div> -->
   </li>
 </ul>

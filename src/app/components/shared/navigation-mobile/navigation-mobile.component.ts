@@ -11,7 +11,7 @@ export class NavigationMobileComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 
-  tracker(index: number, e: HeaderNavData) {
+  tracker(_: number, e: HeaderNavData) {
     return e.text;
   }
 }
