@@ -7,7 +7,13 @@
 
     <div class="flex items-center">
       <app-navigation class="hidden md:block" [navItems]="navItems | async"></app-navigation>
-      <div (click)="userMenuClick()" class="ml-10 hidden md:block" *ngIf="user | async as e">
+      <div
+        appClickedOutside
+        (clickOutside)="closeUserMenu()"
+        (click)="userMenuClick()"
+        class="ml-10 hidden md:block"
+        *ngIf="user | async as e"
+      >
         <app-header-user-menu [isOpen]="openUserMenu" [user]="e"></app-header-user-menu>
       </div>
     </div>

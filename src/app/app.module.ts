@@ -39,6 +39,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
 import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
 import { HeaderUserMenuComponent } from './components/shared/header-user-menu/header-user-menu.component';
+import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { HeaderUserMenuComponent } from './components/shared/header-user-menu/he
     SideBannerComponent,
     LoaderSpinnerComponent,
     HeaderUserMenuComponent,
+    ClickedOutsideDirective,
   ],
   imports: [
     HttpClientModule,
