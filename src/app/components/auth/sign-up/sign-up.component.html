@@ -9,12 +9,13 @@
     </div>
 
     <app-generic-form
-      (onSubmit)="onSubmit($event)"
       class="z-50 h-4/6"
+      (onSubmit)="onSubmit($event)"
       [form]="form"
       [style]="'primary'"
       [isLoading]="isLoading"
       [formErrors]="formErrors"
+      [crossValidators]="crossValidators"
     ></app-generic-form>
   </div>
 
@@ -22,5 +23,5 @@
     &#169; All rights Reserved - PawMe 2021-2022
   </p>
 
-  <img class="absolute top-0 h-52" src="assets/grayPawPrints2.svg" />
+  <img class="absolute top-0 h-52" src="assets/grayPawPrints2.svg"/>
 </div>
