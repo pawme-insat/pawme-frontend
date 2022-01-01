@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext } from '@ngxs/store';
-import { SetUser, SetToken } from './auth.actions';
+import { SetUser, SetToken, RemoveUser, RemoveToken } from './auth.actions';
 
 export interface AuthStateModel {
-  user?: any;
+  user?: { name: string };
   token: string;
 }
 
@@ -25,5 +25,15 @@ export class AuthState {
   @Action(SetToken)
   setToken({ patchState }: StateContext<AuthStateModel>, { payload }: SetToken) {
     patchState({ token: payload });
+  }
+
+  @Action(RemoveUser)
+  removeUser({ patchState }: StateContext<AuthStateModel>) {
+    patchState({ user: null });
+  }
+
+  @Action(RemoveToken)
+  remove({ patchState }: StateContext<AuthStateModel>) {
+    patchState({ token: null });
   }
 }

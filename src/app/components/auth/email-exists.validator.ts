@@ -14,7 +14,7 @@ export class EmailExistsValidator implements AsyncValidator {
       filter((e) => !e.loading && !!e.data),
       map((e) => e.data.validateEmail.user_exists),
       map((e) => (e ? { emailExists: e } : null)),
-      catchError((e) => null)
+      catchError((e) => of(null))
     );
   };
 }
