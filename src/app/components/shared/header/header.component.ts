@@ -12,6 +12,7 @@ import {
   of,
   throttleTime,
 } from 'rxjs';
+import { User } from 'src/app/services/pawme.graphql.service';
 import { HeaderNavData } from './header.data';
 
 const fixedNavItems: HeaderNavData[] = [
@@ -36,11 +37,11 @@ const signInNav: HeaderNavData = {
 })
 export class HeaderComponent implements OnInit {
   @Select((e) => e.auth.user)
-  user: Observable<{ name: string }>;
+  user: Observable<User>;
 
   public navItems = of(fixedNavItems);
 
-  // this magic is to combat a certain bug  where a click events fires two time for unknown reasons
+  // this magic is to combat a certain bug  where a click events fires twice for unknown reasons
   // TODO investigate more and maybe simplify this
   public openMenu = new BehaviorSubject(false);
   public $openMenu = this.openMenu.asObservable().pipe(throttleTime(250));

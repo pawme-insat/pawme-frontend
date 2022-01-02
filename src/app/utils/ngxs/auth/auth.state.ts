@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext } from '@ngxs/store';
+import { User } from 'src/app/services/pawme.graphql.service';
 import { SetUser, SetToken, RemoveUser, RemoveToken } from './auth.actions';
 
 export interface AuthStateModel {
-  user?: { name: string };
+  user?: User;
   token: string;
 }
 
