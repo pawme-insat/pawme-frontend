@@ -1,16 +1,16 @@
 <div class="flex gap-7 w-full mb-12 justify-center">
-  <div>
-    <img src="assets/user-placeholder.svg" />
+  <div class="w-40 h-40">
+    <img class="w-full h-full object-cover rounded-full" [src]="user.image || '/assets/user.jpg'" />
   </div>
   <div class="flex flex-col justify-around">
     <div>
-      <p class="text-lg text-gray-normal font-display font-bold">Edward Larry</p>
-      <p class="text-sm text-gray-normal font-body">Your kiddo will be safe with us</p>
+      <p class="text-lg capitalize text-gray-normal font-display font-bold">{{ getFullName() }}</p>
+      <p class="text-sm text-gray-normal font-body">{{ user['bio'] || 'Your kiddo is safe with us' }}</p>
     </div>
 
     <div class="flex gap-1.5">
       <svg-icon class="fill-secondary-normal" src="assets/icons/shared/location-marker.svg"> </svg-icon>
-      <p class="text-sm text-secondary-normal font-body">Garden City, New York</p>
+      <p class="text-sm text-secondary-normal font-body">{{ getFullAddress() }}</p>
     </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+query User($userId: Int!) {
+  user(id: $userId) {
+    id
+    first_name
+    last_name
+    phone
+    email
+    password
+    birth_date
+    image
+    address {
+      zip_code
+      street
+      region
+      country
+      id
+    }
+    pets {
+      id
+      name
+      age
+      sexe
+      aboutMe
+      type {
+        id
+      }
+    }
+  }
+}

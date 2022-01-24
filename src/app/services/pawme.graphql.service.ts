@@ -91,6 +91,11 @@ export type CreateMessageInput = {
 export type CreatePetInput = {
   aboutMe: Scalars['String'];
   age: Scalars['Int'];
+  image1: Scalars['String'];
+  image2: Scalars['String'];
+  image3: Scalars['String'];
+  image4: Scalars['String'];
+  image5: Scalars['String'];
   name: Scalars['String'];
   sexe: SexeEnum;
   type: CreatePetTypeInput;
@@ -113,6 +118,7 @@ export type CreateUserInput = {
   birth_date: Scalars['DateTime'];
   email: Scalars['String'];
   first_name: Scalars['String'];
+  image: Scalars['String'];
   last_name: Scalars['String'];
   password: Scalars['String'];
   phone: Scalars['Int'];
@@ -155,17 +161,17 @@ export type Mutation = {
   createReview: Review;
   createType: PetType;
   createUser: User;
-  removeAddress: Address;
+  removeAddress: Scalars['String'];
   removeBreed: Breed;
-  removeBreedCharacteristic: BreedCharacteristic;
+  removeBreedCharacteristic: Scalars['String'];
   removeConversation: Conversation;
   removeLike: LikePet;
   removeMatch: Match;
-  removeMessage: Message;
-  removePet: Pet;
-  removeReview: Review;
-  removeType: PetType;
-  removeUser: User;
+  removeMessage: Scalars['String'];
+  removePet: Scalars['String'];
+  removeReview: Scalars['String'];
+  removeType: Scalars['String'];
+  removeUser: Scalars['String'];
   updateAddress: Address;
   updateBreed: Breed;
   updateBreedCharacteristic: BreedCharacteristic;
@@ -354,6 +360,11 @@ export type Pet = {
   aboutMe: Scalars['String'];
   age: Scalars['Int'];
   id: Scalars['Int'];
+  image1?: Maybe<Scalars['String']>;
+  image2?: Maybe<Scalars['String']>;
+  image3?: Maybe<Scalars['String']>;
+  image4?: Maybe<Scalars['String']>;
+  image5?: Maybe<Scalars['String']>;
   name: Scalars['String'];
   sexe: Sexe;
   type: PetType;
@@ -551,6 +562,11 @@ export type UpdatePetInput = {
   aboutMe?: InputMaybe<Scalars['String']>;
   age?: InputMaybe<Scalars['Int']>;
   id: Scalars['Int'];
+  image1?: InputMaybe<Scalars['String']>;
+  image2?: InputMaybe<Scalars['String']>;
+  image3?: InputMaybe<Scalars['String']>;
+  image4?: InputMaybe<Scalars['String']>;
+  image5?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   sexe?: InputMaybe<SexeEnum>;
   type?: InputMaybe<CreatePetTypeInput>;
@@ -576,6 +592,7 @@ export type UpdateUserInput = {
   email?: InputMaybe<Scalars['String']>;
   first_name?: InputMaybe<Scalars['String']>;
   id: Scalars['Int'];
+  image?: InputMaybe<Scalars['String']>;
   last_name?: InputMaybe<Scalars['String']>;
   password?: InputMaybe<Scalars['String']>;
   phone?: InputMaybe<Scalars['Int']>;
@@ -588,6 +605,7 @@ export type User = {
   email: Scalars['String'];
   first_name: Scalars['String'];
   id: Scalars['Int'];
+  image?: Maybe<Scalars['String']>;
   last_name: Scalars['String'];
   password: Scalars['String'];
   pets: Array<Pet>;
@@ -611,7 +629,7 @@ export type LoginQueryVariables = Exact<{
 }>;
 
 
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
@@ -659,6 +677,7 @@ export const LoginDocument = gql`
       pets {
         id
       }
+      image
     }
     token
   }

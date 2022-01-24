@@ -1,5 +1,5 @@
 <div class="relative flex">
-  <button><img class="w-10 h-10 rounded-full" src="/assets/user.jpg" /></button>
+  <button><img class="w-10 h-10 object-cover rounded-full" [src]="user.image || '/assets/user.jpg'" /></button>
   <div [ngClass]="isOpen ? 'block' : 'hidden'" class="absolute right-0 top-full">
     <div class="bg-white w-52 rounded shadow">
       <ul class="flex flex-col">

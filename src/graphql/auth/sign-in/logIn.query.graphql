@@ -18,6 +18,7 @@ query Login($credentials: SignInDto!) {
       pets {
         id
       }
+      image
     }
     token
   }
