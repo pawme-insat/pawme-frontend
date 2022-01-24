@@ -8,9 +8,8 @@ describe('NavigationItemMobileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavigationItemMobileComponent ]
-    })
-    .compileComponents();
+      declarations: [NavigationItemMobileComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

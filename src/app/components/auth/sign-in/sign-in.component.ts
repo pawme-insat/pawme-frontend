@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { LoginGQL } from 'src/app/services/pawme.graphql.service';
+import { LoginGQL, User } from 'src/app/services/pawme.graphql.service';
 import { SetToken, SetUser } from 'src/app/utils/ngxs/auth/auth.actions';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
@@ -29,13 +29,15 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(values: LoginFormValues): void {
-    const query = this.loginGQL.fetch({ credentials: { email: values.email, password: values.password } });
+    const query = this.loginGQL.fetch({
+      credentials: { email: values.email, password: values.password },
+    });
 
     query.subscribe(
       (e) => {
         this.isLoading = e.loading;
         if (e.errors) this.formErrors = e.errors.map((e) => e.message);
-        if (e.data) this.store.dispatch([new SetToken(e.data.login.token), new SetUser({ name: 'tass' })]);
+        if (e.data) this.store.dispatch([new SetToken(e.data.login.token), new SetUser(e.data.login.user as User)]);
         this.router.navigate(['/']);
       },
       (e) => {

@@ -12,7 +12,9 @@ export class TokenInterceptor implements HttpInterceptor {
     const a = this.token.pipe(
       concatMap((e) => {
         if (!e) return next.handle(request);
-        const tokenNizedquest = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + e) });
+        const tokenNizedquest = request.clone({
+          headers: request.headers.set('Authorization', 'Bearer ' + e),
+        });
         return next.handle(tokenNizedquest);
       })
     );

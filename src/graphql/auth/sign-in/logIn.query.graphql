@@ -1,5 +1,24 @@
 query Login($credentials: SignInDto!) {
   login(credentials: $credentials) {
+    user {
+      address {
+        id
+        zip_code
+        region
+        country
+        street
+      }
+      first_name
+      last_name
+      id
+      phone
+      email
+      password
+      birth_date
+      pets {
+        id
+      }
+    }
     token
   }
 }

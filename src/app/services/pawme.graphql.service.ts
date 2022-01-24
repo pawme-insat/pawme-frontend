@@ -373,8 +373,8 @@ export type Query = {
   Address: Address;
   Addresses: Array<Address>;
   breed: Breed;
-  breedCharacteristic: BreedCharacteristic;
-  breedCharacteristics: Array<BreedCharacteristic>;
+  breed_Characteristic: BreedCharacteristic;
+  breed_Characteristics: Array<BreedCharacteristic>;
   breeds: Array<Breed>;
   conversation: Conversation;
   conversations: Array<Conversation>;
@@ -384,10 +384,10 @@ export type Query = {
   message: Message;
   messages: Array<Message>;
   pet: Pet;
-  petLike: LikePet;
-  petLikes: Array<LikePet>;
-  petType: PetType;
-  petTypes: Array<PetType>;
+  pet_like: LikePet;
+  pet_likes: Array<LikePet>;
+  pet_type: PetType;
+  pet_types: Array<PetType>;
   pets: Array<Pet>;
   review: Review;
   reviews: Array<Review>;
@@ -407,7 +407,7 @@ export type QueryBreedArgs = {
 };
 
 
-export type QueryBreedCharacteristicArgs = {
+export type QueryBreed_CharacteristicArgs = {
   id: Scalars['Int'];
 };
 
@@ -437,12 +437,12 @@ export type QueryPetArgs = {
 };
 
 
-export type QueryPetLikeArgs = {
+export type QueryPet_LikeArgs = {
   id: Scalars['Int'];
 };
 
 
-export type QueryPetTypeArgs = {
+export type QueryPet_TypeArgs = {
   id: Scalars['Int'];
 };
 
@@ -497,6 +497,7 @@ export type SignInDto = {
 export type SignInResponseDto = {
   __typename?: 'SignInResponseDto';
   token: Scalars['String'];
+  user: User;
 };
 
 export type UpdateAddressInput = {
@@ -610,7 +611,7 @@ export type LoginQueryVariables = Exact<{
 }>;
 
 
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
@@ -640,6 +641,25 @@ export const ValidateEmailDocument = gql`
 export const LoginDocument = gql`
     query Login($credentials: SignInDto!) {
   login(credentials: $credentials) {
+    user {
+      address {
+        id
+        zip_code
+        region
+        country
+        street
+      }
+      first_name
+      last_name
+      id
+      phone
+      email
+      password
+      birth_date
+      pets {
+        id
+      }
+    }
     token
   }
 }

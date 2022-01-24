@@ -1,6 +1,8 @@
+import { User } from 'src/app/services/pawme.graphql.service';
+
 export class SetUser {
   static readonly type = '[app] set user';
-  constructor(public payload: any) {}
+  constructor(public payload: User) {}
 }
 
 export class SetToken {

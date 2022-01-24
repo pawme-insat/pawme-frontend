@@ -26,12 +26,6 @@ export class AppComponent implements OnInit {
   }
 
   has_layout(routes: string[]): boolean {
-    const current = this.router.url;
-    for (const route of routes) {
-      if (route === current) {
-        return false;
-      }
-    }
-    return true;
+    return !routes.find((e) => e === this.router.url);
   }
 }

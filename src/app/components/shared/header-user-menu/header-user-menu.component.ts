@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
+import { User } from 'src/app/services/pawme.graphql.service';
 import { RemoveToken, RemoveUser } from 'src/app/utils/ngxs/auth/auth.actions';
 
 @Component({
@@ -8,7 +9,7 @@ import { RemoveToken, RemoveUser } from 'src/app/utils/ngxs/auth/auth.actions';
   styleUrls: ['./header-user-menu.component.scss'],
 })
 export class HeaderUserMenuComponent implements OnInit {
-  @Input() user: { name: string };
+  @Input() user: User;
   @Input() isOpen = false;
 
   constructor(private store: Store) {}

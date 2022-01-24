@@ -30,7 +30,10 @@ export class GenericFormComponent implements OnInit {
   };
 
   groupErrorMessages = {
-    confirm_password: { message: "Passwords don't match", position: 'password confirm' },
+    confirm_password: {
+      message: "Passwords don't match",
+      position: 'password confirm',
+    },
   };
 
   constructor(private fb: FormBuilder) {}
