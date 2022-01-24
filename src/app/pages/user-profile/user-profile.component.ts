@@ -25,8 +25,6 @@ export class UserProfileComponent implements OnInit {
         map((e) => e.data.user)
       );
 
-    this.route.paramMap.subscribe((e) => console.log(e));
-
     // if we have route param use the query , else use  the user in the store and reresh him in the store
     const user = this.route.paramMap.pipe(
       map((e) => e.get('id')),
