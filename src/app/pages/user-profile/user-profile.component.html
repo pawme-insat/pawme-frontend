@@ -1,15 +1,17 @@
-<div v *ngIf="user | async as u" class="flex md:flex-row md:justify-center flex-col pt-24 h-screen w-full relative">
-  <div class="md:w-2/5">
-    <app-profile-banner [user]="u"></app-profile-banner>
-    <app-user-breeds></app-user-breeds>
-  </div>
+<div class="min-h-screen">
+  <div v *ngIf="user | async as u" class="flex md:flex-row md:justify-center flex-col pt-24 h-screen w-full relative">
+    <div class="md:w-2/5">
+      <app-profile-banner [user]="u"></app-profile-banner>
+      <app-user-breeds></app-user-breeds>
+    </div>
 
-  <div class="flex justify-center md:w-2/5">
-    <app-user-pets [pets]="u.pets" class="md:w-fit w-full"></app-user-pets>
-  </div>
+    <div class="flex justify-center md:w-2/5">
+      <app-user-pets [pets]="u.pets" class="md:w-fit w-full"></app-user-pets>
+    </div>
 
-  <img class="absolute hidden md:inline-block left-0 h-80 top-1/3" src="assets/grayPawPrints1.2.svg" />
-  <p class="text-xs md:inline hidden text-gray-normal fixed right-0 bottom-4 left-4">
-    &#169; All rights Reserved - PawMe 2021-2022
-  </p>
+    <img class="absolute hidden md:inline-block left-0 h-80 top-1/3" src="assets/grayPawPrints1.2.svg" />
+    <p class="text-xs md:inline hidden text-gray-normal fixed right-0 bottom-4 left-4">
+      &#169; All rights Reserved - PawMe 2021-2022
+    </p>
+  </div>
 </div>
