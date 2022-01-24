@@ -25,7 +25,10 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    children: [{ path: ':id', component: UserProfileComponent }],
+    children: [
+      { path: ':id', component: UserProfileComponent },
+      { path: '', component: UserProfileComponent },
+    ],
   },
 ];
 
