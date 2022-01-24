@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { Observable, switchMap, take } from 'rxjs';
+import { map, Observable, switchMap, take } from 'rxjs';
 import { User, UserFullDataGQL } from 'src/app/services/pawme.graphql.service';
 import { SetUser } from 'src/app/utils/ngxs/auth/auth.actions';
 
@@ -20,7 +20,10 @@ export class UserProfileComponent implements OnInit {
       switchMap((e) => this.userFullDataGQL.watch({ userId: e.id }).valueChanges),
       take(1)
     );
+    query.subscribe((e) => this.store.dispatch(new SetUser(e.data.user as any)));
+  }
 
-    query.subscribe((e) => console.log(e));
+  getUserPets() {
+    return this.user.pipe(map((e) => e.pets));
   }
 }

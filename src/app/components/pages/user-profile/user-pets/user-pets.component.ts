@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pet } from 'src/app/services/pawme.graphql.service';
 
 @Component({
   selector: 'app-user-pets',
@@ -6,23 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-pets.component.scss'],
 })
 export class UserPetsComponent implements OnInit {
-  pets = [
-    {
-      name: 'Milo',
-      gender: 'Boy',
-      breed: 'Rottweiler',
-    },
-    {
-      name: 'Milo',
-      gender: 'Boy',
-      breed: 'Rottweiler',
-    },
-    {
-      name: 'Milo',
-      gender: 'Boy',
-      breed: 'Rottweiler',
-    },
-  ];
+  @Input()
+  pets: Pet[];
+
   constructor() {}
 
   ngOnInit(): void {}
