@@ -3,7 +3,7 @@
   <div [ngClass]="isOpen ? 'block' : 'hidden'" class="absolute right-0 top-full">
     <div class="bg-white w-52 rounded shadow">
       <ul class="flex flex-col">
-        <li><a class="py-4 hover:bg-gray-200 block px-4" [routerLink]="['/profile', user.id]">Profile</a></li>
+        <li><a class="py-4 hover:bg-gray-200 block px-4" [routerLink]="['/profile']">Profile</a></li>
         <li class="py-4 hover:bg-gray-200 px-4">Settings</li>
         <li>
           <button class="py-4 px-4 text-left block w-full hover:bg-gray-200" (click)="signOut()">Sign Out</button>
