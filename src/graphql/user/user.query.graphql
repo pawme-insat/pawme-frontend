@@ -1,4 +1,4 @@
-query User($userId: Int!) {
+query UserFullData($userId: Int!) {
   user(id: $userId) {
     id
     first_name

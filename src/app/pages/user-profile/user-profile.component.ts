@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Select } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { User } from 'src/app/services/pawme.graphql.service';
+import { Select, Store } from '@ngxs/store';
+import { Observable, switchMap } from 'rxjs';
+import { User, UserFullDataGQL } from 'src/app/services/pawme.graphql.service';
+import { SetUser } from 'src/app/utils/ngxs/auth/auth.actions';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +13,9 @@ export class UserProfileComponent implements OnInit {
   @Select((e) => e.auth.user)
   user: Observable<User>;
 
-  constructor() {}
+  constructor(private store: Store, private userFullDataGQL: UserFullDataGQL) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const query = this.user.pipe(switchMap((e) => this.userFullDataGQL.fetch({ userId: e.id })));
+  }
 }

@@ -638,6 +638,13 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
+export type UserFullDataQueryVariables = Exact<{
+  userId: Scalars['Int'];
+}>;
+
+
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'PetType', id: number } }> } | null | undefined };
+
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
   validateEmail(email: $email) {
@@ -720,6 +727,48 @@ export const SignUpDocument = gql`
   })
   export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
     document = SignUpDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const UserFullDataDocument = gql`
+    query UserFullData($userId: Int!) {
+  user(id: $userId) {
+    id
+    first_name
+    last_name
+    phone
+    email
+    password
+    birth_date
+    image
+    address {
+      zip_code
+      street
+      region
+      country
+      id
+    }
+    pets {
+      id
+      name
+      age
+      sexe
+      aboutMe
+      type {
+        id
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class UserFullDataGQL extends Apollo.Query<UserFullDataQuery, UserFullDataQueryVariables> {
+    document = UserFullDataDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);
