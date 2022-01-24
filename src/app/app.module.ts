@@ -38,10 +38,17 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TokenInterceptor } from './interceptors/token-interceptor/token.interceptor';
 import { LoaderSpinnerComponent } from './components/forms/loader-spinner/loader-spinner.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { ProfileBannerComponent } from './components/pages/user-profile/profile-banner/profile-banner.component';
+import { UserPetsComponent } from './components/pages/user-profile/user-pets/user-pets.component';
+import { UserBreedsComponent } from './components/pages/user-profile/user-breeds/user-breeds.component';
+import { BreedComponent } from './components/pages/user-profile/user-breeds/breed/breed.component';
+import { PetComponent } from './components/pages/user-profile/user-pets/pet/pet.component';
 import { HeaderUserMenuComponent } from './components/shared/header-user-menu/header-user-menu.component';
 import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
 import { NavigationMobileComponent } from './components/shared/navigation-mobile/navigation-mobile.component';
 import { NavigationItemMobileComponent } from './components/shared/navigation-item-mobile/navigation-item-mobile.component';
+
 
 @NgModule({
   declarations: [
@@ -71,6 +78,12 @@ import { NavigationItemMobileComponent } from './components/shared/navigation-it
     GenericFormComponent,
     SideBannerComponent,
     LoaderSpinnerComponent,
+    UserProfileComponent,
+    ProfileBannerComponent,
+    UserPetsComponent,
+    UserBreedsComponent,
+    BreedComponent,
+    PetComponent,
     HeaderUserMenuComponent,
     ClickedOutsideDirective,
     NavigationMobileComponent,

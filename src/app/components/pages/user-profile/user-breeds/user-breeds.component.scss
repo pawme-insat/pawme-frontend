@@ -1,0 +1,14 @@
+/*width*/
+div::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*track color*/
+div::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+div::-webkit-scrollbar-thumb {
+  background: transparent;
+}
