@@ -643,7 +643,7 @@ export type UserFullDataQueryVariables = Exact<{
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'PetType', id: number } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'PetType', id: number } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -740,7 +740,6 @@ export const UserFullDataDocument = gql`
     last_name
     phone
     email
-    password
     birth_date
     image
     address {

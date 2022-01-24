@@ -5,7 +5,6 @@ query UserFullData($userId: Int!) {
     last_name
     phone
     email
-    password
     birth_date
     image
     address {

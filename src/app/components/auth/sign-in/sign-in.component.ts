@@ -7,6 +7,7 @@ import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { LoginFormValues } from './sign-in.interface';
 import { Validators } from '@angular/forms';
+import { take } from 'rxjs';
 
 const WRONG_EMAIL_STRING = 'Wrong Password Or Email';
 
@@ -29,11 +30,11 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(values: LoginFormValues): void {
-    const query = this.loginGQL.fetch({
+    const query = this.loginGQL.watch({
       credentials: { email: values.email, password: values.password },
-    });
+    }).valueChanges;
 
-    query.subscribe(
+    query.pipe(take(1)).subscribe(
       (e) => {
         this.isLoading = e.loading;
         if (e.errors) this.formErrors = e.errors.map((e) => e.message);
