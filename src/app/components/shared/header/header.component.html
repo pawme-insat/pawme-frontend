@@ -3,7 +3,9 @@
     <app-navigation-mobile [navItems]="navItems | async"></app-navigation-mobile>
   </div>
   <div class="flex w-full md:container h-14 px-4 py-1 items-center justify-between">
-    <app-logo></app-logo>
+    <a routerLink="/" class="cursor-pointer block">
+      <app-logo></app-logo>
+    </a>
     <div (click)="menuClick()" class="md:hidden">
       <app-hotdog-menu [isOpen]="$openMenu | async"></app-hotdog-menu>
     </div>
