@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { Validators } from '@angular/forms';
-import { FullNamePattern, PasswordPattern } from '../../../validators/patterns';
-import { SignUpFormValues } from '../../auth/sign-up/sign-up.interface';
+import { addPetFormValues } from './addPetFormValues';
+import { CreatePetGQL, User } from 'src/app/services/pawme.graphql.service';
+import { Select } from '@ngxs/store';
+import { Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-add-pet',
@@ -11,6 +13,9 @@ import { SignUpFormValues } from '../../auth/sign-up/sign-up.interface';
   styleUrls: ['./add-pet.component.scss'],
 })
 export class AddPetComponent implements OnInit {
+  @Select((e) => e.auth.user)
+  user: Observable<User>;
+
   public form: Field[] = [
     new Field('name', FieldType.text, "Please enter your pet's name", [Validators.required]),
     // this has to be a select input
@@ -24,9 +29,25 @@ export class AddPetComponent implements OnInit {
   public isLoading = false;
   public formErrors: string[] = [];
 
-  constructor() {}
+  constructor(private createPet: CreatePetGQL) {}
 
   ngOnInit(): void {}
 
-  onSubmit(values: SignUpFormValues) {}
+  onSubmit(values: addPetFormValues) {
+    // TODO fix with backend
+    this.user.pipe(
+      switchMap((u) =>
+        this.createPet.mutate({
+          createPetInput: {
+            aboutMe: values['about me'],
+            age: values.age,
+            sexe: values.gender as any,
+            name: values.name,
+            user: u.id,
+            type: 0,
+          },
+        })
+      )
+    );
+  }
 }
