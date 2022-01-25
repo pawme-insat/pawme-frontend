@@ -48,7 +48,12 @@ import { HeaderUserMenuComponent } from './components/shared/header-user-menu/he
 import { ClickedOutsideDirective } from './directive/clicked-outside/clicked-outside.directive';
 import { NavigationMobileComponent } from './components/shared/navigation-mobile/navigation-mobile.component';
 import { NavigationItemMobileComponent } from './components/shared/navigation-item-mobile/navigation-item-mobile.component';
-
+import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
+import { PetCardComponent } from './components/pages/pet-profile/pet-card/pet-card.component';
+import { PetOwnerComponent } from './components/pages/pet-profile/pet-owner/pet-owner.component';
+import { PetDescriptionComponent } from './components/pages/pet-profile/pet-card/pet-description/pet-description.component';
+import { PetGalleryComponent } from './components/pages/pet-profile/pet-card/pet-gallery/pet-gallery.component';
+import { ButtonsComponent } from './components/pages/pet-profile/pet-card/buttons/buttons.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +93,12 @@ import { NavigationItemMobileComponent } from './components/shared/navigation-it
     ClickedOutsideDirective,
     NavigationMobileComponent,
     NavigationItemMobileComponent,
+    PetProfileComponent,
+    PetCardComponent,
+    PetOwnerComponent,
+    PetDescriptionComponent,
+    PetGalleryComponent,
+    ButtonsComponent,
   ],
   imports: [
     HttpClientModule,
