@@ -54,6 +54,7 @@ import { PetOwnerComponent } from './components/pages/pet-profile/pet-owner/pet-
 import { PetDescriptionComponent } from './components/pages/pet-profile/pet-card/pet-description/pet-description.component';
 import { PetGalleryComponent } from './components/pages/pet-profile/pet-card/pet-gallery/pet-gallery.component';
 import { ButtonsComponent } from './components/pages/pet-profile/pet-card/buttons/buttons.component';
+import { PetMainPictureComponent } from './components/pages/pet-profile/pet-card/pet-main-picture/pet-main-picture.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { ButtonsComponent } from './components/pages/pet-profile/pet-card/button
     PetDescriptionComponent,
     PetGalleryComponent,
     ButtonsComponent,
+    PetMainPictureComponent,
   ],
   imports: [
     HttpClientModule,
