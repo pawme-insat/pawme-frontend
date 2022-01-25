@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable, switchMap, take } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, map, Observable, of, switchMap, take } from 'rxjs';
 import { GetPetGQL, Pet } from 'src/app/services/pawme.graphql.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { GetPetGQL, Pet } from 'src/app/services/pawme.graphql.service';
   styleUrls: ['./pet-profile.component.scss'],
 })
 export class PetProfileComponent implements OnInit {
-  constructor(private getPetGQL: GetPetGQL, private route: ActivatedRoute) {}
+  constructor(private getPetGQL: GetPetGQL, private route: ActivatedRoute, private router: Router) {}
 
   pet: Observable<Pet>;
+  notFound: Observable<Boolean>;
 
   ngOnInit(): void {
     const query = (id: number) =>
@@ -22,7 +23,11 @@ export class PetProfileComponent implements OnInit {
 
     const pet = this.route.paramMap.pipe(
       map((e) => e.get('id')),
-      switchMap((e) => query(Number(e)))
+      switchMap((e) => query(Number(e))),
+      catchError(() => {
+        this.router.navigate(['/404']);
+        return of(null);
+      })
     );
 
     this.pet = pet as any;

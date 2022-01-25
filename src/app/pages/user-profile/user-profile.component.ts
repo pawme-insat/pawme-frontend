@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { map, Observable, of, switchMap, take, tap } from 'rxjs';
 import { User, UserFullDataGQL } from 'src/app/services/pawme.graphql.service';
@@ -16,7 +16,12 @@ export class UserProfileComponent implements OnInit {
 
   user: Observable<User>;
 
-  constructor(private store: Store, private route: ActivatedRoute, private userFullDataGQL: UserFullDataGQL) {}
+  constructor(
+    private store: Store,
+    private router: Router,
+    private route: ActivatedRoute,
+    private userFullDataGQL: UserFullDataGQL
+  ) {}
 
   ngOnInit(): void {
     const query = (id: number) =>
@@ -35,7 +40,10 @@ export class UserProfileComponent implements OnInit {
               switchMap((u) => query(u.id)),
               tap((v) => this.store.dispatch(new SetUser(v as any)))
             )
-      )
+      ),
+      tap((e) => {
+        if (!e) this.router.navigate(['/404']);
+      })
     );
     this.user = user as any;
   }
