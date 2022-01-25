@@ -1,0 +1,28 @@
+query GetPet($petId: Int!) {
+  pet(id: $petId) {
+    id
+    name
+    age
+    sexe
+    aboutMe
+    user {
+      image
+      first_name
+      last_name
+      id
+    }
+    pdp
+    type {
+      name
+      breed_characteristics {
+        label
+        id
+        description
+      }
+      type {
+        id
+        name
+      }
+    }
+  }
+}

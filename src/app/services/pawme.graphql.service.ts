@@ -61,9 +61,8 @@ export type CreateBreedCharacteristicInput = {
 };
 
 export type CreateBreedInput = {
-  breed_characteristics: Array<CreateBreedCharacteristicInput>;
   name: Scalars['String'];
-  type: CreatePetTypeInput;
+  type: Scalars['Float'];
 };
 
 export type CreateConversationInput = {
@@ -91,21 +90,14 @@ export type CreateMessageInput = {
 export type CreatePetInput = {
   aboutMe: Scalars['String'];
   age: Scalars['Int'];
-  image1: Scalars['String'];
-  image2: Scalars['String'];
-  image3: Scalars['String'];
-  image4: Scalars['String'];
-  image5: Scalars['String'];
   name: Scalars['String'];
   sexe: SexeEnum;
-  type: CreatePetTypeInput;
-  user: CreateUserInput;
+  type: Scalars['Float'];
+  user: Scalars['Float'];
 };
 
 export type CreatePetTypeInput = {
-  breeds: Array<CreateBreedInput>;
   name: Scalars['String'];
-  pets: Array<CreatePetInput>;
 };
 
 export type CreateReviewInput = {
@@ -115,10 +107,10 @@ export type CreateReviewInput = {
 
 export type CreateUserInput = {
   address: CreateAddressInput;
+  bio: Scalars['String'];
   birth_date: Scalars['DateTime'];
   email: Scalars['String'];
   first_name: Scalars['String'];
-  image: Scalars['String'];
   last_name: Scalars['String'];
   password: Scalars['String'];
   phone: Scalars['Int'];
@@ -359,16 +351,20 @@ export type Pet = {
   __typename?: 'Pet';
   aboutMe: Scalars['String'];
   age: Scalars['Int'];
+  gallery: Array<PetGallery>;
   id: Scalars['Int'];
-  image1?: Maybe<Scalars['String']>;
-  image2?: Maybe<Scalars['String']>;
-  image3?: Maybe<Scalars['String']>;
-  image4?: Maybe<Scalars['String']>;
-  image5?: Maybe<Scalars['String']>;
   name: Scalars['String'];
+  pdp: Scalars['String'];
   sexe: Sexe;
-  type: PetType;
+  type: Breed;
   user: User;
+};
+
+export type PetGallery = {
+  __typename?: 'PetGallery';
+  filename: Scalars['String'];
+  id: Scalars['Int'];
+  pet: Pet;
 };
 
 export type PetType = {
@@ -376,7 +372,6 @@ export type PetType = {
   breeds: Array<Breed>;
   id: Scalars['Int'];
   name: Scalars['String'];
-  pets: Array<Pet>;
 };
 
 export type Query = {
@@ -526,10 +521,9 @@ export type UpdateBreedCharacteristicInput = {
 };
 
 export type UpdateBreedInput = {
-  breed_characteristics?: InputMaybe<Array<CreateBreedCharacteristicInput>>;
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
-  type?: InputMaybe<CreatePetTypeInput>;
+  type?: InputMaybe<Scalars['Float']>;
 };
 
 export type UpdateConversationInput = {
@@ -562,22 +556,15 @@ export type UpdatePetInput = {
   aboutMe?: InputMaybe<Scalars['String']>;
   age?: InputMaybe<Scalars['Int']>;
   id: Scalars['Int'];
-  image1?: InputMaybe<Scalars['String']>;
-  image2?: InputMaybe<Scalars['String']>;
-  image3?: InputMaybe<Scalars['String']>;
-  image4?: InputMaybe<Scalars['String']>;
-  image5?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   sexe?: InputMaybe<SexeEnum>;
-  type?: InputMaybe<CreatePetTypeInput>;
-  user?: InputMaybe<CreateUserInput>;
+  type?: InputMaybe<Scalars['Float']>;
+  user?: InputMaybe<Scalars['Float']>;
 };
 
 export type UpdatePetTypeInput = {
-  breeds?: InputMaybe<Array<CreateBreedInput>>;
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
-  pets?: InputMaybe<Array<CreatePetInput>>;
 };
 
 export type UpdateReviewInput = {
@@ -588,11 +575,12 @@ export type UpdateReviewInput = {
 
 export type UpdateUserInput = {
   address?: InputMaybe<CreateAddressInput>;
+  bio?: InputMaybe<Scalars['String']>;
   birth_date?: InputMaybe<Scalars['DateTime']>;
   email?: InputMaybe<Scalars['String']>;
   first_name?: InputMaybe<Scalars['String']>;
   id: Scalars['Int'];
-  image?: InputMaybe<Scalars['String']>;
+  image: Scalars['String'];
   last_name?: InputMaybe<Scalars['String']>;
   password?: InputMaybe<Scalars['String']>;
   phone?: InputMaybe<Scalars['Int']>;
@@ -601,6 +589,7 @@ export type UpdateUserInput = {
 export type User = {
   __typename?: 'User';
   address: Address;
+  bio: Scalars['String'];
   birth_date: Scalars['DateTime'];
   email: Scalars['String'];
   first_name: Scalars['String'];
@@ -638,12 +627,26 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
+export type CreatePetMutationVariables = Exact<{
+  createPetInput: CreatePetInput;
+}>;
+
+
+export type CreatePetMutation = { __typename?: 'Mutation', createPet: { __typename?: 'Pet', name: string, age: number, sexe: Sexe, aboutMe: string } };
+
+export type GetPetQueryVariables = Exact<{
+  petId: Scalars['Int'];
+}>;
+
+
+export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, type: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
+
 export type UserFullDataQueryVariables = Exact<{
   userId: Scalars['Int'];
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'PetType', id: number } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'Breed', id: number } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -727,6 +730,68 @@ export const SignUpDocument = gql`
   })
   export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
     document = SignUpDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const CreatePetDocument = gql`
+    mutation CreatePet($createPetInput: CreatePetInput!) {
+  createPet(createPetInput: $createPetInput) {
+    name
+    age
+    sexe
+    aboutMe
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreatePetGQL extends Apollo.Mutation<CreatePetMutation, CreatePetMutationVariables> {
+    document = CreatePetDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const GetPetDocument = gql`
+    query GetPet($petId: Int!) {
+  pet(id: $petId) {
+    id
+    name
+    age
+    sexe
+    aboutMe
+    user {
+      image
+      first_name
+      last_name
+      id
+    }
+    pdp
+    type {
+      name
+      breed_characteristics {
+        label
+        id
+        description
+      }
+      type {
+        id
+        name
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class GetPetGQL extends Apollo.Query<GetPetQuery, GetPetQueryVariables> {
+    document = GetPetDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);

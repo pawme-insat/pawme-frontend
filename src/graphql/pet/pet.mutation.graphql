@@ -1,0 +1,8 @@
+mutation CreatePet($createPetInput: CreatePetInput!) {
+  createPet(createPetInput: $createPetInput) {
+    name
+    age
+    sexe
+    aboutMe
+  }
+}

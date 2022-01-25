@@ -31,6 +31,7 @@ const routes: Routes = [
       { path: '', component: UserProfileComponent },
     ],
   },
+
   {
     path: 'pet-profile',
     component: PetProfileComponent,
