@@ -26,6 +26,7 @@ module.exports = {
       backgroundImage: {
         'sign-in': "url('assets/signInPic.png')",
         'sign-up': "url('assets/signUpPic.png')",
+        'add-pet': "url('assets/addPetBg.png')",
       },
     },
   },
