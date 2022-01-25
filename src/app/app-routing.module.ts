@@ -5,6 +5,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
       { path: ':id', component: UserProfileComponent },
       { path: '', component: UserProfileComponent },
     ],
+  },
+  {
+    path: 'pet-profile',
+    component: PetProfileComponent,
   },
 ];
 
