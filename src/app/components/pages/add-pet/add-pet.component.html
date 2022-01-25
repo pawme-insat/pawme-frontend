@@ -1,12 +1,8 @@
 <div class="w-full relative">
-  <app-side-banner page="sign-up" class="z-0"></app-side-banner>
+  <app-side-banner page="add-pet" class="z-0"></app-side-banner>
 
   <div class="flex-col h-screen flex justify-center px-16 text-gray-normal">
-    <p class="font-display text-3xl font-bold z-50">Sign Up to PawMe.</p>
-    <div class="text-left z-50">
-      <span class="opacity-70">Already a member? </span>
-      <a class="text-secondary-normal" routerLink="/sign-in">sign in</a>
-    </div>
+    <p class="font-display text-3xl font-bold z-50">Add your pet!</p>
 
     <app-generic-form
       class="z-50 h-4/6"
@@ -15,7 +11,6 @@
       [primaryMode]="true"
       [isLoading]="isLoading"
       [formErrors]="formErrors"
-      [crossValidators]="crossValidators"
     ></app-generic-form>
   </div>
 
