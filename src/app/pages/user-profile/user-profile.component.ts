@@ -32,8 +32,8 @@ export class UserProfileComponent implements OnInit {
         e
           ? query(Number(e))
           : this.currentUser.pipe(
-              switchMap((e) => query(e.id)),
-              tap((e) => this.store.dispatch(new SetUser(e as any)))
+              switchMap((u) => query(u.id)),
+              tap((v) => this.store.dispatch(new SetUser(v as any)))
             )
       )
     );
