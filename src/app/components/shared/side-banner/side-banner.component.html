@@ -1,4 +1,4 @@
 <div
   class="h-screen right-0 fixed w-full md:w-1/2 bg-no-repeat bg-cover bg-center"
-  [ngClass]="'bg-' + page"
+  [ngClass]="{'bg-sign-in': isSignIn, 'bg-sign-up': isSignUp, 'bg-add-pet': isAddPet}"
 ></div>

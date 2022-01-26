@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidateEmailGQL } from 'src/app/services/pawme.graphql.service';
 import { Field } from '../../../models/Field';
-import {SelectField} from "../../../models/SelectField";
+import { SelectField } from '../../../models/SelectField';
 
 @Component({
   selector: 'app-generic-form',
@@ -75,11 +75,11 @@ export class GenericFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.formGroup.value)
-    // this.onSubmit.emit(this.formGroup.value);
+    //console.log(this.formGroup.value)
+    this.onSubmit.emit(this.formGroup.value);
   }
 
   test() {
-    console.log(this.formGroup.value)
+    console.log(this.formGroup.value);
   }
 }
