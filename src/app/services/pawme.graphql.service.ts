@@ -627,6 +627,13 @@ export type SignUpMutationVariables = Exact<{
 
 export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
+export type CreateTypeMutationVariables = Exact<{
+  createTypeInput: CreatePetTypeInput;
+}>;
+
+
+export type CreateTypeMutation = { __typename?: 'Mutation', createType: { __typename?: 'PetType', name: string, id: number } };
+
 export type CreatePetMutationVariables = Exact<{
   createPetInput: CreatePetInput;
 }>;
@@ -735,6 +742,25 @@ export const SignUpDocument = gql`
   })
   export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
     document = SignUpDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const CreateTypeDocument = gql`
+    mutation CreateType($createTypeInput: CreatePetTypeInput!) {
+  createType(createTypeInput: $createTypeInput) {
+    name
+    id
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CreateTypeGQL extends Apollo.Mutation<CreateTypeMutation, CreateTypeMutationVariables> {
+    document = CreateTypeDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);

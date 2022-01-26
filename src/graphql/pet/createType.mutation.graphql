@@ -1,0 +1,6 @@
+mutation CreateType($createTypeInput: CreatePetTypeInput!) {
+  createType(createTypeInput: $createTypeInput) {
+    name
+    id
+  }
+}
