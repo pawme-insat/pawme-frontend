@@ -641,6 +641,11 @@ export type GetPetQueryVariables = Exact<{
 
 export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, type: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
 
+export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPetTypesQuery = { __typename?: 'Query', pet_types: Array<{ __typename?: 'PetType', id: number, name: string }> };
+
 export type UserFullDataQueryVariables = Exact<{
   userId: Scalars['Int'];
 }>;
@@ -792,6 +797,25 @@ export const GetPetDocument = gql`
   })
   export class GetPetGQL extends Apollo.Query<GetPetQuery, GetPetQueryVariables> {
     document = GetPetDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const GetPetTypesDocument = gql`
+    query GetPetTypes {
+  pet_types {
+    id
+    name
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class GetPetTypesGQL extends Apollo.Query<GetPetTypesQuery, GetPetTypesQueryVariables> {
+    document = GetPetTypesDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);

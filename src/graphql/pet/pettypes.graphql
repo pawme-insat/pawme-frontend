@@ -1,0 +1,6 @@
+query GetPetTypes {
+  pet_types {
+    id
+    name
+  }
+}

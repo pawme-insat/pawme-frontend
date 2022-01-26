@@ -3,9 +3,9 @@ import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { Validators } from '@angular/forms';
 import { addPetFormValues } from './addPetFormValues';
-import { CreatePetGQL, User } from 'src/app/services/pawme.graphql.service';
+import { CreatePetGQL, GetPetTypesGQL, User } from 'src/app/services/pawme.graphql.service';
 import { Select } from '@ngxs/store';
-import { Observable, switchMap } from 'rxjs';
+import { map, Observable, switchMap, take } from 'rxjs';
 import { SignUpFormValues } from '../../auth/sign-up/sign-up.interface';
 import { SelectField } from '../../../models/SelectField';
 
@@ -21,7 +21,7 @@ export class AddPetComponent implements OnInit {
   public form: Field[] = [
     new Field('name', FieldType.text, "Please enter your pet's name", [Validators.required]),
     // this has to be a select input
-    new SelectField('type', ['dog', 'cat', 'bird', 'hamster']),
+    new SelectField('type', []),
     new Field('breed', FieldType.text, "Please enter your pet's breed", [Validators.required]),
     // this has to be a select input
     new Field('gender', FieldType.text, '', [Validators.required]),
@@ -33,9 +33,19 @@ export class AddPetComponent implements OnInit {
   public isLoading = false;
   public formErrors: string[] = [];
 
-  constructor(private createPet: CreatePetGQL) {}
+  constructor(private createPet: CreatePetGQL, private getPetTypes: GetPetTypesGQL) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPetTypes
+      .watch()
+      .valueChanges.pipe(
+        take(1),
+        map((e) => e.data.pet_types.map((e) => e.name))
+      )
+      .subscribe((e) => {
+        this.form[1]['options'] = e;
+      });
+  }
 
   onSubmit(values: addPetFormValues) {
     // TODO fix with backend
