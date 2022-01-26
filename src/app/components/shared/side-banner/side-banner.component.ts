@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SideBannerComponent implements OnInit {
   @Input() isSignIn = false
-  @Input() page = ''
+  @Input() isSignUp = false
+  @Input() isAddPet = false
+
 
   constructor() {}
 
