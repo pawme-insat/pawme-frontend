@@ -15,13 +15,13 @@ export class UserBioModalComponent implements OnInit {
   @Select((e) => e.auth.user)
   user: Observable<User>;
 
-  constructor(private UpdateBioGQL: UpdateBioGQL, private store: Store) {}
+  constructor(private updateBioGQL: UpdateBioGQL, private store: Store) {}
 
   ngOnInit(): void {}
 
   submit() {
     this.user
-      .pipe(concatMap((u) => this.UpdateBioGQL.mutate({ updateUserInput: { bio: this.bio, id: u.id } })))
+      .pipe(concatMap((u) => this.updateBioGQL.mutate({ updateUserInput: { bio: this.bio, id: u.id } })))
       .subscribe((e) => {
         console.log(e);
         this.store.dispatch(new SetUser(e.data.updateUser as any));
@@ -30,7 +30,7 @@ export class UserBioModalComponent implements OnInit {
 
   skip() {
     this.user
-      .pipe(concatMap((u) => this.UpdateBioGQL.mutate({ updateUserInput: { bio: '', id: u.id } })))
+      .pipe(concatMap((u) => this.updateBioGQL.mutate({ updateUserInput: { bio: '', id: u.id } })))
       .subscribe((e) => {
         console.log(e);
         this.store.dispatch(new SetUser(e.data.updateUser as any));
