@@ -14,7 +14,6 @@ query Login($credentials: SignInDto!) {
       phone
       email
       bio
-      loginCount
       password
       birth_date
       pets {

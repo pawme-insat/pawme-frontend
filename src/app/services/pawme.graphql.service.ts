@@ -596,7 +596,6 @@ export type User = {
   id: Scalars['Int'];
   image?: Maybe<Scalars['String']>;
   last_name: Scalars['String'];
-  loginCount: Scalars['Int'];
   password: Scalars['String'];
   pets: Array<Pet>;
   phone: Scalars['Int'];
@@ -619,7 +618,7 @@ export type LoginQueryVariables = Exact<{
 }>;
 
 
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, bio?: string | null | undefined, loginCount: number, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, bio?: string | null | undefined, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
@@ -666,7 +665,7 @@ export type UserFullDataQueryVariables = Exact<{
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, loginCount: number, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -703,7 +702,6 @@ export const LoginDocument = gql`
       phone
       email
       bio
-      loginCount
       password
       birth_date
       pets {
@@ -887,7 +885,6 @@ export const UserFullDataDocument = gql`
     birth_date
     bio
     image
-    loginCount
     address {
       zip_code
       street
