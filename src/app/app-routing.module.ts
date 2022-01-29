@@ -49,7 +49,7 @@ const routes: Routes = [
     component: AddPetComponent,
   },
   {
-    path: 'modal',
+    path: 'modal2',
     component: UserPictureModalComponent,
   },
 ];
