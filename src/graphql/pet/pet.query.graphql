@@ -2,7 +2,7 @@ query GetPet($petId: Int!) {
   pet(id: $petId) {
     id
     name
-    age
+    birth_date
     sexe
     aboutMe
     user {

@@ -61,6 +61,7 @@ import { ModalLayoutComponent } from './components/shared/modal-layout/modal-lay
 import { UserBioModalComponent } from './components/modals/user-bio-modal/user-bio-modal.component';
 import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
 import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
+import { AgePipe } from './pipes/age/age.pipe';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-
     UserBioModalComponent,
     UserPictureModalComponent,
     AddPetModalComponent,
+    AgePipe,
   ],
   imports: [
     HttpClientModule,

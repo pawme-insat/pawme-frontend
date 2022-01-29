@@ -17,7 +17,7 @@ query UserFullData($userId: Int!) {
     pets {
       id
       name
-      age
+      birth_date
       sexe
       aboutMe
       type {
