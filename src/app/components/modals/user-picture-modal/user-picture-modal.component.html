@@ -1,1 +1,34 @@
-<p>user-picture-modal works!</p>
+<app-modal-layout title="Add a profile picture." description="Help people in your area recognize you">
+  <div class="grid grid-cols-1 space-y-2">
+    <div class="flex items-center justify-center w-full">
+      <label class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+        <div class="h-full w-full text-center flex flex-col items-center justify-center items-center">
+          <div class="flex flex-auto justify-center w-2/5 mx-auto">
+            <img [src]="imageUrl" class="rounded" />
+            <svg-icon
+              *ngIf="!file"
+              class="h-20 w-20 text-gray-400 object-center"
+              src="assets/icons/shared/photo.svg"
+            ></svg-icon>
+          </div>
+          <p class="pointer-none text-gray-500">
+            <span class="text-sm">Drag and your photo here </span><br />
+            or <span id="" class="text-secondary-normal hover:underline">select a photo</span> from your computer
+          </p>
+        </div>
+        <input type="file" class="hidden" (change)="onSelectImage($event)" accept=".png,.jpg,.jpeg"/>
+      </label>
+    </div>
+  </div>
+  <p class="text-sm text-gray-300">
+    <span>Image type: jpg, jpeg, png</span>
+  </p>
+
+  <button
+    (click)="submit()"
+    type="button"
+    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-normal text-base font-medium text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+  >
+    Confirm
+  </button>
+</app-modal-layout>

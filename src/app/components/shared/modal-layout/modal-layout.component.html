@@ -20,12 +20,12 @@
           </div>
 
           <div aria-labelledby="modal-content" class="mt-3">
-            <ng-content select="textarea"></ng-content>
+            <ng-content></ng-content>
           </div>
         </div>
       </div>
       <div class="bg-gray-50 px-4 py-3 justify-between sm:px-6 sm:flex sm:flex-row-reverse">
-        <ng-content></ng-content>
+        <ng-content select="button"></ng-content>
         <button
           (click)="toggleModal()"
           type="button"
