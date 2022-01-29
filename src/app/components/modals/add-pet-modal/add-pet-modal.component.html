@@ -1,1 +1,16 @@
-<p>add-pet-modal works!</p>
+<app-modal-layout
+  [skippable]="false"
+  title="Get started by adding your pet!"
+  description="Fill your pet’s form and start matching!"
+>
+  <div class="w-full flex justify-center">
+    <img src="assets/Pets.svg" />
+  </div>
+
+  <button
+    type="button"
+    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-normal text-base font-medium text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+  >
+    Go
+  </button>
+</app-modal-layout>
