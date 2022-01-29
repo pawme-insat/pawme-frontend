@@ -75,7 +75,6 @@ export class GenericFormComponent implements OnInit {
   }
 
   submit() {
-    //console.log(this.formGroup.value)
     this.onSubmit.emit(this.formGroup.value);
   }
 
