@@ -7,7 +7,7 @@ import { SignUpFormValues } from './sign-up.interface';
 import { AbstractControl, ValidationErrors, Validators } from '@angular/forms';
 import { FullNamePattern, PasswordPattern } from '../../../validators/patterns';
 import { confirmPassword } from '../../../validators/confirm-password';
-import { EmailExistsValidator } from '../email-exists.validator';
+import { EmailExistsValidator } from '../../../validators/email-exists.validator';
 import { Observable, filter, map } from 'rxjs';
 
 @Component({
