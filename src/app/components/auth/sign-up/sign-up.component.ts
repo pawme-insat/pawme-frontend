@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SignUpGQL, ValidateEmailGQL } from 'src/app/services/pawme.graphql.service';
+import { SignUpGQL } from 'src/app/services/pawme.graphql.service';
 import { Field } from '../../../models/Field';
 import { FieldType } from '../../../models/FieldType.enum';
 import { SignUpFormValues } from './sign-up.interface';
-import { AbstractControl, ValidationErrors, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { FullNamePattern, PasswordPattern } from '../../../validators/patterns';
 import { confirmPassword } from '../../../validators/confirm-password';
 import { EmailExistsValidator } from '../email-exists.validator';
-import { Observable, filter, map } from 'rxjs';
+import { map } from 'rxjs';
+import { AddressService } from '../../../services/address.service';
+import { Address } from '../../../models/Address';
 
 @Component({
   selector: 'app-sign-up',
@@ -43,7 +45,8 @@ export class SignUpComponent implements OnInit {
   constructor(
     private signUpGQL: SignUpGQL,
     private router: Router,
-    private emailExistsValidator: EmailExistsValidator
+    private emailExistsValidator: EmailExistsValidator,
+    private addressService: AddressService
   ) {}
 
   ngOnInit(): void {
@@ -51,10 +54,12 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(values: SignUpFormValues) {
+    // const address = this.getUserLocation();
     const [firstName, ...lastName] = values['first and last name'].split(' ');
     const mutation = this.signUpGQL.mutate({
       registerDto: {
         email: values.email,
+        // Todo: use address const here
         address: { country: '', region: '', street: '', zip_code: -1 },
         birth_date: values['birth date'],
         first_name: firstName,
@@ -69,5 +74,21 @@ export class SignUpComponent implements OnInit {
       if (e.errors) this.formErrors = e.errors.map((e) => e.message);
       if (e.data) this.router.navigate(['/sign-in']);
     });
+  }
+
+  getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.addressService
+            .getAddress(position.coords.latitude, position.coords.longitude)
+            .pipe(map((result) => result['geonames'][0]))
+            .subscribe((result) => new Address(result['countryName'], result['adminName1'], result['name']));
+        },
+        () => {
+          return new Address();
+        }
+      );
+    }
   }
 }
