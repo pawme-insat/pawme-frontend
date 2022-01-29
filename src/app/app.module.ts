@@ -57,6 +57,7 @@ import { ButtonsComponent } from './components/pages/pet-profile/pet-card/button
 import { PetMainPictureComponent } from './components/pages/pet-profile/pet-card/pet-main-picture/pet-main-picture.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
+import { AgePipe } from './pipes/age/age.pipe';
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
     PetMainPictureComponent,
     NotfoundComponent,
     AddPetComponent,
+    AgePipe,
   ],
   imports: [
     HttpClientModule,

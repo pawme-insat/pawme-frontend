@@ -56,7 +56,7 @@ export class AddPetComponent implements OnInit {
         this.createPet.mutate({
           createPetInput: {
             aboutMe: values['about me'],
-            age: values.age,
+            birth_date: values['birth date'],
             sexe: mappingGender[values.gender],
             name: values.name,
             user: u.id,
