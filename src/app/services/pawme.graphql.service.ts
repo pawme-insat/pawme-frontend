@@ -89,7 +89,7 @@ export type CreateMessageInput = {
 
 export type CreatePetInput = {
   aboutMe: Scalars['String'];
-  age: Scalars['Int'];
+  birth_date: Scalars['DateTime'];
   name: Scalars['String'];
   sexe: SexeEnum;
   type: Scalars['Float'];
@@ -350,7 +350,7 @@ export type MutationUpdateUserArgs = {
 export type Pet = {
   __typename?: 'Pet';
   aboutMe: Scalars['String'];
-  age: Scalars['Int'];
+  birth_date: Scalars['DateTime'];
   gallery: Array<PetGallery>;
   id: Scalars['Int'];
   name: Scalars['String'];
@@ -554,7 +554,7 @@ export type UpdateMessageInput = {
 
 export type UpdatePetInput = {
   aboutMe?: InputMaybe<Scalars['String']>;
-  age?: InputMaybe<Scalars['Int']>;
+  birth_date?: InputMaybe<Scalars['DateTime']>;
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
   sexe?: InputMaybe<SexeEnum>;
@@ -639,14 +639,14 @@ export type CreatePetMutationVariables = Exact<{
 }>;
 
 
-export type CreatePetMutation = { __typename?: 'Mutation', createPet: { __typename?: 'Pet', name: string, age: number, sexe: Sexe, aboutMe: string } };
+export type CreatePetMutation = { __typename?: 'Mutation', createPet: { __typename?: 'Pet', name: string, birth_date: any, sexe: Sexe, aboutMe: string } };
 
 export type GetPetQueryVariables = Exact<{
   petId: Scalars['Int'];
 }>;
 
 
-export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, type: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
+export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, type: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
 
 export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -658,7 +658,7 @@ export type UserFullDataQueryVariables = Exact<{
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, age: number, sexe: Sexe, aboutMe: string, type: { __typename?: 'Breed', id: number } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, type: { __typename?: 'Breed', id: number } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -770,7 +770,7 @@ export const CreatePetDocument = gql`
     mutation CreatePet($createPetInput: CreatePetInput!) {
   createPet(createPetInput: $createPetInput) {
     name
-    age
+    birth_date
     sexe
     aboutMe
   }
@@ -792,7 +792,7 @@ export const GetPetDocument = gql`
   pet(id: $petId) {
     id
     name
-    age
+    birth_date
     sexe
     aboutMe
     user {
@@ -867,7 +867,7 @@ export const UserFullDataDocument = gql`
     pets {
       id
       name
-      age
+      birth_date
       sexe
       aboutMe
       type {
