@@ -10,6 +10,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
 import { ModalLayoutComponent } from './components/shared/modal-layout/modal-layout.component';
 import {UserBioModalComponent} from "./components/modals/user-bio-modal/user-bio-modal.component";
+import {AddPetModalComponent} from "./components/modals/add-pet-modal/add-pet-modal.component";
 
 const routes: Routes = [
   {
@@ -51,7 +52,7 @@ const routes: Routes = [
   },
   {
     path: 'modal',
-    component: UserBioModalComponent,
+    component: AddPetModalComponent,
   },
 ];
 
