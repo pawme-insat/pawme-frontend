@@ -9,7 +9,6 @@ export class ModalLayoutComponent implements OnInit {
   showModal = true;
   @Input() title = '';
   @Input() description = '';
-  @Input() skippable = true
 
   submitted = false;
 

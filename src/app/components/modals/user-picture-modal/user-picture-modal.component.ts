@@ -16,10 +16,12 @@ export class UserPictureModalComponent implements OnInit {
     this.file = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (e : any) => {
+    reader.onload = (e: any) => {
       this.imageUrl = e.target.result;
     };
   }
 
   submit() {}
+
+  skip() {}
 }
