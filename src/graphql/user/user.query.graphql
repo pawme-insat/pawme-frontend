@@ -6,7 +6,9 @@ query UserFullData($userId: Int!) {
     phone
     email
     birth_date
+    bio
     image
+    loginCount
     address {
       zip_code
       street

@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   user: Observable<User>;
 
   $showAddPetModal: Observable<Boolean>;
+  $showBioModal: Observable<Boolean>;
 
   noFooter = ['/sign-up', '/sign-in', '/profile', '/pet-profile', '/add-pet'];
 
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.$showAddPetModal = this.showAddPetModal();
+    this.$showBioModal = this.showBioModal();
   }
 
   has_footer(): boolean {
@@ -36,6 +38,10 @@ export class AppComponent implements OnInit {
 
   has_layout(routes: string[]): boolean {
     return !routes.find((e) => e === this.router.url);
+  }
+
+  showBioModal(): Observable<Boolean> {
+    return this.user.pipe(map((e) => e && e.bio === null));
   }
 
   showAddPetModal(): Observable<Boolean> {

@@ -9,7 +9,7 @@ import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
 import { ModalLayoutComponent } from './components/shared/modal-layout/modal-layout.component';
-import {UserBioModalComponent} from "./components/modals/user-bio-modal/user-bio-modal.component";
+import { UserBioModalComponent } from './components/modals/user-bio-modal/user-bio-modal.component';
 
 const routes: Routes = [
   {
@@ -48,10 +48,6 @@ const routes: Routes = [
   {
     path: 'add-pet',
     component: AddPetComponent,
-  },
-  {
-    path: 'modal',
-    component: UserBioModalComponent,
   },
 ];
 

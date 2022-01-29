@@ -13,6 +13,8 @@ query Login($credentials: SignInDto!) {
       id
       phone
       email
+      bio
+      loginCount
       password
       birth_date
       pets {

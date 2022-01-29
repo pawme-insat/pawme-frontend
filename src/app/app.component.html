@@ -12,4 +12,6 @@
       <a routerLink="/add-pet" class="bg-red-200">Take me to add pet form</a>
     </div>
   </div>
+
+  <app-user-bio-modal *ngIf="$showBioModal | async"></app-user-bio-modal>
 </div>

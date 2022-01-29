@@ -580,7 +580,7 @@ export type UpdateUserInput = {
   email?: InputMaybe<Scalars['String']>;
   first_name?: InputMaybe<Scalars['String']>;
   id: Scalars['Int'];
-  image: Scalars['String'];
+  image?: InputMaybe<Scalars['String']>;
   last_name?: InputMaybe<Scalars['String']>;
   password?: InputMaybe<Scalars['String']>;
   phone?: InputMaybe<Scalars['Int']>;
@@ -589,13 +589,14 @@ export type UpdateUserInput = {
 export type User = {
   __typename?: 'User';
   address: Address;
-  bio: Scalars['String'];
+  bio?: Maybe<Scalars['String']>;
   birth_date: Scalars['DateTime'];
   email: Scalars['String'];
   first_name: Scalars['String'];
   id: Scalars['Int'];
   image?: Maybe<Scalars['String']>;
   last_name: Scalars['String'];
+  loginCount: Scalars['Int'];
   password: Scalars['String'];
   pets: Array<Pet>;
   phone: Scalars['Int'];
@@ -618,14 +619,14 @@ export type LoginQueryVariables = Exact<{
 }>;
 
 
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, bio?: string | null | undefined, loginCount: number, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
 }>;
 
 
-export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
+export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, bio?: string | null | undefined, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
 
 export type CreateTypeMutationVariables = Exact<{
   createTypeInput: CreatePetTypeInput;
@@ -653,12 +654,19 @@ export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetPetTypesQuery = { __typename?: 'Query', pet_types: Array<{ __typename?: 'PetType', id: number, name: string }> };
 
+export type UpdateBioMutationVariables = Exact<{
+  updateUserInput: UpdateUserInput;
+}>;
+
+
+export type UpdateBioMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'User', bio?: string | null | undefined } };
+
 export type UserFullDataQueryVariables = Exact<{
   userId: Scalars['Int'];
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, loginCount: number, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -694,6 +702,8 @@ export const LoginDocument = gql`
       id
       phone
       email
+      bio
+      loginCount
       password
       birth_date
       pets {
@@ -724,6 +734,7 @@ export const SignUpDocument = gql`
     last_name
     phone
     email
+    bio
     password
     address {
       id
@@ -847,6 +858,24 @@ export const GetPetTypesDocument = gql`
       super(apollo);
     }
   }
+export const UpdateBioDocument = gql`
+    mutation UpdateBio($updateUserInput: UpdateUserInput!) {
+  updateUser(updateUserInput: $updateUserInput) {
+    bio
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class UpdateBioGQL extends Apollo.Mutation<UpdateBioMutation, UpdateBioMutationVariables> {
+    document = UpdateBioDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const UserFullDataDocument = gql`
     query UserFullData($userId: Int!) {
   user(id: $userId) {
@@ -856,7 +885,9 @@ export const UserFullDataDocument = gql`
     phone
     email
     birth_date
+    bio
     image
+    loginCount
     address {
       zip_code
       street

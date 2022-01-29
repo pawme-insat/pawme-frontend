@@ -5,6 +5,7 @@ mutation SignUp($registerDto: RegisterDto!) {
     last_name
     phone
     email
+    bio
     password
     address {
       id
