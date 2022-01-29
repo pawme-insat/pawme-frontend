@@ -90,9 +90,9 @@ export type CreateMessageInput = {
 export type CreatePetInput = {
   aboutMe: Scalars['String'];
   birth_date: Scalars['DateTime'];
+  breedType: CreateBreedInput;
   name: Scalars['String'];
   sexe: SexeEnum;
-  type: Scalars['Float'];
   user: Scalars['Float'];
 };
 
@@ -351,12 +351,12 @@ export type Pet = {
   __typename?: 'Pet';
   aboutMe: Scalars['String'];
   birth_date: Scalars['DateTime'];
+  breedType: Breed;
   gallery: Array<PetGallery>;
   id: Scalars['Int'];
   name: Scalars['String'];
   pdp: Scalars['String'];
   sexe: Sexe;
-  type: Breed;
   user: User;
 };
 
@@ -555,10 +555,10 @@ export type UpdateMessageInput = {
 export type UpdatePetInput = {
   aboutMe?: InputMaybe<Scalars['String']>;
   birth_date?: InputMaybe<Scalars['DateTime']>;
+  breedType?: InputMaybe<CreateBreedInput>;
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
   sexe?: InputMaybe<SexeEnum>;
-  type?: InputMaybe<Scalars['Float']>;
   user?: InputMaybe<Scalars['Float']>;
 };
 
@@ -646,7 +646,7 @@ export type GetPetQueryVariables = Exact<{
 }>;
 
 
-export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, type: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
+export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
 
 export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -658,7 +658,7 @@ export type UserFullDataQueryVariables = Exact<{
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, type: { __typename?: 'Breed', id: number } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -802,7 +802,7 @@ export const GetPetDocument = gql`
       id
     }
     pdp
-    type {
+    breedType {
       name
       breed_characteristics {
         label
@@ -870,8 +870,17 @@ export const UserFullDataDocument = gql`
       birth_date
       sexe
       aboutMe
-      type {
-        id
+      breedType {
+        name
+        breed_characteristics {
+          label
+          id
+          description
+        }
+        type {
+          id
+          name
+        }
       }
     }
   }

@@ -47,23 +47,25 @@ export class AddPetComponent implements OnInit {
 
   onSubmit(values: addPetFormValues) {
     const mappingGender = {
-      male: SexeEnum.Masculin,
-      female: SexeEnum.Feminin,
+      boy: SexeEnum.Masculin,
+      girl: SexeEnum.Feminin,
     };
 
-    this.user.pipe(
-      switchMap((u) =>
-        this.createPet.mutate({
-          createPetInput: {
-            aboutMe: values['about me'],
-            birth_date: values['birth date'],
-            sexe: mappingGender[values.gender],
-            name: values.name,
-            user: u.id,
-            type: this.petTypes.find((e) => e.name === values.type).id,
-          },
-        })
+    this.user
+      .pipe(
+        switchMap((u) =>
+          this.createPet.mutate({
+            createPetInput: {
+              aboutMe: values['about me'],
+              birth_date: values['birth date'],
+              sexe: mappingGender[values.gender],
+              name: values.name,
+              user: u.id,
+              breedType: { name: values.breed, type: this.petTypes.find((e) => e.name === values.type).id },
+            },
+          })
+        )
       )
-    );
+      .subscribe((e) => console.log(e));
   }
 }

@@ -12,7 +12,7 @@ query GetPet($petId: Int!) {
       id
     }
     pdp
-    type {
+    breedType {
       name
       breed_characteristics {
         label

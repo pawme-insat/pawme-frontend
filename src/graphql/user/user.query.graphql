@@ -20,8 +20,17 @@ query UserFullData($userId: Int!) {
       birth_date
       sexe
       aboutMe
-      type {
-        id
+      breedType {
+        name
+        breed_characteristics {
+          label
+          id
+          description
+        }
+        type {
+          id
+          name
+        }
       }
     }
   }
