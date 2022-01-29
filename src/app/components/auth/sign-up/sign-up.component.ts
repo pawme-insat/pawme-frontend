@@ -51,16 +51,25 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.form.find((e) => e.name == 'email').asyncValidators.push(this.emailExistsValidator.validate);
+    this.getUserLocation();
   }
 
+  address: Address;
+
   onSubmit(values: SignUpFormValues) {
-    // const address = this.getUserLocation();
     const [firstName, ...lastName] = values['first and last name'].split(' ');
     const mutation = this.signUpGQL.mutate({
       registerDto: {
         email: values.email,
         // Todo: use address const here
-        address: { country: '', region: '', street: '', zip_code: -1 },
+        address: this.address
+          ? {
+              country: this.address.country,
+              region: this.address.region,
+              street: this.address.street,
+              zip_code: this.address.zip_code,
+            }
+          : { country: '', region: '', street: '', zip_code: -1 },
         birth_date: values['birth date'],
         first_name: firstName,
         last_name: lastName.join(' '),
@@ -83,10 +92,12 @@ export class SignUpComponent implements OnInit {
           this.addressService
             .getAddress(position.coords.latitude, position.coords.longitude)
             .pipe(map((result) => result['geonames'][0]))
-            .subscribe((result) => new Address(result['countryName'], result['adminName1'], result['name']));
+            .subscribe((result) => {
+              this.address = new Address(result['countryName'], result['adminName1'], result['name']);
+            });
         },
         () => {
-          return new Address();
+          this.address = null;
         }
       );
     }
