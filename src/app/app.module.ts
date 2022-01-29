@@ -31,7 +31,7 @@ import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanne
 import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
 import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -57,6 +57,10 @@ import { ButtonsComponent } from './components/pages/pet-profile/pet-card/button
 import { PetMainPictureComponent } from './components/pages/pet-profile/pet-card/pet-main-picture/pet-main-picture.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
+import { ModalLayoutComponent } from './components/shared/modal-layout/modal-layout.component';
+import { UserBioModalComponent } from './components/modals/user-bio-modal/user-bio-modal.component';
+import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
+import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
 
 @NgModule({
   declarations: [
@@ -105,13 +109,17 @@ import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
     PetMainPictureComponent,
     NotfoundComponent,
     AddPetComponent,
+    ModalLayoutComponent,
+    UserBioModalComponent,
+    UserPictureModalComponent,
+    AddPetModalComponent,
   ],
   imports: [
     HttpClientModule,
     NgxsReduxDevtoolsPluginModule.forRoot(),
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot({ key: [AuthState] }),
+    NgxsStoragePluginModule.forRoot({key: [AuthState]}),
     NgxsModule.forRoot([AuthState], {
       developmentMode: true,
     }),
@@ -119,6 +127,7 @@ import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
     AppRoutingModule,
     ReactiveFormsModule,
     GraphQLModule,
+    FormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent],
