@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { User } from 'src/app/services/pawme.graphql.service';
 
 @Component({
   selector: 'app-user-picture-modal',
@@ -6,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-picture-modal.component.scss'],
 })
 export class UserPictureModalComponent implements OnInit {
-  file: FileList | null = null;
+  file: File | null = null;
   imageUrl = '';
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
+
+  @Output()
+  onSubmit = new EventEmitter<User>();
+
+  @Output()
+  onSkip = new EventEmitter<void>();
 
   ngOnInit(): void {}
 
@@ -21,7 +29,12 @@ export class UserPictureModalComponent implements OnInit {
     };
   }
 
-  submit() {}
+  submit() {
+    const formData = new FormData();
+    formData.append('image', this.file);
+    this.httpClient.post('http://localhost:3000/uploads', formData).subscribe((e) => console.log(e));
+    console.log(this.file);
+  }
 
   skip() {}
 }
