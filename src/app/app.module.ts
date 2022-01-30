@@ -62,6 +62,10 @@ import { UserBioModalComponent } from './components/modals/user-bio-modal/user-b
 import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
 import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
 import { AgePipe } from './pipes/age/age.pipe';
+import { FeedComponent } from './pages/feed/feed.component';
+import { ConnectedPetComponent } from './components/pages/feed/connected-pet/connected-pet.component';
+import { PetPictureBannerComponent } from './components/pages/feed/pet-picture-banner/pet-picture-banner.component';
+import { PetInfoBannerComponent } from './components/pages/feed/pet-info-banner/pet-info-banner.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +119,10 @@ import { AgePipe } from './pipes/age/age.pipe';
     UserPictureModalComponent,
     AddPetModalComponent,
     AgePipe,
+    FeedComponent,
+    ConnectedPetComponent,
+    PetPictureBannerComponent,
+    PetInfoBannerComponent,
   ],
   imports: [
     HttpClientModule,
