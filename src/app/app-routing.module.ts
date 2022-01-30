@@ -8,7 +8,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
-import {FeedComponent} from "./pages/feed/feed.component";
+import { FeedComponent } from './pages/feed/feed.component';
 
 const routes: Routes = [
   {

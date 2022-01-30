@@ -6,10 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./side-banner.component.scss'],
 })
 export class SideBannerComponent implements OnInit {
-  @Input() isSignIn = false
-  @Input() isSignUp = false
-  @Input() isAddPet = false
-
+  @Input() isSignIn = false;
+  @Input() isSignUp = false;
+  @Input() isAddPet = false;
 
   constructor() {}
 

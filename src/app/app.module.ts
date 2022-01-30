@@ -31,7 +31,7 @@ import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanne
 import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
 import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -129,7 +129,7 @@ import { PetInfoBannerComponent } from './components/pages/feed/pet-info-banner/
     NgxsReduxDevtoolsPluginModule.forRoot(),
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot({key: [AuthState]}),
+    NgxsStoragePluginModule.forRoot({ key: [AuthState] }),
     NgxsModule.forRoot([AuthState], {
       developmentMode: true,
     }),

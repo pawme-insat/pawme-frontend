@@ -1,21 +1,19 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-breeds',
   templateUrl: './user-breeds.component.html',
-  styleUrls: ['./user-breeds.component.scss']
+  styleUrls: ['./user-breeds.component.scss'],
 })
 export class UserBreedsComponent implements OnInit {
+  breeds: String[] = [];
 
-  breeds: String[] =[]
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     // get the breeds of current user pets
-    for (let i=0; i <5 ; i++) {
-      this.breeds.push('Rottweiler')
+    for (let i = 0; i < 5; i++) {
+      this.breeds.push('Rottweiler');
     }
   }
-
 }

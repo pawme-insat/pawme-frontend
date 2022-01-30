@@ -8,9 +8,8 @@ describe('PetPictureBannerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PetPictureBannerComponent ]
-    })
-    .compileComponents();
+      declarations: [PetPictureBannerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
