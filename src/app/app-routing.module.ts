@@ -9,6 +9,7 @@ import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
 import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
+import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,8 @@ const routes: Routes = [
     path: 'test',
     component: UserPictureModalComponent,
   },
+
+  { path: 'test2', component: AddPetModalComponent },
 
   {
     path: '404',
