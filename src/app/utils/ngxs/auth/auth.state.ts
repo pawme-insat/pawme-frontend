@@ -19,8 +19,9 @@ export interface AuthStateModel {
 export class AuthState {
   constructor() {}
   @Action(SetUser)
-  setUser({ patchState }: StateContext<AuthStateModel>, { payload }: SetUser) {
-    patchState({ user: payload });
+  setUser({ patchState, getState }: StateContext<AuthStateModel>, { payload }: SetUser) {
+    const state = getState();
+    patchState({ user: { ...state.user, ...payload } });
   }
 
   @Action(SetToken)

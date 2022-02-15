@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { concatMap, Observable, tap } from 'rxjs';
+import { concatMap, Observable, take } from 'rxjs';
 import { UpdateBioGQL, User } from 'src/app/services/pawme.graphql.service';
 import { SetUser } from 'src/app/utils/ngxs/auth/auth.actions';
 
@@ -21,10 +21,13 @@ export class UserBioModalComponent implements OnInit {
 
   submit() {
     this.user
-      .pipe(concatMap((u) => this.updateBioGQL.mutate({ updateUserInput: { bio: this.bio, id: u.id } })))
+      .pipe(
+        concatMap((u) => this.updateBioGQL.mutate({ updateUserInput: { bio: this.bio, id: u.id } })),
+        take(1)
+      )
       .subscribe((e) => {
         console.log(e);
-        this.store.dispatch(new SetUser(e.data.updateUser as any));
+        this.store.dispatch(new SetUser({ ...e.data.updateUser } as any));
       });
   }
 
