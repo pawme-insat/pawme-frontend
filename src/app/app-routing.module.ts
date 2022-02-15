@@ -51,8 +51,6 @@ const routes: Routes = [
     component: UserPictureModalComponent,
   },
 
-  { path: 'test2', component: AddPetModalComponent },
-
   {
     path: 'feed',
     component: FeedComponent,

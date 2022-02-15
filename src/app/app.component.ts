@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Select } from '@ngxs/store';
-import { filter, map, Observable, of, switchMap, tap } from 'rxjs';
+import { combineLatest, filter, map, Observable, of, switchMap, tap } from 'rxjs';
 import { User } from './services/pawme.graphql.service';
 
 @Component({
@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
 
   $showAddPetModal: Observable<Boolean>;
   $showBioModal: Observable<Boolean>;
+  $showUserPictureModal: Observable<Boolean>;
+
+  $modalChoice: Observable<number>;
 
   noFooter = ['/sign-up', '/sign-in', '/profile', '/pet-profile', '/add-pet', '/feed'];
 
@@ -26,6 +29,13 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.$showAddPetModal = this.showAddPetModal();
     this.$showBioModal = this.showBioModal();
+    this.$showUserPictureModal = this.user.pipe(map((e) => !!e && !e.image));
+
+    this.$modalChoice = combineLatest([this.$showBioModal, this.$showUserPictureModal, this.$showAddPetModal]).pipe(
+      map((arr) => {
+        return arr.findIndex((e) => e) + 1;
+      })
+    );
   }
 
   hasFooter(): boolean {
@@ -45,10 +55,7 @@ export class AppComponent implements OnInit {
   }
 
   showAddPetModal(): Observable<Boolean> {
-    return of(false);
-
     const allowedUrls = ['/add-pet'];
-
     const currentRoute = this.router.events.pipe(
       filter((event: NavigationEnd) => event instanceof NavigationEnd),
       map((e) => e.url)

@@ -3,15 +3,9 @@
   <router-outlet></router-outlet>
   <app-footer *ngIf="hasFooter()"></app-footer>
 
-  <div
-    *ngIf="$showAddPetModal | async"
-    class="absolute z-50 top-0 left-0 h-screen w-full bg-black bg-opacity-30 flex items-center justify-center"
-  >
-    <div class="bg-white rounded p-10">
-      <p>WOOPSIE NO PETS</p>
-      <a routerLink="/add-pet" class="bg-red-200">Take me to add pet form</a>
-    </div>
+  <div *ngIf="$modalChoice | async as choice">
+    <app-user-bio-modal *ngIf="choice === 0"></app-user-bio-modal>
+    <app-user-picture-modal *ngIf="choice === 1"></app-user-picture-modal>
+    <app-add-pet-modal *ngIf="choice === 2"></app-add-pet-modal>
   </div>
-
-  <app-user-bio-modal *ngIf="$showBioModal | async"></app-user-bio-modal>
 </div>
