@@ -1,1 +1,12 @@
-<div class="bg-backgrounds-normal shadow-2xl h-14"></div>
+<div class="bg-backgrounds-normal flex shadow-2xl h-16 items-center justify-center gap-10">
+  <div
+    *ngFor="let pet of petsImages"
+    class="border-4 rounded-full p-1 cursor-pointer"
+    (click)="changePet()"
+    [ngClass]="[pet.connected ? 'border-secondary-dark' : 'border-gray-400']"
+  >
+    <div class="rounded-full overflow-hidden bg-center bg-cover w-10 h-10">
+      <img [src]="pet.url" />
+    </div>
+  </div>
+</div>
