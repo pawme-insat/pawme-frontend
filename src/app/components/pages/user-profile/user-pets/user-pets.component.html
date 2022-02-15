@@ -1,7 +1,16 @@
 <div
   class="flex relative w-full py-12 flex-col px-12 gap-7 bg-gray-200 rounded-3xl shadow-[-2px_-4px_50px_2px_rgba(0, 0, 0, 0.5)]"
 >
-  <h5 class="text-gray-500 font-body text-xl">My Pets</h5>
+  <h5 class="text-gray-500 flex items-center font-body text-xl">
+    My Pets
+    <div
+      routerLink="/add-pet"
+      class="cursor-pointer w-8 ml-4 inline-block p-1 h-8 rounded-full text-white bg-primary-dark"
+    >
+      <svg-icon class="object-center" src="assets/icons/shared/plus.svg"></svg-icon>
+    </div>
+  </h5>
+
   <app-pet *ngFor="let pet of pets" [pet]="pet"></app-pet>
 
   <div class="md:hidden h-12">

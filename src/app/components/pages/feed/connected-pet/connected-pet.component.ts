@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connected-pet.component.scss'],
 })
 export class ConnectedPetComponent implements OnInit {
+  petsImages = [
+    { url: 'assets/puppy.jpg', connected: true },
+    { url: 'assets/puppy.jpg', connected: false },
+    { url: 'assets/puppy.jpg', connected: false },
+  ];
   constructor() {}
 
   ngOnInit(): void {}
+
+  changePet() {
+    console.log('change pet and reload feed');
+  }
 }
