@@ -8,9 +8,8 @@ describe('UserPictureModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserPictureModalComponent ]
-    })
-    .compileComponents();
+      declarations: [UserPictureModalComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

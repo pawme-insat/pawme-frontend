@@ -8,6 +8,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { PetProfileComponent } from './pages/pet-profile/pet-profile.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
+import { FeedComponent } from './pages/feed/feed.component';
 
 const routes: Routes = [
   {
@@ -38,14 +39,17 @@ const routes: Routes = [
     path: 'pet-profile',
     children: [{ path: ':id', component: PetProfileComponent }],
   },
-
-  {
-    path: '404',
-    component: NotfoundComponent,
-  },
   {
     path: 'add-pet',
     component: AddPetComponent,
+  },
+  {
+    path: 'feed',
+    component: FeedComponent,
+  },
+  {
+    path: '404',
+    component: NotfoundComponent,
   },
 ];
 

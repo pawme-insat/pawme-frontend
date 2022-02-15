@@ -19,6 +19,9 @@ module.exports = {
         gray: {
           normal: '#636363',
         },
+        backgrounds: {
+          normal: '#f8f8fa',
+        },
       },
       fontFamily: {
         display: ['Montserrat', 'sans-serif'],
