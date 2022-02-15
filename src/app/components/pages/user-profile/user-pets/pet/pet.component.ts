@@ -12,4 +12,8 @@ export class PetComponent implements OnInit {
 
   constructor() {}
   ngOnInit(): void {}
+
+  getProfileUrl(): string {
+    return `/pet-profile/${this.pet.id}`;
+  }
 }

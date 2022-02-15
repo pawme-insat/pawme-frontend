@@ -388,7 +388,8 @@ export type Pet = {
   pdp?: Maybe<Scalars['String']>;
   petPreference?: Maybe<PetPreference>;
   sexe: Sexe;
-  user: User;
+  user?: Maybe<User>;
+  userId?: Maybe<Scalars['Float']>;
 };
 
 export type PetGallery = {
@@ -704,7 +705,7 @@ export type GetPetQueryVariables = Exact<{
 }>;
 
 
-export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', name: string, id: number } | null | undefined } } };
+export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, user?: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number } | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', name: string, id: number } | null | undefined }, gallery?: Array<{ __typename?: 'PetGallery', filename: string, id: number }> | null | undefined } };
 
 export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -896,6 +897,10 @@ export const GetPetDocument = gql`
         name
         id
       }
+    }
+    gallery {
+      filename
+      id
     }
   }
 }

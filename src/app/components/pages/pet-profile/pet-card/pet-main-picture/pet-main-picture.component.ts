@@ -8,7 +8,7 @@ import { PetGallery } from 'src/app/services/pawme.graphql.service';
 })
 export class PetMainPictureComponent implements OnInit {
   @Input()
-  picture: PetGallery;
+  pdp: string;
   constructor() {}
 
   ngOnInit(): void {}

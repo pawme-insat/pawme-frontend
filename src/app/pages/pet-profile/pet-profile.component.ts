@@ -23,11 +23,11 @@ export class PetProfileComponent implements OnInit {
 
     const pet = this.route.paramMap.pipe(
       map((e) => e.get('id')),
-      switchMap((e) => query(Number(e))),
-      catchError(() => {
-        this.router.navigate(['/404']);
-        return of(null);
-      })
+      switchMap((e) => query(Number(e)))
+      // catchError(() => {
+      //   this.router.navigate(['/404']);
+      //   return of(null);
+      // })
     );
 
     this.pet = pet as any;

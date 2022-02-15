@@ -39,11 +39,6 @@ const routes: Routes = [
     path: 'pet-profile',
     children: [{ path: ':id', component: PetProfileComponent }],
   },
-
-  {
-    path: '404',
-    component: NotfoundComponent,
-  },
   {
     path: 'add-pet',
     component: AddPetComponent,
@@ -52,6 +47,11 @@ const routes: Routes = [
   {
     path: 'test',
     component: UserPictureModalComponent,
+  },
+
+  {
+    path: '404',
+    component: NotfoundComponent,
   },
 ];
 
