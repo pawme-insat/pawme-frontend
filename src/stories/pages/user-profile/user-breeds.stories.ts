@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import {UserBreedsComponent} from "../../../app/components/pages/user-profile/user-breeds/user-breeds.component";
+import { UserBreedsComponent } from '../../../app/components/pages/user-profile/user-breeds/user-breeds.component';
 
 export default {
   title: 'Pages/User-profile/breeds',

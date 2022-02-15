@@ -31,7 +31,7 @@ import { HomeBannerCtaButtonsComponent } from './components/pages/home/homebanne
 import { CircleStepComponent } from './components/pages/home/home-explanation/circle-step/circle-step.component';
 import { GenericFormComponent } from './components/forms/generic-form/generic-form.component';
 import { SideBannerComponent } from './components/shared/side-banner/side-banner.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { AuthState } from './utils/ngxs/auth/auth.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -64,6 +64,10 @@ import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-
 import { AgePipe } from './pipes/age/age.pipe';
 import { UserPicturePipe } from './pipes/user-picture/user-picture.pipe';
 import { PetPicturePipe } from './pipes/user-picture/pet-picture.pipe';
+import { FeedComponent } from './pages/feed/feed.component';
+import { ConnectedPetComponent } from './components/pages/feed/connected-pet/connected-pet.component';
+import { PetPictureBannerComponent } from './components/pages/feed/pet-picture-banner/pet-picture-banner.component';
+import { PetInfoBannerComponent } from './components/pages/feed/pet-info-banner/pet-info-banner.component';
 
 @NgModule({
   declarations: [
@@ -119,13 +123,17 @@ import { PetPicturePipe } from './pipes/user-picture/pet-picture.pipe';
     AgePipe,
     UserPicturePipe,
     PetPicturePipe,
+    FeedComponent,
+    ConnectedPetComponent,
+    PetPictureBannerComponent,
+    PetInfoBannerComponent,
   ],
   imports: [
     HttpClientModule,
     NgxsReduxDevtoolsPluginModule.forRoot(),
     AngularSvgIconModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot({key: [AuthState]}),
+    NgxsStoragePluginModule.forRoot({ key: [AuthState] }),
     NgxsModule.forRoot([AuthState], {
       developmentMode: true,
     }),

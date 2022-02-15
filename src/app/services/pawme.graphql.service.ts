@@ -192,186 +192,149 @@ export type Mutation = {
   updateUser: User;
 };
 
-
 export type MutationSignUpArgs = {
   registerDto: RegisterDto;
 };
-
 
 export type MutationCreateAddressArgs = {
   createAddressInput: CreateAddressInput;
 };
 
-
 export type MutationCreateBreedArgs = {
   createBreedInput: CreateBreedInput;
 };
-
 
 export type MutationCreateBreedCharacteristicArgs = {
   createBreedCharacteristicInput: CreateBreedCharacteristicInput;
 };
 
-
 export type MutationCreateConversationArgs = {
   createConversationInput: CreateConversationInput;
 };
-
 
 export type MutationCreateLikeArgs = {
   createLikeInput: CreateLikePetInput;
 };
 
-
 export type MutationCreateMatchArgs = {
   createMatchInput: CreateMatchInput;
 };
-
 
 export type MutationCreateMessageArgs = {
   createMessageInput: CreateMessageInput;
 };
 
-
 export type MutationCreatePetArgs = {
   createPetInput: CreatePetInput;
 };
-
 
 export type MutationCreatePetPreferenceArgs = {
   createPetPreferenceInput: CreatePetPreferenceInput;
 };
 
-
 export type MutationCreateReviewArgs = {
   createReviewInput: CreateReviewInput;
 };
-
 
 export type MutationCreateTypeArgs = {
   createTypeInput: CreatePetTypeInput;
 };
 
-
 export type MutationCreateUserArgs = {
   createUserInput: CreateUserInput;
 };
-
 
 export type MutationRemoveAddressArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemoveBreedArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationRemoveBreedCharacteristicArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemoveConversationArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationRemoveLikeArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemoveMatchArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationRemoveMessageArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemovePetArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationRemovePetPreferenceArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemoveReviewArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationRemoveTypeArgs = {
   id: Scalars['Int'];
 };
 
-
 export type MutationRemoveUserArgs = {
   id: Scalars['Int'];
 };
-
 
 export type MutationUpdateAddressArgs = {
   updateAddressInput: UpdateAddressInput;
 };
 
-
 export type MutationUpdateBreedArgs = {
   updateBreedInput: UpdateBreedInput;
 };
-
 
 export type MutationUpdateBreedCharacteristicArgs = {
   updateBreedCharacteristicInput: UpdateBreedCharacteristicInput;
 };
 
-
 export type MutationUpdateConversationArgs = {
   updateConversationInput: UpdateConversationInput;
 };
-
 
 export type MutationUpdateLikeArgs = {
   updateLikeInput: UpdateLikePetInput;
 };
 
-
 export type MutationUpdateMatchArgs = {
   updateMatchInput: UpdateMatchInput;
 };
-
 
 export type MutationUpdateMessageArgs = {
   updateMessageInput: UpdateMessageInput;
 };
 
-
 export type MutationUpdatePetArgs = {
   updatePetInput: UpdatePetInput;
 };
-
 
 export type MutationUpdatePetPreferenceArgs = {
   updatePetPreferenceInput: UpdatePetPreferenceInput;
 };
 
-
 export type MutationUpdateReviewArgs = {
   updateReviewInput: UpdateReviewInput;
 };
 
-
 export type MutationUpdateTypeArgs = {
   updateTypeInput: UpdatePetTypeInput;
 };
-
 
 export type MutationUpdateUserArgs = {
   updateUserInput: UpdateUserInput;
@@ -445,71 +408,57 @@ export type Query = {
   validateEmail: ValidateEmailResponseDto;
 };
 
-
 export type QueryAddressArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryBreedArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryBreed_CharacteristicArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryConversationArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryLoginArgs = {
   credentials: SignInDto;
 };
-
 
 export type QueryMatchArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryMessageArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryPetArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryPetPreferenceArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryPet_LikeArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryPet_TypeArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryReviewArgs = {
   id: Scalars['Int'];
 };
 
-
 export type QueryUserArgs = {
   id: Scalars['Int'];
 };
-
 
 export type QueryValidateEmailArgs = {
   email: Scalars['String'];
@@ -535,12 +484,12 @@ export type Review = {
 
 export enum Sexe {
   Feminin = 'Feminin',
-  Masculin = 'Masculin'
+  Masculin = 'Masculin',
 }
 
 export enum SexeEnum {
   Feminin = 'Feminin',
-  Masculin = 'Masculin'
+  Masculin = 'Masculin',
 }
 
 export type SignInDto = {
@@ -669,81 +618,255 @@ export type ValidateEmailQueryVariables = Exact<{
   email: Scalars['String'];
 }>;
 
-
-export type ValidateEmailQuery = { __typename?: 'Query', validateEmail: { __typename?: 'ValidateEmailResponseDto', user_exists: boolean } };
+export type ValidateEmailQuery = {
+  __typename?: 'Query';
+  validateEmail: { __typename?: 'ValidateEmailResponseDto'; user_exists: boolean };
+};
 
 export type LoginQueryVariables = Exact<{
   credentials: SignInDto;
 }>;
 
-
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets?: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', id: number, name: string } | null | undefined } }> | null | undefined } } };
+export type LoginQuery = {
+  __typename?: 'Query';
+  login: {
+    __typename?: 'SignInResponseDto';
+    token: string;
+    user: {
+      __typename?: 'User';
+      id: number;
+      first_name: string;
+      last_name: string;
+      phone: number;
+      email: string;
+      birth_date: any;
+      bio?: string | null | undefined;
+      image?: string | null | undefined;
+      address: {
+        __typename?: 'Address';
+        zip_code: number;
+        street: string;
+        region: string;
+        country: string;
+        id: number;
+      };
+      pets?:
+        | Array<{
+            __typename?: 'Pet';
+            id: number;
+            name: string;
+            birth_date: any;
+            sexe: Sexe;
+            aboutMe: string;
+            pdp?: string | null | undefined;
+            breedType: {
+              __typename?: 'Breed';
+              name: string;
+              breed_characteristics?:
+                | Array<{
+                    __typename?: 'BreedCharacteristic';
+                    label: string;
+                    id: number;
+                    description?: string | null | undefined;
+                  }>
+                | null
+                | undefined;
+              petType?: { __typename?: 'PetType'; id: number; name: string } | null | undefined;
+            };
+          }>
+        | null
+        | undefined;
+    };
+  };
+};
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
 }>;
 
-
-export type SignUpMutation = { __typename?: 'Mutation', SignUp: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, bio?: string | null | undefined, password: string, birth_date: any, address: { __typename?: 'Address', id: number, zip_code: number, street: string, region: string, country: string } } };
+export type SignUpMutation = {
+  __typename?: 'Mutation';
+  SignUp: {
+    __typename?: 'User';
+    id: number;
+    first_name: string;
+    last_name: string;
+    phone: number;
+    email: string;
+    bio?: string | null | undefined;
+    password: string;
+    birth_date: any;
+    address: { __typename?: 'Address'; id: number; zip_code: number; street: string; region: string; country: string };
+  };
+};
 
 export type CreateTypeMutationVariables = Exact<{
   createTypeInput: CreatePetTypeInput;
 }>;
 
-
-export type CreateTypeMutation = { __typename?: 'Mutation', createType: { __typename?: 'PetType', name: string, id: number } };
+export type CreateTypeMutation = {
+  __typename?: 'Mutation';
+  createType: { __typename?: 'PetType'; name: string; id: number };
+};
 
 export type CreatePetMutationVariables = Exact<{
   createPetInput: CreatePetInput;
 }>;
 
-
-export type CreatePetMutation = { __typename?: 'Mutation', createPet: { __typename?: 'Pet', name: string, birth_date: any, sexe: Sexe, aboutMe: string } };
+export type CreatePetMutation = {
+  __typename?: 'Mutation';
+  createPet: { __typename?: 'Pet'; name: string; birth_date: any; sexe: Sexe; aboutMe: string };
+};
 
 export type GetPetQueryVariables = Exact<{
   petId: Scalars['Int'];
 }>;
 
+export type GetPetQuery = {
+  __typename?: 'Query';
+  pet: {
+    __typename?: 'Pet';
+    id: number;
+    name: string;
+    birth_date: any;
+    sexe: Sexe;
+    aboutMe: string;
+    pdp: string;
+    user: { __typename?: 'User'; image?: string | null | undefined; first_name: string; last_name: string; id: number };
+    breedType: {
+      __typename?: 'Breed';
+      name: string;
+      breed_characteristics: Array<{
+        __typename?: 'BreedCharacteristic';
+        label: string;
+        id: number;
+        description?: string | null | undefined;
+      }>;
+      type: { __typename?: 'PetType'; id: number; name: string };
+    };
+  };
+};
 
-export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, user?: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number } | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', name: string, id: number } | null | undefined }, gallery?: Array<{ __typename?: 'PetGallery', filename: string, id: number }> | null | undefined } };
+export type GetPetQuery = {
+  __typename?: 'Query';
+  pet: {
+    __typename?: 'Pet';
+    id: number;
+    name: string;
+    birth_date: any;
+    sexe: Sexe;
+    aboutMe: string;
+    pdp?: string | null | undefined;
+    user?:
+      | { __typename?: 'User'; image?: string | null | undefined; first_name: string; last_name: string; id: number }
+      | null
+      | undefined;
+    breedType: {
+      __typename?: 'Breed';
+      name: string;
+      breed_characteristics?:
+        | Array<{
+            __typename?: 'BreedCharacteristic';
+            label: string;
+            id: number;
+            description?: string | null | undefined;
+          }>
+        | null
+        | undefined;
+      petType?: { __typename?: 'PetType'; name: string; id: number } | null | undefined;
+    };
+    gallery?: Array<{ __typename?: 'PetGallery'; filename: string; id: number }> | null | undefined;
+  };
+};
 
-export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetPetTypesQuery = { __typename?: 'Query', pet_types: Array<{ __typename?: 'PetType', id: number, name: string }> };
+export type GetPetTypesQuery = {
+  __typename?: 'Query';
+  pet_types: Array<{ __typename?: 'PetType'; id: number; name: string }>;
+};
 
 export type UpdateBioMutationVariables = Exact<{
   updateUserInput: UpdateUserInput;
 }>;
 
-
-export type UpdateBioMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'User', bio?: string | null | undefined } };
+export type UpdateBioMutation = {
+  __typename?: 'Mutation';
+  updateUser: { __typename?: 'User'; bio?: string | null | undefined };
+};
 
 export type UserFullDataQueryVariables = Exact<{
   userId: Scalars['Int'];
 }>;
 
-
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets?: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', id: number, name: string } | null | undefined } }> | null | undefined } | null | undefined };
+export type UserFullDataQuery = {
+  __typename?: 'Query';
+  user?:
+    | {
+        __typename?: 'User';
+        id: number;
+        first_name: string;
+        last_name: string;
+        phone: number;
+        email: string;
+        birth_date: any;
+        bio?: string | null | undefined;
+        image?: string | null | undefined;
+        address: {
+          __typename?: 'Address';
+          zip_code: number;
+          street: string;
+          region: string;
+          country: string;
+          id: number;
+        };
+        pets?:
+          | Array<{
+              __typename?: 'Pet';
+              id: number;
+              name: string;
+              birth_date: any;
+              sexe: Sexe;
+              aboutMe: string;
+              pdp?: string | null | undefined;
+              breedType: {
+                __typename?: 'Breed';
+                name: string;
+                breed_characteristics?:
+                  | Array<{
+                      __typename?: 'BreedCharacteristic';
+                      label: string;
+                      id: number;
+                      description?: string | null | undefined;
+                    }>
+                  | null
+                  | undefined;
+                petType?: { __typename?: 'PetType'; id: number; name: string } | null | undefined;
+              };
+            }>
+          | null
+          | undefined;
+      }
+    | null
+    | undefined;
+};
 
 export const ValidateEmailDocument = gql`
-    query ValidateEmail($email: String!) {
-  validateEmail(email: $email) {
-    user_exists
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class ValidateEmailGQL extends Apollo.Query<ValidateEmailQuery, ValidateEmailQueryVariables> {
-    document = ValidateEmailDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
+  query ValidateEmail($email: String!) {
+    validateEmail(email: $email) {
+      user_exists
     }
   }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ValidateEmailGQL extends Apollo.Query<ValidateEmailQuery, ValidateEmailQueryVariables> {
+  document = ValidateEmailDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
 export const LoginDocument = gql`
     query Login($credentials: SignInDto!) {
   login(credentials: $credentials) {
@@ -784,109 +907,22 @@ export const LoginDocument = gql`
         pdp
       }
     }
-    token
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
+  document = SignUpDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
   }
 }
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class LoginGQL extends Apollo.Query<LoginQuery, LoginQueryVariables> {
-    document = LoginDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
-export const SignUpDocument = gql`
-    mutation SignUp($registerDto: RegisterDto!) {
-  SignUp(registerDto: $registerDto) {
-    id
-    first_name
-    last_name
-    phone
-    email
-    bio
-    password
-    address {
-      id
-      zip_code
-      street
-      region
-      country
-    }
-    birth_date
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class SignUpGQL extends Apollo.Mutation<SignUpMutation, SignUpMutationVariables> {
-    document = SignUpDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
 export const CreateTypeDocument = gql`
-    mutation CreateType($createTypeInput: CreatePetTypeInput!) {
-  createType(createTypeInput: $createTypeInput) {
-    name
-    id
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class CreateTypeGQL extends Apollo.Mutation<CreateTypeMutation, CreateTypeMutationVariables> {
-    document = CreateTypeDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
-export const CreatePetDocument = gql`
-    mutation CreatePet($createPetInput: CreatePetInput!) {
-  createPet(createPetInput: $createPetInput) {
-    name
-    birth_date
-    sexe
-    aboutMe
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class CreatePetGQL extends Apollo.Mutation<CreatePetMutation, CreatePetMutationVariables> {
-    document = CreatePetDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
-export const GetPetDocument = gql`
-    query GetPet($petId: Int!) {
-  pet(id: $petId) {
-    id
-    name
-    birth_date
-    sexe
-    aboutMe
-    user {
-      image
-      first_name
-      last_name
-      id
-    }
-    pdp
-    breedType {
+  mutation CreateType($createTypeInput: CreatePetTypeInput!) {
+    createType(createTypeInput: $createTypeInput) {
       name
       breed_characteristics {
         label
@@ -906,53 +942,53 @@ export const GetPetDocument = gql`
 }
     `;
 
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class GetPetGQL extends Apollo.Query<GetPetQuery, GetPetQueryVariables> {
-    document = GetPetDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
+@Injectable({
+  providedIn: 'root',
+})
+export class GetPetGQL extends Apollo.Query<GetPetQuery, GetPetQueryVariables> {
+  document = GetPetDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
   }
+}
 export const GetPetTypesDocument = gql`
-    query GetPetTypes {
-  pet_types {
-    id
-    name
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class GetPetTypesGQL extends Apollo.Query<GetPetTypesQuery, GetPetTypesQueryVariables> {
-    document = GetPetTypesDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
+  query GetPetTypes {
+    pet_types {
+      id
+      name
     }
   }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GetPetTypesGQL extends Apollo.Query<GetPetTypesQuery, GetPetTypesQueryVariables> {
+  document = GetPetTypesDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
 export const UpdateBioDocument = gql`
-    mutation UpdateBio($updateUserInput: UpdateUserInput!) {
-  updateUser(updateUserInput: $updateUserInput) {
-    bio
-  }
-}
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class UpdateBioGQL extends Apollo.Mutation<UpdateBioMutation, UpdateBioMutationVariables> {
-    document = UpdateBioDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
+  mutation UpdateBio($updateUserInput: UpdateUserInput!) {
+    updateUser(updateUserInput: $updateUserInput) {
+      bio
     }
   }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UpdateBioGQL extends Apollo.Mutation<UpdateBioMutation, UpdateBioMutationVariables> {
+  document = UpdateBioDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
 export const UserFullDataDocument = gql`
     query UserFullData($userId: Int!) {
   user(id: $userId) {
@@ -971,12 +1007,55 @@ export const UserFullDataDocument = gql`
       country
       id
     }
-    pets {
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CreateTypeGQL extends Apollo.Mutation<CreateTypeMutation, CreateTypeMutationVariables> {
+  document = CreateTypeDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export const CreatePetDocument = gql`
+  mutation CreatePet($createPetInput: CreatePetInput!) {
+    createPet(createPetInput: $createPetInput) {
+      name
+      birth_date
+      sexe
+      aboutMe
+    }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CreatePetGQL extends Apollo.Mutation<CreatePetMutation, CreatePetMutationVariables> {
+  document = CreatePetDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export const GetPetDocument = gql`
+  query GetPet($petId: Int!) {
+    pet(id: $petId) {
       id
       name
       birth_date
       sexe
       aboutMe
+      user {
+        image
+        first_name
+        last_name
+        id
+      }
+      pdp
       breedType {
         name
         breed_characteristics {
@@ -992,16 +1071,103 @@ export const UserFullDataDocument = gql`
       pdp
     }
   }
-}
-    `;
+`;
 
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class UserFullDataGQL extends Apollo.Query<UserFullDataQuery, UserFullDataQueryVariables> {
-    document = UserFullDataDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
+@Injectable({
+  providedIn: 'root',
+})
+export class GetPetGQL extends Apollo.Query<GetPetQuery, GetPetQueryVariables> {
+  document = GetPetDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export const GetPetTypesDocument = gql`
+  query GetPetTypes {
+    pet_types {
+      id
+      name
     }
   }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GetPetTypesGQL extends Apollo.Query<GetPetTypesQuery, GetPetTypesQueryVariables> {
+  document = GetPetTypesDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export const UpdateBioDocument = gql`
+  mutation UpdateBio($updateUserInput: UpdateUserInput!) {
+    updateUser(updateUserInput: $updateUserInput) {
+      bio
+    }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UpdateBioGQL extends Apollo.Mutation<UpdateBioMutation, UpdateBioMutationVariables> {
+  document = UpdateBioDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export const UserFullDataDocument = gql`
+  query UserFullData($userId: Int!) {
+    user(id: $userId) {
+      id
+      first_name
+      last_name
+      phone
+      email
+      birth_date
+      bio
+      image
+      address {
+        zip_code
+        street
+        region
+        country
+        id
+      }
+      pets {
+        id
+        name
+        birth_date
+        sexe
+        aboutMe
+        breedType {
+          name
+          breed_characteristics {
+            label
+            id
+            description
+          }
+          type {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UserFullDataGQL extends Apollo.Query<UserFullDataQuery, UserFullDataQueryVariables> {
+  document = UserFullDataDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}

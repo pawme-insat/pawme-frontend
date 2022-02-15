@@ -10,6 +10,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AddPetComponent } from './components/pages/add-pet/add-pet.component';
 import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
 import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
+import { FeedComponent } from './pages/feed/feed.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
 
   { path: 'test2', component: AddPetModalComponent },
 
+  {
+    path: 'feed',
+    component: FeedComponent,
+  },
   {
     path: '404',
     component: NotfoundComponent,

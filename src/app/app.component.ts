@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   $showAddPetModal: Observable<Boolean>;
   $showBioModal: Observable<Boolean>;
 
-  noFooter = ['/sign-up', '/sign-in', '/profile', '/pet-profile', '/add-pet'];
+  noFooter = ['/sign-up', '/sign-in', '/profile', '/pet-profile', '/add-pet', '/feed'];
 
   noNavbar = ['/sign-up', '/sign-in', '/add-pet'];
 
@@ -28,15 +28,15 @@ export class AppComponent implements OnInit {
     this.$showBioModal = this.showBioModal();
   }
 
-  has_footer(): boolean {
-    return this.has_layout(this.noFooter);
+  hasFooter(): boolean {
+    return this.hasLayout(this.noFooter);
   }
 
-  has_navbar(): boolean {
-    return this.has_layout(this.noNavbar);
+  hasNavbar(): boolean {
+    return this.hasLayout(this.noNavbar);
   }
 
-  has_layout(routes: string[]): boolean {
+  hasLayout(routes: string[]): boolean {
     return !routes.find((e) => e === this.router.url);
   }
 

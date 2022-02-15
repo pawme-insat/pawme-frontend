@@ -9,16 +9,12 @@ export class BreedComponent implements OnInit {
   @Input() index: number;
   @Input() name: String;
 
-  background: String = ''
-  backgrounds = [
-    'bg-primary-normal',
-    'bg-secondary-light',
-    'bg-gray-400'
-  ]
+  background: String = '';
+  backgrounds = ['bg-primary-normal', 'bg-secondary-light', 'bg-gray-400'];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.background = this.backgrounds[this.index%3]
+    this.background = this.backgrounds[this.index % 3];
   }
 }
