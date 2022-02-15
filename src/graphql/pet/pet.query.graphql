@@ -19,9 +19,9 @@ query GetPet($petId: Int!) {
         id
         description
       }
-      type {
-        id
+      petType {
         name
+        id
       }
     }
   }

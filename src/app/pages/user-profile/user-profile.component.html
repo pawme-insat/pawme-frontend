@@ -2,7 +2,7 @@
   <div v *ngIf="user | async as u" class="flex md:flex-row md:justify-center flex-col pt-24 h-screen w-full relative">
     <div class="md:w-2/5">
       <app-profile-banner [user]="u"></app-profile-banner>
-      <app-user-breeds></app-user-breeds>
+      <app-user-breeds [pets]="u.pets"></app-user-breeds>
     </div>
 
     <div class="flex justify-center md:w-2/5">

@@ -28,11 +28,12 @@ query UserFullData($userId: Int!) {
           id
           description
         }
-        type {
+        petType {
           id
           name
         }
       }
+      pdp
     }
   }
 }

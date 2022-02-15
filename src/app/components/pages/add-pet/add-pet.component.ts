@@ -9,6 +9,7 @@ import { map, Observable, switchMap, take } from 'rxjs';
 import { SignUpFormValues } from '../../auth/sign-up/sign-up.interface';
 import { SelectField } from '../../../models/SelectField';
 import { TextAreaField } from '../../../models/TextAreaField';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-pet',
@@ -32,7 +33,7 @@ export class AddPetComponent implements OnInit {
   public formErrors: string[] = [];
   private petTypes: PetType[] = [];
 
-  constructor(private createPet: CreatePetGQL, private getPetTypes: GetPetTypesGQL) {}
+  constructor(private createPet: CreatePetGQL, private getPetTypes: GetPetTypesGQL, private router: Router) {}
 
   ngOnInit(): void {
     this.getPetTypes
@@ -53,6 +54,7 @@ export class AddPetComponent implements OnInit {
 
     this.user
       .pipe(
+        take(1),
         switchMap((u) =>
           this.createPet.mutate({
             createPetInput: {
@@ -61,11 +63,11 @@ export class AddPetComponent implements OnInit {
               sexe: mappingGender[values.gender],
               name: values.name,
               user: u.id,
-              breedType: { name: values.breed, type: this.petTypes.find((e) => e.name === values.type).id },
+              breedType: { name: values.breed, petType: this.petTypes.find((e) => e.name === values.type).id },
             },
           })
         )
       )
-      .subscribe((e) => console.log(e));
+      .subscribe(() => this.router.navigate(['/profile']));
   }
 }

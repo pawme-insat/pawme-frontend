@@ -2,9 +2,7 @@
   <h6 class="text-gray-400 font-body px-12">Breeds</h6>
 
   <div class="flex mt-3 gap-3 md:flex-wrap md:overflow-auto overflow-x-scroll pb-10 px-12">
-    <app-breed *ngFor="let breed of breeds; let i = index" [name]="breed" [index]="i"></app-breed>
-
-
+    <app-breed *ngFor="let breed of getBreedName(); let i = index" [name]="breed" [index]="i"></app-breed>
   </div>
   <div class="md:hidden absolute right-0 h-28 w-14 bg-gradient-to-l from-white to-transparent"></div>
 </div>

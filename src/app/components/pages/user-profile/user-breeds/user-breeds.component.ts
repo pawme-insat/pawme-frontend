@@ -1,21 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Breed, Pet } from 'src/app/services/pawme.graphql.service';
 
 @Component({
   selector: 'app-user-breeds',
   templateUrl: './user-breeds.component.html',
-  styleUrls: ['./user-breeds.component.scss']
+  styleUrls: ['./user-breeds.component.scss'],
 })
 export class UserBreedsComponent implements OnInit {
+  @Input()
+  pets: Pet[] = [];
 
-  breeds: String[] =[]
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    // get the breeds of current user pets
-    for (let i=0; i <5 ; i++) {
-      this.breeds.push('Rottweiler')
-    }
+  getBreedName(): string[] {
+    return this.pets.map((e) => e.breedType).map((e) => `${e.name} ${e?.petType?.name}`);
   }
-
 }

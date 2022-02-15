@@ -28,10 +28,10 @@ export type Address = {
 
 export type Breed = {
   __typename?: 'Breed';
-  breed_characteristics: Array<BreedCharacteristic>;
+  breed_characteristics?: Maybe<Array<BreedCharacteristic>>;
   id: Scalars['Int'];
   name: Scalars['String'];
-  type: PetType;
+  petType?: Maybe<PetType>;
 };
 
 export type BreedCharacteristic = {
@@ -62,7 +62,7 @@ export type CreateBreedCharacteristicInput = {
 
 export type CreateBreedInput = {
   name: Scalars['String'];
-  type: Scalars['Float'];
+  petType: Scalars['Float'];
 };
 
 export type CreateConversationInput = {
@@ -71,11 +71,13 @@ export type CreateConversationInput = {
 };
 
 export type CreateLikePetInput = {
-  likedPet: CreatePetInput;
-  pet: CreatePetInput;
+  likedPet: Scalars['Int'];
+  pet: Scalars['Int'];
 };
 
 export type CreateMatchInput = {
+  isSeenLeft: Scalars['Boolean'];
+  isSeenRight: Scalars['Boolean'];
   likePetLeft: CreateLikePetInput;
   likePetRight: CreateLikePetInput;
 };
@@ -92,8 +94,16 @@ export type CreatePetInput = {
   birth_date: Scalars['DateTime'];
   breedType: CreateBreedInput;
   name: Scalars['String'];
+  petPreference?: InputMaybe<Scalars['Float']>;
   sexe: SexeEnum;
   user: Scalars['Float'];
+};
+
+export type CreatePetPreferenceInput = {
+  age?: InputMaybe<Scalars['Int']>;
+  breedType?: InputMaybe<Scalars['Float']>;
+  pet: Scalars['Float'];
+  sexe?: InputMaybe<Sexe>;
 };
 
 export type CreatePetTypeInput = {
@@ -102,7 +112,7 @@ export type CreatePetTypeInput = {
 
 export type CreateReviewInput = {
   description: Scalars['String'];
-  pet: CreatePetInput;
+  pet: CreateUserInput;
 };
 
 export type CreateUserInput = {
@@ -126,6 +136,8 @@ export type LikePet = {
 export type Match = {
   __typename?: 'Match';
   id: Scalars['Int'];
+  isSeenLeft: Scalars['Boolean'];
+  isSeenRight: Scalars['Boolean'];
   likePetLeft: LikePet;
   likePetRight: LikePet;
 };
@@ -150,6 +162,7 @@ export type Mutation = {
   createMatch: Match;
   createMessage: Message;
   createPet: Pet;
+  createPetPreference: PetPreference;
   createReview: Review;
   createType: PetType;
   createUser: User;
@@ -161,6 +174,7 @@ export type Mutation = {
   removeMatch: Match;
   removeMessage: Scalars['String'];
   removePet: Scalars['String'];
+  removePetPreference: PetPreference;
   removeReview: Scalars['String'];
   removeType: Scalars['String'];
   removeUser: Scalars['String'];
@@ -172,6 +186,7 @@ export type Mutation = {
   updateMatch: Match;
   updateMessage: Message;
   updatePet: Pet;
+  updatePetPreference: PetPreference;
   updateReview: Review;
   updateType: PetType;
   updateUser: User;
@@ -220,6 +235,11 @@ export type MutationCreateMessageArgs = {
 
 export type MutationCreatePetArgs = {
   createPetInput: CreatePetInput;
+};
+
+
+export type MutationCreatePetPreferenceArgs = {
+  createPetPreferenceInput: CreatePetPreferenceInput;
 };
 
 
@@ -274,6 +294,11 @@ export type MutationRemoveMessageArgs = {
 
 
 export type MutationRemovePetArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type MutationRemovePetPreferenceArgs = {
   id: Scalars['Int'];
 };
 
@@ -333,6 +358,11 @@ export type MutationUpdatePetArgs = {
 };
 
 
+export type MutationUpdatePetPreferenceArgs = {
+  updatePetPreferenceInput: UpdatePetPreferenceInput;
+};
+
+
 export type MutationUpdateReviewArgs = {
   updateReviewInput: UpdateReviewInput;
 };
@@ -352,10 +382,11 @@ export type Pet = {
   aboutMe: Scalars['String'];
   birth_date: Scalars['DateTime'];
   breedType: Breed;
-  gallery: Array<PetGallery>;
+  gallery?: Maybe<Array<PetGallery>>;
   id: Scalars['Int'];
   name: Scalars['String'];
-  pdp: Scalars['String'];
+  pdp?: Maybe<Scalars['String']>;
+  petPreference?: Maybe<PetPreference>;
   sexe: Sexe;
   user: User;
 };
@@ -365,6 +396,15 @@ export type PetGallery = {
   filename: Scalars['String'];
   id: Scalars['Int'];
   pet: Pet;
+};
+
+export type PetPreference = {
+  __typename?: 'PetPreference';
+  age: Scalars['Int'];
+  breedType: Breed;
+  id: Scalars['Int'];
+  pet: Pet;
+  sexe: Sexe;
 };
 
 export type PetType = {
@@ -390,6 +430,8 @@ export type Query = {
   message: Message;
   messages: Array<Message>;
   pet: Pet;
+  petPreference: PetPreference;
+  petPreferences: Array<PetPreference>;
   pet_like: LikePet;
   pet_likes: Array<LikePet>;
   pet_type: PetType;
@@ -439,6 +481,11 @@ export type QueryMessageArgs = {
 
 
 export type QueryPetArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type QueryPetPreferenceArgs = {
   id: Scalars['Int'];
 };
 
@@ -523,7 +570,7 @@ export type UpdateBreedCharacteristicInput = {
 export type UpdateBreedInput = {
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
-  type?: InputMaybe<Scalars['Float']>;
+  petType?: InputMaybe<Scalars['Float']>;
 };
 
 export type UpdateConversationInput = {
@@ -534,12 +581,14 @@ export type UpdateConversationInput = {
 
 export type UpdateLikePetInput = {
   id: Scalars['Int'];
-  likedPet?: InputMaybe<CreatePetInput>;
-  pet?: InputMaybe<CreatePetInput>;
+  likedPet?: InputMaybe<Scalars['Int']>;
+  pet?: InputMaybe<Scalars['Int']>;
 };
 
 export type UpdateMatchInput = {
   id: Scalars['Int'];
+  isSeenLeft?: InputMaybe<Scalars['Boolean']>;
+  isSeenRight?: InputMaybe<Scalars['Boolean']>;
   likePetLeft?: InputMaybe<CreateLikePetInput>;
   likePetRight?: InputMaybe<CreateLikePetInput>;
 };
@@ -558,8 +607,17 @@ export type UpdatePetInput = {
   breedType?: InputMaybe<CreateBreedInput>;
   id: Scalars['Int'];
   name?: InputMaybe<Scalars['String']>;
+  petPreference?: InputMaybe<Scalars['Float']>;
   sexe?: InputMaybe<SexeEnum>;
   user?: InputMaybe<Scalars['Float']>;
+};
+
+export type UpdatePetPreferenceInput = {
+  age?: InputMaybe<Scalars['Int']>;
+  breedType?: InputMaybe<Scalars['Float']>;
+  id: Scalars['Int'];
+  pet?: InputMaybe<Scalars['Float']>;
+  sexe?: InputMaybe<Sexe>;
 };
 
 export type UpdatePetTypeInput = {
@@ -570,7 +628,7 @@ export type UpdatePetTypeInput = {
 export type UpdateReviewInput = {
   description?: InputMaybe<Scalars['String']>;
   id: Scalars['Int'];
-  pet?: InputMaybe<CreatePetInput>;
+  pet?: InputMaybe<CreateUserInput>;
 };
 
 export type UpdateUserInput = {
@@ -597,7 +655,7 @@ export type User = {
   image?: Maybe<Scalars['String']>;
   last_name: Scalars['String'];
   password: Scalars['String'];
-  pets: Array<Pet>;
+  pets?: Maybe<Array<Pet>>;
   phone: Scalars['Int'];
 };
 
@@ -618,7 +676,7 @@ export type LoginQueryVariables = Exact<{
 }>;
 
 
-export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', first_name: string, last_name: string, id: number, phone: number, email: string, bio?: string | null | undefined, password: string, birth_date: any, image?: string | null | undefined, address: { __typename?: 'Address', id: number, zip_code: number, region: string, country: string, street: string }, pets: Array<{ __typename?: 'Pet', id: number }> } } };
+export type LoginQuery = { __typename?: 'Query', login: { __typename?: 'SignInResponseDto', token: string, user: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets?: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', id: number, name: string } | null | undefined } }> | null | undefined } } };
 
 export type SignUpMutationVariables = Exact<{
   registerDto: RegisterDto;
@@ -646,7 +704,7 @@ export type GetPetQueryVariables = Exact<{
 }>;
 
 
-export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp: string, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } } };
+export type GetPetQuery = { __typename?: 'Query', pet: { __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, user: { __typename?: 'User', image?: string | null | undefined, first_name: string, last_name: string, id: number }, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', name: string, id: number } | null | undefined } } };
 
 export type GetPetTypesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -665,7 +723,7 @@ export type UserFullDataQueryVariables = Exact<{
 }>;
 
 
-export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, breedType: { __typename?: 'Breed', name: string, breed_characteristics: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }>, type: { __typename?: 'PetType', id: number, name: string } } }> } | null | undefined };
+export type UserFullDataQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: number, first_name: string, last_name: string, phone: number, email: string, birth_date: any, bio?: string | null | undefined, image?: string | null | undefined, address: { __typename?: 'Address', zip_code: number, street: string, region: string, country: string, id: number }, pets?: Array<{ __typename?: 'Pet', id: number, name: string, birth_date: any, sexe: Sexe, aboutMe: string, pdp?: string | null | undefined, breedType: { __typename?: 'Breed', name: string, breed_characteristics?: Array<{ __typename?: 'BreedCharacteristic', label: string, id: number, description?: string | null | undefined }> | null | undefined, petType?: { __typename?: 'PetType', id: number, name: string } | null | undefined } }> | null | undefined } | null | undefined };
 
 export const ValidateEmailDocument = gql`
     query ValidateEmail($email: String!) {
@@ -689,25 +747,41 @@ export const LoginDocument = gql`
     query Login($credentials: SignInDto!) {
   login(credentials: $credentials) {
     user {
-      address {
-        id
-        zip_code
-        region
-        country
-        street
-      }
+      id
       first_name
       last_name
-      id
       phone
       email
-      bio
-      password
       birth_date
-      pets {
+      bio
+      image
+      address {
+        zip_code
+        street
+        region
+        country
         id
       }
-      image
+      pets {
+        id
+        name
+        birth_date
+        sexe
+        aboutMe
+        breedType {
+          name
+          breed_characteristics {
+            label
+            id
+            description
+          }
+          petType {
+            id
+            name
+          }
+        }
+        pdp
+      }
     }
     token
   }
@@ -818,9 +892,9 @@ export const GetPetDocument = gql`
         id
         description
       }
-      type {
-        id
+      petType {
         name
+        id
       }
     }
   }
@@ -905,11 +979,12 @@ export const UserFullDataDocument = gql`
           id
           description
         }
-        type {
+        petType {
           id
           name
         }
       }
+      pdp
     }
   }
 }
