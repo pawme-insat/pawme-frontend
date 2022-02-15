@@ -4,8 +4,8 @@
   <app-footer *ngIf="hasFooter()"></app-footer>
 
   <div *ngIf="$modalChoice | async as choice">
-    <app-user-bio-modal *ngIf="choice === 0"></app-user-bio-modal>
-    <app-user-picture-modal *ngIf="choice === 1"></app-user-picture-modal>
-    <app-add-pet-modal *ngIf="choice === 2"></app-add-pet-modal>
+    <app-user-bio-modal *ngIf="choice === 1"></app-user-bio-modal>
+    <app-user-picture-modal *ngIf="choice === 2"></app-user-picture-modal>
+    <app-add-pet-modal *ngIf="choice === 3"></app-add-pet-modal>
   </div>
 </div>
