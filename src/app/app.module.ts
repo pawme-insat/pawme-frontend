@@ -66,6 +66,7 @@ import { FeedComponent } from './pages/feed/feed.component';
 import { ConnectedPetComponent } from './components/pages/feed/connected-pet/connected-pet.component';
 import { PetPictureBannerComponent } from './components/pages/feed/pet-picture-banner/pet-picture-banner.component';
 import { PetInfoBannerComponent } from './components/pages/feed/pet-info-banner/pet-info-banner.component';
+import { PetPictureModalComponent } from './components/modals/pet-picture-modal/pet-picture-modal.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { PetInfoBannerComponent } from './components/pages/feed/pet-info-banner/
     ConnectedPetComponent,
     PetPictureBannerComponent,
     PetInfoBannerComponent,
+    PetPictureModalComponent,
   ],
   imports: [
     HttpClientModule,

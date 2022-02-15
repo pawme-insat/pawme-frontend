@@ -10,7 +10,13 @@ export class PetGalleryComponent implements OnInit {
   @Input()
   gallery: PetGallery[];
 
+  showModal = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  openModal() {
+    this.showModal = true;
+  }
 }

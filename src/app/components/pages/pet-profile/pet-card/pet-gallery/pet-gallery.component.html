@@ -1,14 +1,44 @@
 <div class="flex flex-col gap-3 mb-5">
+  <app-pet-picture-modal class="z-50" *ngIf="showModal"></app-pet-picture-modal>
+
   <h1 class="text-secondary-normal font-body font-bold text-l">Gallery</h1>
   <div class="flex h-20 gap-1.5 px-2 md:px-20">
     <div class="flex flex-col md:flex-row h-full grow-[2] md:grow-[5] gap-1.5">
       <div class="flex grow-[2] gap-1.5">
-        <div class="rounded bg-secondary-light grow-[1]"></div>
-        <div class="rounded bg-gray-400 grow-[3]"></div>
+        <div class="rounded bg-secondary-light cursor-pointer grow-[1]">
+          <div
+            (click)="openModal()"
+            class="rounded flex items-center justify-center w-full h-full bg-black opacity-0 hover:opacity-50"
+          >
+            <svg-icon class="text-white h-6 w-6" src="assets/icons/shared/plus.svg"></svg-icon>
+          </div>
+        </div>
+        <div class="rounded bg-gray-400 cursor-pointer grow-[3]">
+          <div
+            (click)="openModal()"
+            class="rounded flex items-center justify-center w-full h-full bg-black opacity-0 hover:opacity-50"
+          >
+            <svg-icon class="text-white h-6 w-6" src="assets/icons/shared/plus.svg"></svg-icon>
+          </div>
+        </div>
       </div>
 
-      <div class="rounded h-1/2 md:h-full bg-primary-light md:grow-[1]"></div>
+      <div class="rounded h-1/2 md:h-full cursor-pointer bg-primary-light md:grow-[1]">
+        <div
+          (click)="openModal()"
+          class="rounded flex items-center justify-center w-full h-full bg-black opacity-0 hover:opacity-50"
+        >
+          <svg-icon class="text-white h-6 w-6" src="assets/icons/shared/plus.svg"></svg-icon>
+        </div>
+      </div>
     </div>
-    <div class="h-full rounded bg-secondary-medium grow-[1]"></div>
+    <div class="h-full rounded bg-secondary-medium cursor-pointer grow-[1]">
+      <div
+        (click)="openModal()"
+        class="rounded flex items-center justify-center w-full h-full bg-black opacity-0 hover:opacity-50"
+      >
+        <svg-icon class="text-white h-6 w-6" src="assets/icons/shared/plus.svg"></svg-icon>
+      </div>
+    </div>
   </div>
 </div>
