@@ -1,12 +1,12 @@
 <div class="flex gap-7">
-  <img [src]="pet.gallery[0].filename" />
+  <img class="w-12 h-12 rounded-full" [src]="pet.pdp | petPicture" />
   <div class="flex flex-col justify-center gap-3">
     <div class="flex gap-2 items-center">
       <span class="text-black text-lg">{{ pet.name }}</span>
       <span class="bg-gray-400 rounded-3xl h-1 w-1"></span>
-      <span class="text-gray-500">{{ pet.name }}</span>
+      <span class="text-gray-500">{{ pet.breedType.petType }}</span>
       <span class="bg-gray-400 rounded-3xl h-1 w-1"></span>
-      <span class="text-gray-500">{{ pet.name }}</span>
+      <span class="text-gray-500">{{ pet.breedType.petType.name }}</span>
     </div>
 
     <div>
