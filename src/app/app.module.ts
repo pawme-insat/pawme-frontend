@@ -62,6 +62,7 @@ import { UserBioModalComponent } from './components/modals/user-bio-modal/user-b
 import { UserPictureModalComponent } from './components/modals/user-picture-modal/user-picture-modal.component';
 import { AddPetModalComponent } from './components/modals/add-pet-modal/add-pet-modal.component';
 import { AgePipe } from './pipes/age/age.pipe';
+import { UserPicturePipe } from './pipes/user-picture/user-picture.pipe';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,7 @@ import { AgePipe } from './pipes/age/age.pipe';
     UserPictureModalComponent,
     AddPetModalComponent,
     AgePipe,
+    UserPicturePipe,
   ],
   imports: [
     HttpClientModule,
